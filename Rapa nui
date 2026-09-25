@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Municipalidad de Rapa Nui</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --ocean: #007C83;
+      --turquoise: #4DB6AC;
+      --green: #688C61;
+      --leaf: #3F684F;
+      --coral: #C96E4B;
+      --sand: #F1DFC0;
+      --cream: #FAF7EF;
+      --dark: #19383A;
+      --white: #FFFFFF;
+      --gray: #667576;
+      --line: #DDE4DD;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+
+    /* --------------------------------
+       BARRA SUPERIOR
+    -------------------------------- */
+
+    .topbar {
+      background: var(--dark);
+      color: white;
+      font-size: 13px;
+      padding: 9px 0;
+    }
+
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topbar a {
+      opacity: .85;
+    }
+
+
+    /* --------------------------------
+       HEADER
+    -------------------------------- */
+
+    header {
+      background: rgba(250,247,239,.97);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    /*
+      ESPACIO PARA EL LOGO
+      El logo actual se incorporará posteriormente.
+    */
+
+    .logo-area {
+      width: 190px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a {
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: var(--ocean);
+    }
+
+    .nav-contact {
+      background: var(--ocean);
+      color: white;
+      padding: 11px 19px;
+      border-radius: 6px;
+    }
+
+    .nav-contact:hover {
+      color: white;
+      background: var(--leaf);
+    }
+
+
+    /* --------------------------------
+       HERO
+    -------------------------------- */
+
+    .hero {
+      min-height: 650px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(25,56,58,.88) 0%,
+          rgba(25,56,58,.62) 45%,
+          rgba(25,56,58,.08) 100%
+        ),
+        url("imagenes/hero-rapanui.jpg") center/cover;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      color: white;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-small {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--sand);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: .97;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 560px;
+      font-size: 17px;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      padding: 13px 21px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .button-primary {
+      background: var(--sand);
+      color: var(--dark);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255,255,255,.6);
+      color: white;
+    }
+
+
+    /* --------------------------------
+       FORMAS TROPICALES
+    -------------------------------- */
+
+    .wave {
+      height: 65px;
+      background: var(--cream);
+      position: relative;
+      margin-top: -1px;
+    }
+
+    .wave::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--cream);
+      clip-path: ellipse(58% 65% at 50% 100%);
+    }
+
+
+    /* --------------------------------
+       ACCESOS
+    -------------------------------- */
+
+    .quick {
+      padding: 65px 0 85px;
+    }
+
+    .section-label {
+      color: var(--coral);
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: "Manrope", sans-serif;
+      font-size: 38px;
+      line-height: 1.08;
+      margin-bottom: 32px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .quick-card {
+      background: white;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      padding: 26px;
+      min-height: 175px;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(25,56,58,.08);
+    }
+
+    .quick-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #E3F0EA;
+      color: var(--ocean);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
+
+    .quick-card h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .quick-card p {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+
+    /* --------------------------------
+       FRANJA TROPICAL
+    -------------------------------- */
+
+    .island-strip {
+      min-height: 150px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0,124,131,.93),
+          rgba(63,104,79,.93)
+        ),
+        url("imagenes/paisaje-rapanui.jpg") center/cover;
+
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .island-strip::after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50%;
+      right: 7%;
+      top: -80px;
+    }
+
+    .island-strip-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .island-strip h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: 29px;
+    }
+
+    .island-strip p {
+      max-width: 470px;
+      color: rgba(255,255,255,.82);
+      font-size: 14px;
+    }
+
+
+    /* --------------------------------
+       NOTICIAS
+    -------------------------------- */
+
+    .news {
+      padding: 90px 0;
+      background: white;
+    }
+
+    .news-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    .see-all {
+      color: var(--ocean);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .news-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .news-photo {
+      height: 230px;
+      background: var(--sand);
+    }
+
+    .news-card:first-child .news-photo {
+      height: 290px;
+    }
+
+    .news-content {
+      padding: 22px;
+    }
+
+    .news-date {
+      color: var(--coral);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .news-content h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 20px;
+      line-height: 1.25;
+      margin: 8px 0;
+    }
+
+    .news-content p {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+
+    /* --------------------------------
+       MUNICIPALIDAD
+    -------------------------------- */
+
+    .municipality {
+      padding: 90px 0;
+      background: var(--sand);
+    }
+
+    .municipality-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .municipality h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: 43px;
+      line-height: 1.05;
+      margin: 10px 0 20px;
+    }
+
+    .municipality p {
+      color: #5E6B68;
+      max-width: 510px;
+    }
+
+    .municipality-image {
+      height: 430px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #D5C19A;
+    }
+
+
+    /* --------------------------------
+       COLORES
+    -------------------------------- */
+
+    .color-line {
+      display: flex;
+      height: 48px;
+      margin-top: 30px;
+      border-radius: 7px;
+      overflow: hidden;
+    }
+
+    .color-line div {
+      flex: 1;
+    }
+
+    .c1 { background: var(--ocean); }
+    .c2 { background: var(--turquoise); }
+    .c3 { background: var(--green); }
+    .c4 { background: var(--coral); }
+    .c5 { background: var(--sand); }
+
+
+    /* --------------------------------
+       AGENDA
+    -------------------------------- */
+
+    .agenda {
+      padding: 90px 0;
+    }
+
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+    }
+
+    .agenda-intro p {
+      color: var(--gray);
+      max-width: 430px;
+    }
+
+    .agenda-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .agenda-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 20px;
+      padding: 23px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .agenda-type {
+      color: var(--coral);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .agenda-item h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .agenda-item p {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+
+    /* --------------------------------
+       TRANSPARENCIA
+    -------------------------------- */
+
+    .transparency {
+      background: var(--dark);
+      color: white;
+      padding: 75px 0;
+    }
+
+    .transparency-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .transparency h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: 40px;
+      line-height: 1.05;
+      margin: 10px 0 18px;
+    }
+
+    .transparency p {
+      max-width: 530px;
+      color: rgba(255,255,255,.7);
+    }
+
+    .transparency-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .transparency-links a {
+      border: 1px solid rgba(255,255,255,.15);
+      padding: 18px;
+      border-radius: 7px;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .transparency-links a:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
+
+    footer {
+      background: #10282A;
+      color: white;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 45px;
+    }
+
+    footer h3 {
+      font-family: "Manrope", sans-serif;
+      margin-bottom: 15px;
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255,255,255,.65);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(255,255,255,.4);
+      font-size: 11px;
+    }
+
+
+    /* --------------------------------
+       RESPONSIVE
+    -------------------------------- */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .news-card:first-child {
+        grid-column: span 2;
+      }
+
+      .municipality-grid,
+      .agenda-grid,
+      .transparency-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .topbar-content {
+        justify-content: center;
+      }
+
+      .topbar-content span {
+        display: none;
+      }
+
+      .navbar {
+        min-height: 70px;
+      }
+
+      .hero {
+        min-height: 570px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+        letter-spacing: -2px;
+      }
+
+      .quick-grid,
+      .news-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-card:first-child {
+        grid-column: auto;
+      }
+
+      .news-card:first-child .news-photo {
+        height: 230px;
+      }
+
+      .municipality h2,
+      .transparency h2 {
+        font-size: 35px;
+      }
+
+      .island-strip-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .transparency-links {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- BARRA SUPERIOR -->
+
+  <div class="topbar">
+
+    <div class="container topbar-content">
+
+      <span>
+        Municipalidad de Rapa Nui
+      </span>
+
+      <div>
+        <a href="#transparencia">Transparencia</a>
+        &nbsp; · &nbsp;
+        <a href="#contacto">Contacto</a>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- NAVEGACIÓN -->
+
+  <header>
+
+    <div class="container navbar">
+
+      <div class="logo-area">
+        <!-- Logo municipal -->
+      </div>
+
+      <nav>
+
+        <a href="#municipio">
+          Municipio
+        </a>
+
+        <a href="#servicios">
+          Servicios
+        </a>
+
+        <a href="#noticias">
+          Noticias
+        </a>
+
+        <a href="#agenda">
+          Agenda
+        </a>
+
+        <a href="#transparencia">
+          Transparencia
+        </a>
+
+        <a href="#contacto" class="nav-contact">
+          Contacto
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="hero-small">
+            Municipalidad de Rapa Nui
+          </div>
+
+          <h1>
+            Comunidad,<br>
+            territorio<br>
+            y futuro.
+          </h1>
+
+          <p>
+            Información, servicios y actividades de la Municipalidad
+            de Rapa Nui al servicio de la comunidad y del territorio.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#servicios" class="button button-primary">
+              Servicios municipales
+            </a>
+
+            <a href="#noticias" class="button button-secondary">
+              Ver noticias
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <div class="wave"></div>
+
+
+
+    <!-- ACCESOS -->
+
+    <section class="quick" id="servicios">
+
+      <div class="container">
+
+        <div class="section-label">
+          Servicios municipales
+        </div>
+
+        <h2 class="section-title">
+          Todo lo que necesitas,<br>
+          en un solo lugar.
+        </h2>
+
+
+        <div class="quick-grid">
+
+
+          <a href="#" class="quick-card">
+
+            <div class="quick-icon">
+              01
+            </div>
+
+            <h3>
+              Trámites
+            </h3>
+
+            <p>
+              Información y acceso a servicios municipales.
+            </p>
+
+          </a>
+
+
+          <a href="#agenda" class="quick-card">
+
+            <div class="quick-icon">
+              02
+            </div>
+
+            <h3>
+              Agenda
+            </h3>
+
+            <p>
+              Actividades, reuniones y eventos de la comunidad.
+            </p>
+
+          </a>
+
+
+          <a href="#noticias" class="quick-card">
+
+            <div class="quick-icon">
+              03
+            </div>
+
+            <h3>
+              Noticias
+            </h3>
+
+            <p>
+              Información y actualidad del municipio.
+            </p>
+
+          </a>
+
+
+          <a href="#transparencia" class="quick-card">
+
+            <div class="quick-icon">
+              04
+            </div>
+
+            <h3>
+              Transparencia
+            </h3>
+
+            <p>
+              Información pública y documentación municipal.
+            </p>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FRANJA -->
+
+    <section class="island-strip">
+
+      <div class="container island-strip-content">
+
+        <h2>
+          Rapa Nui · territorio vivo
+        </h2>
+
+        <p>
+          Una comunidad insular, su patrimonio, su paisaje
+          y una identidad profundamente vinculada al territorio.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- NOTICIAS -->
+
+    <section class="news" id="noticias">
+
+      <div class="container">
+
+        <div class="news-heading">
+
+          <div>
+
+            <div class="section-label">
+              Actualidad
+            </div>
+
+            <h2 class="section-title">
+              Noticias
+            </h2>
+
+          </div>
+
+          <a href="#" class="see-all">
+            Ver todas →
+          </a>
+
+        </div>
+
+
+        <div class="news-grid">
+
+
+          <article class="news-card">
+
+            <div class="news-photo">
+              <img src="imagenes/noticia-01.jpg" alt="">
+            </div>
+
+            <div class="news-content">
+
+              <div class="news-date">
+                Municipalidad
+              </div>
+
+              <h3>
+                Noticias de la Municipalidad de Rapa Nui
+              </h3>
+
+              <p>
+                Información sobre iniciativas, actividades
+                y acontecimientos de interés para la comunidad.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="news-card">
+
+            <div class="news-photo">
+              <img src="imagenes/noticia-02.jpg" alt="">
+            </div>
+
+            <div class="news-content">
+
+              <div class="news-date">
+                Comunidad
+              </div>
+
+              <h3>
+                Actividades para la comunidad
+              </h3>
+
+              <p>
+                Conoce las próximas actividades y encuentros.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="news-card">
+
+            <div class="news-photo">
+              <img src="imagenes/noticia-03.jpg" alt="">
+            </div>
+
+            <div class="news-content">
+
+              <div class="news-date">
+                Territorio
+              </div>
+
+              <h3>
+                Iniciativas para el territorio
+              </h3>
+
+              <p>
+                Proyectos y acciones desarrolladas en la isla.
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- MUNICIPALIDAD -->
+
+    <section class="municipality" id="municipio">
+
+      <div class="container municipality-grid">
+
+
+        <div>
+
+          <div class="section-label">
+            Municipalidad
+          </div>
+
+          <h2>
+            Una institución<br>
+            conectada con<br>
+            su territorio.
+          </h2>
+
+          <p>
+            Conoce la Municipalidad de Rapa Nui, sus servicios,
+            áreas de trabajo, información institucional y
+            espacios de participación para la comunidad.
+          </p>
+
+
+          <div class="color-line">
+
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+            <div class="c5"></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="municipality-image">
+
+          <img
+            src="imagenes/municipalidad.jpg"
+            alt="Rapa Nui"
+          >
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- AGENDA -->
+
+    <section class="agenda" id="agenda">
+
+      <div class="container agenda-grid">
+
+
+        <div class="agenda-intro">
+
+          <div class="section-label">
+            Participación
+          </div>
+
+          <h2 class="section-title">
+            Agenda<br>
+            municipal
+          </h2>
+
+          <p>
+            Revisa las actividades, reuniones y encuentros
+            que forman parte de la agenda municipal.
+          </p>
+
+        </div>
+
+
+        <div class="agenda-list">
+
+
+          <div class="agenda-item">
+
+            <div class="agenda-type">
+              Actividad
+            </div>
+
+            <div>
+
+              <h3>
+                Actividades municipales
+              </h3>
+
+              <p>
+                Información disponible en la agenda oficial.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="agenda-item">
+
+            <div class="agenda-type">
+              Comunidad
+            </div>
+
+            <div>
+
+              <h3>
+                Reuniones y encuentros
+              </h3>
+
+              <p>
+                Consulta fechas, horarios y lugares.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="agenda-item">
+
+            <div class="agenda-type">
+              Territorio
+            </div>
+
+            <div>
+
+              <h3>
+                Actividades abiertas
+              </h3>
+
+              <p>
+                Espacios de participación comunitaria.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- TRANSPARENCIA -->
+
+    <section class="transparency" id="transparencia">
+
+      <div class="container transparency-grid">
+
+
+        <div>
+
+          <div class="section-label">
+            Información pública
+          </div>
+
+          <h2>
+            Transparencia<br>
+            municipal.
+          </h2>
+
+          <p>
+            Accede a información institucional, documentos,
+            normativa y antecedentes públicos de la Municipalidad.
+          </p>
+
+        </div>
+
+
+        <div class="transparency-links">
+
+          <a href="#">
+            Información municipal →
+          </a>
+
+          <a href="#">
+            Documentos públicos →
+          </a>
+
+          <a href="#">
+            Presupuesto →
+          </a>
+
+          <a href="#">
+            Solicitudes de información →
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer id="contacto">
+
+    <div class="container">
+
+
+      <div class="footer-grid">
+
+
+        <div>
+
+          <h3>
+            Municipalidad<br>
+            de Rapa Nui
+          </h3>
+
+          <p>
+            Información y servicios para la comunidad
+            y el territorio.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Navegación
+          </h3>
+
+          <div class="footer-links">
+
+            <a href="#municipio">
+              Municipio
+            </a>
+
+            <a href="#servicios">
+              Servicios
+            </a>
+
+            <a href="#noticias">
+              Noticias
+            </a>
+
+            <a href="#agenda">
+              Agenda
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Información
+          </h3>
+
+          <div class="footer-links">
+
+            <a href="#transparencia">
+              Transparencia
+            </a>
+
+            <a href="#">
+              Contacto
+            </a>
+
+            <a href="#">
+              Ubicación
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          Municipalidad de Rapa Nui
+        </span>
+
+        <span>
+          © 2026
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
