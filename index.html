@@ -23,6 +23,19 @@
     <div class="header-inner">
 
       <a class="identity" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
+        
+<button
+  class="menu-toggle"
+  type="button"
+  aria-label="Abrir menú de navegación"
+  aria-controls="menu-principal"
+  aria-expanded="false"
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
         <span class="seal" aria-hidden="true">RN</span>
         <span class="brand">
           <strong>MUNICIPALIDAD</strong>
@@ -312,6 +325,33 @@
     );
 
     observador.observe(universo);
+  }
+</script>
+
+<script>
+  const botonMenu = document.querySelector(".menu-toggle");
+  const menuPrincipal = document.querySelector("#menu-principal");
+
+  if (botonMenu && menuPrincipal) {
+    botonMenu.addEventListener("click", () => {
+      const abierto = botonMenu.getAttribute("aria-expanded") === "true";
+
+      botonMenu.setAttribute("aria-expanded", String(!abierto));
+      botonMenu.setAttribute(
+        "aria-label",
+        abierto ? "Abrir menú de navegación" : "Cerrar menú de navegación"
+      );
+
+      menuPrincipal.classList.toggle("is-open", !abierto);
+    });
+
+    menuPrincipal.querySelectorAll("a").forEach((enlace) => {
+      enlace.addEventListener("click", () => {
+        botonMenu.setAttribute("aria-expanded", "false");
+        botonMenu.setAttribute("aria-label", "Abrir menú de navegación");
+        menuPrincipal.classList.remove("is-open");
+      });
+    });
   }
 </script>
 
