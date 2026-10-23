@@ -47,4 +47,53 @@
   } else {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
+  
+  const orbitTopics = {
+    territory: {
+      label: "Territorio",
+      title: "Un territorio que nos conecta.",
+      text: "Conoce el espacio que habitamos y las iniciativas que contribuyen a su cuidado.",
+      href: "explora.html"
+    },
+    community: {
+      label: "Comunidad",
+      title: "El futuro se construye en comunidad.",
+      text: "Descubre espacios de participación, iniciativas y recursos para la vida comunitaria.",
+      href: "comunidad.html"
+    },
+    nature: {
+      label: "Naturaleza",
+      title: "Cuidar el entorno es cuidar el futuro.",
+      text: "Explora información sobre el entorno natural y su relación con la vida en Rapa Nui.",
+      href: "explora.html"
+    }
+  };
+
+  const orbitExperience = document.querySelector("#orbit-experience");
+
+  if (orbitExperience) {
+    const points = orbitExperience.querySelectorAll(".orbit-point");
+    const label = orbitExperience.querySelector("#orbit-detail-label");
+    const title = orbitExperience.querySelector("#orbit-detail-title");
+    const text = orbitExperience.querySelector("#orbit-detail-text");
+    const link = orbitExperience.querySelector("#orbit-detail-link");
+
+    points.forEach((point) => {
+      point.addEventListener("click", () => {
+        const topic = orbitTopics[point.dataset.topic];
+        if (!topic) return;
+
+        points.forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === point));
+        });
+
+        label.textContent = topic.label;
+        title.textContent = topic.title;
+        text.textContent = topic.text;
+        link.href = topic.href;
+        link.innerHTML = `${topic.label === "Comunidad" ? "Participar en comunidad" : "Explorar " + topic.label.toLowerCase()} <span aria-hidden="true">↗</span>`;
+      });
+    });
+  }
+
 })();
