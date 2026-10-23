@@ -1482,3 +1482,22 @@ svg {
     transform: none !important;
   }
 }
+
+html body .site-header {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+body {
+  padding-top: 118px;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding-top: 100px;
+  }
+}
