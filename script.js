@@ -2,7 +2,6 @@
 (() => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Menú móvil
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".main-nav");
 
@@ -13,16 +12,16 @@
     };
 
     toggle.addEventListener("click", () => {
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-      nav.classList.toggle("is-open", !isOpen);
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("is-open", !open);
     });
 
-    nav.querySelectorAll("a").forEach((link) => {
+    nav.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", closeMenu);
     });
 
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", event => {
       if (event.key === "Escape") closeMenu();
     });
 
@@ -31,22 +30,20 @@
     });
   }
 
-  // Aparición progresiva al desplazarse
   const revealItems = document.querySelectorAll(".reveal");
 
   if (reduceMotion || !("IntersectionObserver" in window)) {
-    revealItems.forEach((item) => item.classList.add("is-visible"));
+    revealItems.forEach(item => item.classList.add("is-visible"));
   } else {
     const observer = new IntersectionObserver((entries, activeObserver) => {
-      entries.forEach((entry) => {
+      entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-
         entry.target.classList.add("is-visible");
         activeObserver.unobserve(entry.target);
       });
     }, {
       threshold: 0.12,
-      rootMargin: "0px 0px -45px 0px"
+      rootMargin: "0px 0px -40px 0px"
     });
 
     revealItems.forEach((item, index) => {
@@ -55,112 +52,104 @@
     });
   }
 
-  // Contenido de la órbita
-  const orbitTopics = {
+  const topics = {
     territory: {
       label: "Territorio",
       title: "Un territorio que nos conecta.",
       text: "Conoce el espacio que habitamos y las iniciativas que contribuyen a su cuidado.",
+      linkText: "Explorar territorio",
       href: "explora.html"
     },
     community: {
       label: "Comunidad",
       title: "El futuro se construye en comunidad.",
       text: "Descubre espacios de participación, iniciativas y recursos para la vida comunitaria.",
+      linkText: "Participar en comunidad",
       href: "comunidad.html"
     },
     nature: {
       label: "Naturaleza",
       title: "Cuidar el entorno es cuidar el futuro.",
       text: "Explora información sobre el entorno natural y su relación con la vida en Rapa Nui.",
+      linkText: "Explorar naturaleza",
       href: "explora.html"
     }
   };
 
   const experience = document.querySelector("#orbit-experience");
-  const orbitArt = experience?.querySelector(".orbit-art");
 
-  if (experience && orbitArt) {
-    const points = experience.querySelectorAll(".orbit-point");
-    const label = experience.querySelector("#orbit-detail-label");
-    const title = experience.querySelector("#orbit-detail-title");
-    const text = experience.querySelector("#orbit-detail-text");
-    const link = experience.querySelector("#orbit-detail-link");
+  if (!experience) return;
 
-    // Movimiento suave de la órbita con ratón o trackpad.
-    // En pantallas táctiles no bloquea el desplazamiento de la página.
-    if (!reduceMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-      let framePending = false;
-      let pointerX = 0;
-      let pointerY = 0;
+  const points = experience.querySelectorAll(".orbit-point");
+  const detail = experience.querySelector(".orbit-detail");
+  const label = experience.querySelector("#orbit-detail-label");
+  const title = experience.querySelector("#orbit-detail-title");
+  const text = experience.querySelector("#orbit-detail-text");
+  const link = experience.querySelector("#orbit-detail-link");
 
-      orbitArt.addEventListener("pointermove", (event) => {
-        const rect = orbitArt.getBoundingClientRect();
-        pointerX = (event.clientX - rect.left) / rect.width - 0.5;
-        pointerY = (event.clientY - rect.top) / rect.height - 0.5;
+  if (!points.length || !detail || !label || !title || !text || !link) return;
 
-        if (framePending) return;
-        framePending = true;
+  let activeTopic = "territory";
+  let changeTimeout;
 
-        window.requestAnimationFrame(() => {
-          orbitArt.style.setProperty("--orbit-tilt-x", `${pointerX * 9}deg`);
-          orbitArt.style.setProperty("--orbit-tilt-y", `${pointerY * -9}deg`);
-          orbitArt.style.setProperty("--orbit-shift-x", `${pointerX * 5}px`);
-          orbitArt.style.setProperty("--orbit-shift-y", `${pointerY * 5}px`);
-          framePending = false;
-        });
-      });
+  const selectTopic = (point) => {
+    const key = point.dataset.topic;
+    const topic = topics[key];
 
-      orbitArt.addEventListener("pointerleave", () => {
-        orbitArt.style.setProperty("--orbit-tilt-x", "0deg");
-        orbitArt.style.setProperty("--orbit-tilt-y", "0deg");
-        orbitArt.style.setProperty("--orbit-shift-x", "0px");
-        orbitArt.style.setProperty("--orbit-shift-y", "0px");
-      });
-    }
+    if (!topic) return;
 
-    const selectTopic = (point) => {
-      const topic = orbitTopics[point.dataset.topic];
-      if (!topic || !label || !title || !text || !link) return;
+    activeTopic = key;
 
-      points.forEach((item) => {
-        item.setAttribute("aria-pressed", String(item === point));
-      });
+    points.forEach(item => {
+      const active = item === point;
+      item.setAttribute("aria-pressed", String(active));
+      item.classList.toggle("is-active", active);
+    });
 
-      experience.dataset.activeTopic = point.dataset.topic;
+    experience.dataset.activeTopic = key;
 
-      const detail = experience.querySelector(".orbit-detail");
+    window.clearTimeout(changeTimeout);
+    detail.classList.add("is-changing");
 
-      if (detail) {
-        detail.classList.add("is-changing");
+    changeTimeout = window.setTimeout(() => {
+      label.textContent = topic.label;
+      title.textContent = topic.title;
+      text.textContent = topic.text;
+      link.textContent = topic.linkText;
+      link.href = topic.href;
+      detail.classList.remove("is-changing");
+      detail.classList.add("is-expanded");
+    }, reduceMotion ? 0 : 170);
+  };
 
-        window.setTimeout(() => {
-          label.textContent = topic.label;
-          title.textContent = topic.title;
-          text.textContent = topic.text;
-          link.href = topic.href;
+  points.forEach(point => {
+    point.addEventListener("click", () => selectTopic(point));
 
-          // Icono vectorial SVG, sin caracteres de flecha.
-          link.innerHTML = `${point.dataset.topic === "community" ? "Participar en comunidad" : `Explorar ${topic.label.toLowerCase()}`}
-            <span class="link-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 17 17 7"></path>
-                <path d="M8 7h9v9"></path>
-              </svg>
-            </span>`;
+    point.addEventListener("keydown", event => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      selectTopic(point);
+    });
+  });
 
-          detail.classList.remove("is-changing");
-        }, reduceMotion ? 0 : 160);
-      } else {
-        label.textContent = topic.label;
-        title.textContent = topic.title;
-        text.textContent = topic.text;
-        link.href = topic.href;
-      }
-    };
+  const orbitArt = experience.querySelector(".orbit-art");
 
-    points.forEach((point) => {
-      point.addEventListener("click", () => selectTopic(point));
+  if (orbitArt && !reduceMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    orbitArt.addEventListener("pointermove", event => {
+      const rect = orbitArt.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      orbitArt.style.setProperty("--orbit-tilt-x", `${x * 8}deg`);
+      orbitArt.style.setProperty("--orbit-tilt-y", `${y * -8}deg`);
+    });
+
+    orbitArt.addEventListener("pointerleave", () => {
+      orbitArt.style.setProperty("--orbit-tilt-x", "0deg");
+      orbitArt.style.setProperty("--orbit-tilt-y", "0deg");
     });
   }
+
+  const initialPoint = experience.querySelector('.orbit-point[data-topic="territory"]');
+  if (initialPoint) selectTopic(initialPoint);
 })();
