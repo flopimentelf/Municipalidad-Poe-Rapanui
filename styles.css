@@ -1,474 +1,1803 @@
 
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#282A60">
-  <meta name="description" content="Servicios, información pública y participación ciudadana de la Municipalidad de Rapa Nui.">
-  <title>Municipalidad de Rapa Nui | Territorio y comunidad</title>
+:root {
+  color-scheme: light;
+  --navy: #282A60;
+  --blue: #34376F;
+  --turquoise: #23A6A0;
+  --green: #66866B;
+  --green-dark: #405E48;
+  --green-light: #E4ECE2;
+  --cream: #FAF9F5;
+  --white: #FFFFFF;
+  --ink: #292D3A;
+  --muted: #69717B;
+  --line: #E0E2E5;
+  --font-display: "Montserrat", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --page-width: 1440px;
+  --page-gutter: clamp(22px, 6vw, 88px);
+  --radius: 5px;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
+* {
+  box-sizing: border-box;
+}
 
-<body id="top" class="home-page">
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
-      <span class="brand-symbol" aria-hidden="true">
-        <svg viewBox="0 0 48 48">
-          <path d="M24 3 44 14.5v19L24 45 4 33.5v-19L24 3Z"/>
-          <path d="M13 18h22M13 24h15M13 30h19"/>
-        </svg>
-      </span>
-      <span class="brand-copy">
-        <strong>RAPA NUI</strong>
-        <small>MUNICIPALIDAD</small>
-      </span>
-    </a>
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+}
 
-    <div class="header-actions">
-      <a class="social-link" href="contacto.html" aria-label="Contacto municipal">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3.5" y="5" width="17" height="14" rx="1.5"/>
-          <path d="m4 6 8 7 8-7"/>
-        </svg>
-      </a>
+body,
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 
-      <a class="social-link" href="contacto.html" aria-label="Atención municipal">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2-2-5Z"/>
-        </svg>
-      </a>
+body.menu-open {
+  overflow: hidden;
+}
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
-        <span class="menu-toggle-lines" aria-hidden="true"></span>
-        <span>Menú</span>
-      </button>
-    </div>
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
 
-    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-      <a href="tramites.html">Trámites</a>
-      <a href="direcciones.html">Direcciones</a>
-      <a href="comunidad.html">Comunidad</a>
-      <a href="desarrollo.html">Desarrollo</a>
-      <a href="planes.html">Planes</a>
-      <a href="explora.html">Explora Rapa Nui</a>
-    </nav>
-  </header>
+svg {
+  overflow: visible;
+}
 
-  <main id="contenido">
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-backdrop" aria-hidden="true">
-        <div class="hero-sun"></div>
-        <div class="hero-horizon"></div>
+button {
+  color: inherit;
+  font: inherit;
+}
 
-        <svg class="hero-landscape" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice">
-          <path d="M0 380 110 330 190 350 300 255 400 330 520 285 650 360 760 300 890 335 1020 245 1140 325 1280 280 1440 350V600H0Z"/>
-          <path d="M0 440 160 390 300 415 470 350 610 430 780 365 920 425 1090 350 1240 415 1440 370V600H0Z"/>
-          <path d="M0 500 180 450 350 480 520 435 700 490 880 450 1080 475 1250 435 1440 470V600H0Z"/>
-        </svg>
-      </div>
+button,
+a {
+  touch-action: manipulation;
+}
 
-      <div class="hero-index" aria-hidden="true">
-        <span>27° 07′ S</span>
-        <span>109° 22′ O</span>
-      </div>
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--turquoise);
+  outline-offset: 5px;
+}
 
-      <div class="hero-content">
-        <p class="eyebrow reveal">Territorio / Comunidad / Futuro</p>
+::selection {
+  background: var(--green);
+  color: var(--white);
+}
 
-        <h1 id="hero-title" class="hero-title">
-          <span class="title-line"><span>Una isla.</span></span>
-          <span class="title-line title-offset"><span>Muchas</span></span>
-          <span class="title-line"><span class="title-accent">conexiones.</span></span>
-        </h1>
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 12px;
+  left: 12px;
+  padding: 12px 18px;
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--green);
+  transform: translateY(-160%);
+  transition: transform .2s ease;
+}
 
-        <div class="hero-bottom reveal">
-          <p>Un municipio que escucha, conecta y construye junto a su comunidad.</p>
+.skip-link:focus {
+  transform: translateY(0);
+}
 
-          <a class="round-link" href="#servicios" aria-label="Descender a los servicios municipales">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3v17M5 13l7 7 7-7"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+.site-header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 18px var(--page-gutter);
+  background: var(--cream);
+  border-bottom: 1px solid rgba(40, 42, 96, .1);
+}
 
-      <div class="hero-footer">
-        <span>Municipalidad de Rapa Nui</span>
-        <span>Isla / Pacífico / Chile</span>
-      </div>
-    </section>
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
 
-    <section class="intro-section section-pad" aria-labelledby="intro-title">
-      <div class="section-kicker reveal">
-        <span>01</span>
-        <span>Un lugar para encontrarnos</span>
-      </div>
+.brand-symbol {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  place-items: center;
+  color: var(--green);
+}
 
-      <div class="intro-layout">
-        <h2 id="intro-title" class="display-title reveal">
-          El territorio<br>
-          no termina<br>
-          <em>en el mapa.</em>
-        </h2>
+.brand-symbol svg {
+  width: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
-        <div class="intro-copy reveal">
-          <p>También está en las personas, las decisiones compartidas y las formas en que cuidamos el lugar que habitamos.</p>
-          <p>Esta plataforma reúne servicios, información pública y espacios de participación para acercar la gestión municipal a la comunidad.</p>
+.brand-copy {
+  display: grid;
+  line-height: 1.15;
+  gap: 5px;
+}
 
-          <a class="text-link" href="comunidad.html">
-            Conoce la comunidad
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 12h15M13 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+.brand-copy strong {
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
 
-      <svg class="story-line story-line-intro" viewBox="0 0 120 260" aria-hidden="true">
-        <path d="M60 0V110C60 150 20 150 20 190S60 220 60 260"/>
-      </svg>
-    </section>
+.brand-copy small {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .19em;
+}
 
-    <section class="services-section section-pad" id="servicios" aria-labelledby="services-title">
-      <div class="section-kicker reveal">
-        <span>02</span>
-        <span>Servicios municipales</span>
-      </div>
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
 
-      <div class="services-heading reveal">
-        <h2 id="services-title" class="display-title">
-          ¿Qué necesitas<br>
-          <em>resolver hoy?</em>
-        </h2>
-        <p>Accede directamente a los servicios y la información que buscas.</p>
-      </div>
+.social-link {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--navy);
+  transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
 
-      <div class="service-grid">
-        <a class="service-card service-card-large reveal" href="tramites.html">
-          <span class="card-number">01</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <rect x="10" y="6" width="28" height="36" rx="2"/>
-              <path d="M17 16h14M17 23h14M17 30h9"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Trámites y servicios</strong>
-            <span>Encuentra orientación y gestiones municipales.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
+.social-link svg {
+  width: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
-        <a class="service-card reveal" href="direcciones.html">
-          <span class="card-number">02</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M8 42V15l16-9 16 9v27M17 42V27h14v15"/>
-              <path d="M16 17h.1M24 17h.1M32 17h.1"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Direcciones municipales</strong>
-            <span>Conoce las áreas y sus funciones.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
+.social-link:hover {
+  color: var(--white);
+  background: var(--green);
+  border-color: var(--green);
+}
 
-        <a class="service-card reveal" href="comunidad.html">
-          <span class="card-number">03</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <circle cx="18" cy="16" r="7"/>
-              <circle cx="33" cy="19" r="5"/>
-              <path d="M5 42c0-9 5-14 13-14s13 5 13 14M30 31c7-1 12 3 13 11"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Comunidad</strong>
-            <span>Participación, iniciativas y vida local.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 43px;
+  padding: 0 3px 0 17px;
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
 
-        <a class="service-card reveal" href="desarrollo.html">
-          <span class="card-number">04</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M7 40V23l12 7V18l12 8V9h10v31Z"/>
-              <path d="M14 35h.1M24 35h.1M35 16h.1M35 23h.1M35 30h.1"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Desarrollo local</strong>
-            <span>Iniciativas y oportunidades para el territorio.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
+.menu-toggle-lines {
+  position: relative;
+  display: block;
+  width: 23px;
+  height: 15px;
+  border-top: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transition: border-color .2s ease;
+}
 
-        <a class="service-card reveal" href="planes.html">
-          <span class="card-number">05</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M8 8h32v32H8zM16 17h16M16 24h16M16 31h10"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Planes municipales</strong>
-            <span>Consulta planes y líneas de trabajo.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
+.menu-toggle-lines::after {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 15px;
+  height: 1.5px;
+  background: currentColor;
+  content: "";
+  transition: width .2s ease;
+}
 
-        <a class="service-card service-card-dark reveal" href="explora.html">
-          <span class="card-number">06</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <circle cx="24" cy="24" r="18"/>
-              <path d="m31 15-5 11-11 7 5-12Z"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Explora Rapa Nui</strong>
-            <span>Territorio, entorno e identidad.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
-      </div>
-    </section>
+.menu-toggle[aria-expanded="true"] .menu-toggle-lines::after {
+  width: 23px;
+}
 
-    <section class="orbit-section section-pad" id="territorio" aria-labelledby="orbit-title">
-      <div class="section-kicker reveal">
-        <span>03</span>
-        <span>Territorio en movimiento</span>
-      </div>
+.main-nav {
+  position: absolute;
+  top: calc(100% - 1px);
+  right: var(--page-gutter);
+  display: grid;
+  width: min(360px, calc(100vw - 32px));
+  padding: 16px 25px;
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 22px 50px rgba(25, 27, 65, .2);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
 
-      <div class="orbit-layout">
-        <div class="orbit-intro">
-          <h2 id="orbit-title" class="display-title reveal">
-            Todo está<br>
-            <em>conectado.</em>
-          </h2>
-          <p class="reveal">Territorio, comunidad y naturaleza forman parte de una misma red. Explora cada dimensión y descubre cómo se relacionan.</p>
-          <p class="orbit-hint reveal">Selecciona un nodo o continúa desplazándote.</p>
-          <div class="orbit-progress" aria-hidden="true">
-            <span id="orbit-progress-bar"></span>
-          </div>
-        </div>
+.main-nav.is-open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
 
-        <div class="orbit-experience" id="orbit-experience">
-          <svg class="orbit-svg" viewBox="0 0 600 600" role="group" aria-label="Diagrama interactivo de territorio, comunidad y naturaleza">
-            <circle class="orbit-path orbit-path-outer" cx="300" cy="300" r="220"/>
-            <ellipse class="orbit-path orbit-path-middle" cx="300" cy="300" rx="170" ry="220" transform="rotate(55 300 300)"/>
-            <ellipse class="orbit-path orbit-path-inner" cx="300" cy="300" rx="115" ry="220" transform="rotate(-55 300 300)"/>
+.main-nav a {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+  font-size: 14px;
+  transition: color .2s ease, padding-left .2s ease;
+}
 
-            <path class="orbit-drawing" d="M300 80C425 80 520 180 520 300S420 520 300 520 80 420 80 300 180 80 300 80"/>
+.main-nav a:last-child {
+  border-bottom: 0;
+}
 
-            <circle class="orbit-center" cx="300" cy="300" r="78"/>
-            <text class="orbit-center-label" x="300" y="294" text-anchor="middle">RAPA</text>
-            <text class="orbit-center-label" x="300" y="322" text-anchor="middle">NUI</text>
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  color: #AFC9AF;
+  padding-left: 7px;
+}
 
-            <g class="orbit-node" data-topic="territory" role="button" tabindex="0" aria-label="Explorar territorio" aria-pressed="false">
-              <circle class="orbit-node-halo" cx="300" cy="80" r="30"/>
-              <circle class="orbit-node-dot" cx="300" cy="80" r="10"/>
-              <text class="orbit-node-label" x="300" y="43" text-anchor="middle">TERRITORIO</text>
-            </g>
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: min(790px, calc(100svh - 94px));
+  min-height: max(670px, min(790px, calc(100svh - 94px)));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px var(--page-gutter) 92px;
+  background: var(--navy);
+  color: var(--white);
+}
 
-            <g class="orbit-node" data-topic="community" role="button" tabindex="0" aria-label="Explorar comunidad" aria-pressed="false">
-              <circle class="orbit-node-halo" cx="490" cy="410" r="30"/>
-              <circle class="orbit-node-dot" cx="490" cy="410" r="10"/>
-              <text class="orbit-node-label" x="485" y="455" text-anchor="middle">COMUNIDAD</text>
-            </g>
+.hero-backdrop {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 78% 22%, rgba(35, 166, 160, .3), transparent 33%),
+    linear-gradient(135deg, #282A60 0%, #34376F 58%, #405E48 150%);
+}
 
-            <g class="orbit-node" data-topic="nature" role="button" tabindex="0" aria-label="Explorar naturaleza" aria-pressed="false">
-              <circle class="orbit-node-halo" cx="110" cy="410" r="30"/>
-              <circle class="orbit-node-dot" cx="110" cy="410" r="10"/>
-              <text class="orbit-node-label" x="115" y="455" text-anchor="middle">NATURALEZA</text>
-            </g>
-          </svg>
+.hero-sun {
+  position: absolute;
+  top: 10%;
+  right: 17%;
+  width: clamp(150px, 22vw, 310px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 35%, rgba(220, 235, 233, .45), rgba(35, 166, 160, .08) 60%, transparent 70%);
+  animation: sun-breathe 9s ease-in-out infinite alternate;
+}
 
-          <div class="orbit-detail" aria-live="polite" aria-atomic="true">
-            <p class="eyebrow" id="orbit-detail-label">Una isla, muchas conexiones</p>
-            <h3 id="orbit-detail-title">El territorio nos conecta.</h3>
-            <p id="orbit-detail-text">Selecciona uno de los nodos para conocer cada dimensión.</p>
-            <a class="text-link" id="orbit-detail-link" href="explora.html">
-              Explorar Rapa Nui
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 12h15M13 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+.hero-sun::before,
+.hero-sun::after {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 50%;
+  content: "";
+}
 
-    <section class="news-section section-pad" aria-labelledby="news-title">
-      <div class="section-kicker reveal">
-        <span>04</span>
-        <span>Información municipal</span>
-      </div>
+.hero-sun::after {
+  inset: -12%;
+}
 
-      <div class="news-heading reveal">
-        <h2 id="news-title" class="display-title">
-          Lo que pasa<br>
-          <em>en la isla.</em>
-        </h2>
-        <a class="text-link" href="noticias.html">
-          Ver todas las noticias
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 12h15M13 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
+.hero-horizon {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 32%, rgba(20, 23, 59, .15) 56%, rgba(20, 23, 59, .6) 100%);
+}
 
-      <div class="news-grid">
-        <a class="news-card news-card-feature reveal" href="noticias.html">
-          <div class="news-art news-art-landscape" aria-hidden="true">
-            <span class="news-art-sun"></span>
-            <span class="news-art-hill"></span>
-            <span class="news-art-hill news-art-hill-back"></span>
-          </div>
-          <div class="news-card-copy">
-            <span class="eyebrow">01 / Actualidad</span>
-            <h3>Noticias y avisos municipales</h3>
-            <p>Información y novedades para la comunidad.</p>
-            <span class="text-link">
-              Ver actualidad
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
+.hero-landscape {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  fill: rgba(20, 23, 59, .35);
+}
 
-        <a class="news-card reveal" href="transparencia.html">
-          <div class="news-art news-art-grid" aria-hidden="true">
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-          </div>
-          <div class="news-card-copy">
-            <span class="eyebrow">02 / Información pública</span>
-            <h3>Transparencia y gestión</h3>
-            <p>Consulta la información pública municipal.</p>
-            <span class="text-link">
-              Consultar información
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
+.hero-landscape path:nth-child(2) {
+  fill: rgba(64, 94, 72, .62);
+}
 
-        <a class="news-card reveal" href="comunidad.html">
-          <div class="news-art news-art-lines" aria-hidden="true">
-            <svg viewBox="0 0 320 220">
-              <path d="M0 160C80 160 60 40 150 40S210 180 320 70"/>
-              <path d="M0 180C100 180 80 60 160 60S220 200 320 90"/>
-              <path d="M0 200C110 200 100 80 170 80S240 220 320 110"/>
-            </svg>
-          </div>
-          <div class="news-card-copy">
-            <span class="eyebrow">03 / Participación</span>
-            <h3>La comunidad construye</h3>
-            <p>Conoce espacios e iniciativas de participación.</p>
-            <span class="text-link">
-              Conocer iniciativas
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
-      </div>
-    </section>
+.hero-landscape path:nth-child(3) {
+  fill: rgba(30, 47, 55, .68);
+}
 
-    <section class="contact-band section-pad reveal" aria-labelledby="contact-title">
-      <div class="contact-band-copy">
-        <p class="eyebrow">Estamos para orientarte</p>
-        <h2 id="contact-title" class="display-title">
-          Hablemos<br>
-          <em>de lo que importa.</em>
-        </h2>
-      </div>
+.hero-index {
+  position: absolute;
+  top: 35px;
+  right: var(--page-gutter);
+  display: grid;
+  gap: 4px;
+  color: rgba(255, 255, 255, .72);
+  font-size: 10px;
+  letter-spacing: .13em;
+  text-align: right;
+}
 
-      <a class="contact-cta" href="contacto.html">
-        <span>Canales de contacto</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 12h15M13 5l7 7-7 7"/>
-        </svg>
-      </a>
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: auto;
+}
 
-      <svg class="contact-line" viewBox="0 0 500 200" aria-hidden="true">
-        <path d="M5 170C80 170 75 30 180 30S280 180 360 110 430 40 495 40"/>
-      </svg>
-    </section>
+.eyebrow {
+  margin: 0;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
 
-  </main>
+.hero .eyebrow {
+  color: #C2D8C1;
+}
 
-  <footer class="site-footer">
-    <div class="footer-main">
-      <a class="brand brand-footer" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
-        <span class="brand-symbol" aria-hidden="true">
-          <svg viewBox="0 0 48 48">
-            <path d="M24 3 44 14.5v19L24 45 4 33.5v-19L24 3Z"/>
-            <path d="M13 18h22M13 24h15M13 30h19"/>
-          </svg>
-        </span>
-        <span class="brand-copy">
-          <strong>RAPA NUI</strong>
-          <small>MUNICIPALIDAD</small>
-        </span>
-      </a>
-      <p>Información y servicios para la comunidad.</p>
-    </div>
+.hero-title {
+  margin: 34px 0 46px;
+  font-family: var(--font-display);
+  font-size: clamp(66px, 11.5vw, 164px);
+  font-weight: 700;
+  letter-spacing: -.085em;
+  line-height: .92;
+}
 
-    <div class="footer-links">
-      <div>
-        <h2>Servicios</h2>
-        <a href="tramites.html">Trámites y servicios</a>
-        <a href="direcciones.html">Direcciones</a>
-        <a href="planes.html">Planes municipales</a>
-      </div>
+.title-line {
+  display: block;
+  overflow: hidden;
+  padding: .04em .08em .11em 0;
+}
 
-      <div>
-        <h2>Información</h2>
-        <a href="noticias.html">Noticias</a>
-        <a href="transparencia.html">Transparencia</a>
-        <a href="contacto.html">Contacto</a>
-      </div>
+.title-line > span {
+  display: inline-block;
+  animation: title-rise .9s var(--ease) both;
+}
 
-      <div>
-        <h2>Comunidad</h2>
-        <a href="comunidad.html">Participación</a>
-        <a href="desarrollo.html">Desarrollo local</a>
-        <a href="explora.html">Explora Rapa Nui</a>
-      </div>
-    </div>
+.title-line:nth-child(2) > span {
+  animation-delay: .12s;
+}
 
-    <div class="footer-bottom">
-      <span>Municipalidad de Rapa Nui</span>
-      <a href="#top">
-        Volver al inicio
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 20V4M5 11l7-7 7 7"/>
-        </svg>
-      </a>
-    </div>
-  </footer>
-</body>
-</html>
+.title-line:nth-child(3) > span {
+  animation-delay: .24s;
+}
+
+.title-offset {
+  padding-left: clamp(25px, 8vw, 130px);
+}
+
+.title-accent {
+  color: #AFC9AF;
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 850px;
+}
+
+.hero-bottom p {
+  max-width: 330px;
+  margin: 0;
+  color: rgba(255, 255, 255, .8);
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.7;
+}
+
+.round-link {
+  display: grid;
+  width: 57px;
+  height: 57px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .55);
+  border-radius: 50%;
+  color: var(--white);
+  transition: background .3s ease, color .3s ease, transform .3s ease;
+}
+
+.round-link svg {
+  width: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.round-link:hover {
+  transform: translateY(4px);
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.hero-footer {
+  position: absolute;
+  right: var(--page-gutter);
+  bottom: 23px;
+  left: var(--page-gutter);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, .25);
+  color: rgba(255, 255, 255, .66);
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+.section-pad {
+  padding: clamp(76px, 11vw, 150px) var(--page-gutter);
+}
+
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: clamp(38px, 6vw, 78px);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.section-kicker span:first-child {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  color: var(--green-dark);
+  letter-spacing: 0;
+}
+
+.section-kicker span + span {
+  position: relative;
+}
+
+.section-kicker span + span::before {
+  display: inline-block;
+  width: 23px;
+  height: 1px;
+  margin: 0 12px 3px 0;
+  background: var(--line);
+  content: "";
+}
+
+.intro-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.intro-layout {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  align-items: end;
+  gap: clamp(45px, 10vw, 150px);
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+.display-title {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: clamp(46px, 7.4vw, 102px);
+  font-weight: 600;
+  letter-spacing: -.075em;
+  line-height: 1.03;
+}
+
+.display-title em {
+  color: var(--green);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.intro-copy {
+  max-width: 440px;
+  padding-bottom: 8px;
+}
+
+.intro-copy p,
+.orbit-intro > p,
+.services-heading > p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.intro-copy p:first-child {
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 18px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.text-link svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .3s var(--ease);
+}
+
+.text-link:hover svg {
+  transform: translateX(5px);
+}
+
+.story-line {
+  position: absolute;
+  right: 12%;
+  bottom: -85px;
+  width: 90px;
+  height: 190px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.story-line path,
+.contact-line path,
+.news-art-lines path {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.story-line path,
+.contact-line path {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+
+.story-line.is-drawn path,
+.contact-line.is-drawn path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 2s var(--ease);
+}
+
+.services-section {
+  background: #F0F1E9;
+}
+
+.services-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 35px;
+  margin-bottom: 55px;
+}
+
+.services-heading > p {
+  max-width: 300px;
+  margin: 0 0 8px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.service-card {
+  position: relative;
+  display: flex;
+  min-height: 290px;
+  grid-column: span 4;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(23px, 3vw, 39px);
+  overflow: hidden;
+  border: 1px solid rgba(40, 42, 96, .12);
+  background: var(--cream);
+  transition: transform .45s var(--ease), background .35s ease, color .35s ease, border-color .35s ease;
+}
+
+.service-card-large {
+  grid-column: span 8;
+  min-height: 350px;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.service-card:nth-child(2),
+.service-card:nth-child(5) {
+  background: var(--green-light);
+}
+
+.service-card:nth-child(3) {
+  grid-column: span 4;
+}
+
+.service-card:nth-child(4) {
+  grid-column: span 4;
+}
+
+.service-card-dark {
+  grid-column: span 8;
+  min-height: 290px;
+  background: var(--green-dark);
+  color: var(--white);
+}
+
+.card-number {
+  position: absolute;
+  top: 23px;
+  right: 25px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .1em;
+}
+
+.service-card-large .card-number,
+.service-card-dark .card-number {
+  color: rgba(255, 255, 255, .55);
+}
+
+.service-icon {
+  display: grid;
+  width: 55px;
+  height: 55px;
+  place-items: center;
+  margin-bottom: auto;
+  color: var(--green);
+}
+
+.service-icon svg {
+  width: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-card-large .service-icon,
+.service-card-dark .service-icon {
+  color: #B8D1B5;
+}
+
+.service-card-content {
+  display: grid;
+  gap: 9px;
+  max-width: 390px;
+  margin-top: 32px;
+}
+
+.service-card-content strong {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.1vw, 30px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.2;
+}
+
+.service-card-content > span {
+  max-width: 300px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.service-card-large .service-card-content > span,
+.service-card-dark .service-card-content > span {
+  color: rgba(255, 255, 255, .72);
+}
+
+.card-visit {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border: 1px solid rgba(40, 42, 96, .22);
+  border-radius: 50%;
+  color: var(--navy);
+  transition: transform .35s ease, background .35s ease, color .35s ease;
+}
+
+.card-visit svg {
+  width: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-card-large .card-visit,
+.service-card-dark .card-visit {
+  border-color: rgba(255, 255, 255, .4);
+  color: var(--white);
+}
+
+.service-card:hover {
+  z-index: 1;
+  transform: translateY(-5px);
+  border-color: var(--green);
+}
+
+.service-card-large:hover,
+.service-card-dark:hover {
+  background: var(--green-dark);
+}
+
+.service-card:hover .card-visit {
+  transform: rotate(-35deg);
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+
+.orbit-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.orbit-section::before {
+  position: absolute;
+  top: 18%;
+  right: -220px;
+  width: 480px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(102, 134, 107, .12);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.orbit-layout {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  align-items: center;
+  gap: clamp(25px, 5vw, 75px);
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+.orbit-intro {
+  position: relative;
+  z-index: 2;
+}
+
+.orbit-intro > p {
+  max-width: 360px;
+  margin-top: 28px;
+}
+
+.orbit-intro .orbit-hint {
+  margin-top: 35px;
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.orbit-progress {
+  width: 100%;
+  max-width: 270px;
+  height: 2px;
+  margin-top: 18px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.orbit-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--green);
+  transform-origin: left;
+}
+
+.orbit-experience {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.orbit-svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.orbit-path {
+  fill: none;
+  stroke: rgba(40, 42, 96, .16);
+  stroke-width: 1;
+}
+
+.orbit-path-outer {
+  stroke: rgba(102, 134, 107, .5);
+}
+
+.orbit-path-middle {
+  stroke: rgba(35, 166, 160, .38);
+  stroke-dasharray: 5 7;
+}
+
+.orbit-path-inner {
+  stroke: rgba(40, 42, 96, .2);
+  stroke-dasharray: 2 7;
+}
+
+.orbit-drawing {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+}
+
+.orbit-experience.is-drawn .orbit-drawing {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 2.4s var(--ease);
+}
+
+.orbit-center {
+  fill: var(--navy);
+  stroke: var(--green);
+  stroke-width: 1.5;
+}
+
+.orbit-center-label {
+  fill: var(--white);
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.orbit-node {
+  cursor: pointer;
+  outline: none;
+  transform-box: view-box;
+  transform-origin: 300px 300px;
+}
+
+.orbit-node-halo {
+  fill: var(--cream);
+  stroke: var(--green);
+  stroke-width: 1.3;
+  transition: r .35s ease, fill .35s ease, stroke-width .35s ease;
+}
+
+.orbit-node-dot {
+  fill: var(--green);
+  stroke: var(--cream);
+  stroke-width: 2;
+  transition: r .35s ease, fill .35s ease;
+}
+
+.orbit-node-label {
+  fill: var(--navy);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  pointer-events: none;
+}
+
+.orbit-node:hover .orbit-node-halo,
+.orbit-node:focus-visible .orbit-node-halo,
+.orbit-node[aria-pressed="true"] .orbit-node-halo {
+  r: 35px;
+  fill: var(--green-light);
+  stroke-width: 2;
+}
+
+.orbit-node[aria-pressed="true"] .orbit-node-dot {
+  r: 13px;
+  fill: var(--turquoise);
+}
+
+.orbit-node:focus-visible {
+  outline: none;
+}
+
+.orbit-detail {
+  max-width: 460px;
+  margin: -5px auto 0;
+  padding: 25px 28px 28px;
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, .55);
+}
+
+.orbit-detail .eyebrow {
+  margin-bottom: 9px;
+}
+
+.orbit-detail h3 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: clamp(21px, 2.4vw, 29px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.25;
+}
+
+.orbit-detail > p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.news-section {
+  background: #F0F1E9;
+}
+
+.news-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 55px;
+}
+
+.news-heading .text-link {
+  margin-bottom: 8px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 16px;
+}
+
+.news-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  background: var(--cream);
+  transition: transform .4s var(--ease);
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-art {
+  position: relative;
+  min-height: 200px;
+  overflow: hidden;
+  background: var(--green-light);
+}
+
+.news-card-feature .news-art {
+  min-height: 280px;
+}
+
+.news-art-landscape {
+  background: linear-gradient(150deg, #DCEBE9 0%, #B7D0C4 45%, #66866B 100%);
+}
+
+.news-art-sun {
+  position: absolute;
+  top: 15%;
+  right: 17%;
+  width: 85px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(40, 42, 96, .45);
+  border-radius: 50%;
+  background: rgba(250, 249, 245, .55);
+}
+
+.news-art-hill {
+  position: absolute;
+  right: -15%;
+  bottom: -35%;
+  left: -15%;
+  height: 75%;
+  border-radius: 50% 50% 0 0;
+  background: var(--green-dark);
+  transform: rotate(-7deg);
+}
+
+.news-art-hill-back {
+  bottom: -43%;
+  left: -30%;
+  background: var(--navy);
+  opacity: .8;
+  transform: rotate(9deg);
+}
+
+.news-art-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 6px;
+  padding: 25px;
+  background: var(--navy);
+}
+
+.news-art-grid span {
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid rgba(255, 255, 255, .24);
+  background: rgba(35, 166, 160, .12);
+  transition: background .3s ease;
+}
+
+.news-card:hover .news-art-grid span:nth-child(2n) {
+  background: rgba(102, 134, 107, .7);
+}
+
+.news-art-lines {
+  display: grid;
+  place-items: center;
+  padding: 15px;
+  background: var(--green-light);
+}
+
+.news-art-lines svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.news-card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+}
+
+.news-card-copy .eyebrow {
+  font-size: 9px;
+}
+
+.news-card-copy h3 {
+  margin: 15px 0 7px;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.1vw, 27px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.25;
+}
+
+.news-card-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.news-card-copy .text-link {
+  margin-top: auto;
+  padding-top: 25px;
+  font-size: 11px;
+}
+
+.contact-band {
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.contact-band-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-band .eyebrow {
+  margin-bottom: 25px;
+  color: #B8D1B5;
+}
+
+.contact-band .display-title {
+  color: var(--white);
+  font-size: clamp(42px, 6.8vw, 88px);
+}
+
+.contact-band .display-title em {
+  color: #AFC9AF;
+}
+
+.contact-cta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 230px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.contact-cta svg {
+  width: 21px;
+  fill: none;
+  stroke: #AFC9AF;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .3s ease;
+}
+
+.contact-cta:hover svg {
+  transform: translateX(5px);
+}
+
+.contact-line {
+  position: absolute;
+  right: -35px;
+  bottom: -50px;
+  width: min(45%, 500px);
+  opacity: .4;
+  pointer-events: none;
+}
+
+.contact-line path {
+  stroke: #AFC9AF;
+}
+
+.site-footer {
+  padding: 65px var(--page-gutter) 22px;
+  background: #20224E;
+  color: var(--white);
+}
+
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid rgba(255, 255, 255, .16);
+}
+
+.brand-footer .brand-copy strong {
+  color: var(--white);
+}
+
+.brand-footer .brand-copy small {
+  color: rgba(255, 255, 255, .58);
+}
+
+.brand-footer .brand-symbol {
+  color: #AFC9AF;
+}
+
+.footer-main > p {
+  margin: 0;
+  color: rgba(255, 255, 255, .65);
+  font-size: 13px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 42px 0;
+}
+
+.footer-links > div {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 11px;
+}
+
+.footer-links h2 {
+  margin: 0 0 8px;
+  color: #AFC9AF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, .72);
+  font-size: 12px;
+  transition: color .2s ease;
+}
+
+.footer-links a:hover {
+  color: #B8D1B5;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  color: rgba(255, 255, 255, .55);
+  font-size: 10px;
+}
+
+.footer-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, .8);
+}
+
+.footer-bottom svg {
+  width: 16px;
+  fill: none;
+  stroke: #AFC9AF;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes title-rise {
+  from {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sun-breathe {
+  from {
+    transform: scale(.96);
+    opacity: .65;
+  }
+  to {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1500px) {
+  .hero-content,
+  .intro-layout,
+  .orbit-layout {
+    max-width: var(--page-width);
+  }
+
+  .hero {
+    align-items: center;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .site-header {
+    min-height: 82px;
+  }
+
+  .hero {
+    min-height: 690px;
+    min-height: max(620px, calc(100svh - 82px));
+  }
+
+  .service-card,
+  .service-card:nth-child(3),
+  .service-card:nth-child(4) {
+    grid-column: span 6;
+    min-height: 275px;
+  }
+
+  .service-card-large,
+  .service-card-dark {
+    grid-column: span 12;
+    min-height: 300px;
+  }
+
+  .orbit-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .orbit-intro > p {
+    max-width: 540px;
+  }
+
+  .orbit-experience {
+    max-width: 620px;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .news-card-feature {
+    grid-column: span 2;
+  }
+
+  .news-card-feature .news-art {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-gutter: 22px;
+  }
+
+  html {
+    scroll-padding-top: 65px;
+  }
+
+  .site-header {
+    min-height: 72px;
+    gap: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-symbol {
+    width: 35px;
+    height: 35px;
+  }
+
+  .brand-copy strong {
+    font-size: 14px;
+  }
+
+  .brand-copy small {
+    font-size: 8px;
+  }
+
+  .header-actions {
+    gap: 7px;
+  }
+
+  .social-link {
+    width: 34px;
+    height: 34px;
+  }
+
+  .social-link svg {
+    width: 15px;
+  }
+
+  .menu-toggle {
+    min-height: 37px;
+    gap: 8px;
+    padding-left: 5px;
+    font-size: 11px;
+  }
+
+  .menu-toggle-lines {
+    width: 20px;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-lines::after {
+    width: 20px;
+  }
+
+  .main-nav {
+    right: 12px;
+    width: calc(100vw - 24px);
+  }
+
+  .hero {
+    min-height: 690px;
+    min-height: max(640px, calc(100svh - 72px));
+    padding-top: 85px;
+    padding-bottom: 95px;
+  }
+
+  .hero-index {
+    top: 22px;
+    font-size: 9px;
+  }
+
+  .hero-sun {
+    top: 15%;
+    right: 5%;
+    width: 175px;
+  }
+
+  .hero-landscape {
+    height: 50%;
+  }
+
+  .hero-title {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: clamp(58px, 14.4vw, 90px);
+    letter-spacing: -.09em;
+    line-height: .98;
+  }
+
+  .title-offset {
+    padding-left: 20px;
+  }
+
+  .hero-bottom {
+    align-items: end;
+    gap: 15px;
+  }
+
+  .hero-bottom p {
+    max-width: 245px;
+    font-size: 14px;
+  }
+
+  .round-link {
+    width: 46px;
+    height: 46px;
+  }
+
+  .hero-footer {
+    bottom: 16px;
+    font-size: 8px;
+    letter-spacing: .04em;
+  }
+
+  .section-pad {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .section-kicker {
+    gap: 10px;
+    margin-bottom: 37px;
+    font-size: 9px;
+  }
+
+  .section-kicker span:first-child {
+    width: 28px;
+    height: 28px;
+  }
+
+  .section-kicker span + span::before {
+    width: 12px;
+    margin-right: 8px;
+  }
+
+  .intro-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .display-title {
+    font-size: clamp(44px, 11vw, 66px);
+    letter-spacing: -.075em;
+  }
+
+  .intro-copy p,
+  .orbit-intro > p,
+  .services-heading > p {
+    font-size: 14px;
+  }
+
+  .intro-copy p:first-child {
+    font-size: 16px;
+  }
+
+  .story-line {
+    right: 8%;
+    bottom: -70px;
+    width: 65px;
+    height: 140px;
+  }
+
+  .services-heading,
+  .news-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 32px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .service-card,
+  .service-card:nth-child(3),
+  .service-card:nth-child(4),
+  .service-card-large,
+  .service-card-dark {
+    grid-column: span 2;
+    min-height: 245px;
+    padding: 23px;
+  }
+
+  .service-card:nth-child(2),
+  .service-card:nth-child(5) {
+    grid-column: span 1;
+    min-height: 250px;
+    padding: 17px;
+  }
+
+  .service-card:nth-child(2) .service-card-content strong,
+  .service-card:nth-child(5) .service-card-content strong {
+    font-size: 18px;
+  }
+
+  .service-card:nth-child(2) .service-card-content > span,
+  .service-card:nth-child(5) .service-card-content > span {
+    font-size: 11px;
+  }
+
+  .service-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .service-card-content {
+    gap: 7px;
+    margin-top: 28px;
+  }
+
+  .service-card-content strong {
+    font-size: 22px;
+  }
+
+  .service-card-content > span {
+    font-size: 12px;
+  }
+
+  .card-number {
+    top: 19px;
+    right: 17px;
+    font-size: 9px;
+  }
+
+  .card-visit {
+    right: 17px;
+    bottom: 17px;
+    width: 33px;
+    height: 33px;
+  }
+
+  .orbit-layout {
+    gap: 20px;
+  }
+
+  .orbit-intro > p {
+    margin-top: 18px;
+  }
+
+  .orbit-intro .orbit-hint {
+    margin-top: 23px;
+  }
+
+  .orbit-experience {
+    width: 100%;
+  }
+
+  .orbit-node-label {
+    font-size: 13px;
+  }
+
+  .orbit-detail {
+    margin-top: 0;
+    padding: 22px 18px;
+  }
+
+  .orbit-detail h3 {
+    font-size: 24px;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .news-card-feature {
+    grid-column: auto;
+  }
+
+  .news-art,
+  .news-card-feature .news-art {
+    min-height: 220px;
+  }
+
+  .news-card-copy {
+    padding: 22px;
+  }
+
+  .news-card-copy h3 {
+    font-size: 24px;
+  }
+
+  .contact-band {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-band .display-title {
+    font-size: clamp(40px, 10vw, 58px);
+  }
+
+  .contact-cta {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contact-line {
+    right: -80px;
+    bottom: -35px;
+    width: 80%;
+  }
+
+  .footer-main {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+    padding-bottom: 28px;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 18px;
+    padding: 32px 0;
+  }
+
+  .footer-links > div:last-child {
+    grid-column: span 2;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 370px) {
+  :root {
+    --page-gutter: 16px;
+  }
+
+  .social-link {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-copy strong {
+    font-size: 12px;
+  }
+
+  .brand-copy small {
+    font-size: 7px;
+  }
+
+  .menu-toggle {
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .service-card:nth-child(2),
+  .service-card:nth-child(5) {
+    padding: 13px;
+  }
+
+  .service-card:nth-child(2) .service-card-content strong,
+  .service-card:nth-child(5) .service-card-content strong {
+    font-size: 16px;
+  }
+
+  .service-card:nth-child(2) .service-card-content > span,
+  .service-card:nth-child(5) .service-card-content > span {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .story-line path,
+  .contact-line path,
+  .orbit-drawing {
+    stroke-dashoffset: 0;
+  }
+}
