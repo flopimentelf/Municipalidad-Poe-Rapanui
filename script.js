@@ -152,4 +152,18 @@
 
   const initialPoint = experience.querySelector('.orbit-point[data-topic="territory"]');
   if (initialPoint) selectTopic(initialPoint);
+  (() => {
+  const welcome = document.getElementById("welcome-screen");
+  if (!welcome || sessionStorage.getItem("welcome-seen")) {
+    welcome?.remove();
+    return;
+  }
+  sessionStorage.setItem("welcome-seen", "true");
+  window.setTimeout(() => {
+    welcome.classList.add("is-hidden");
+    window.setTimeout(() => {
+      welcome.remove();
+    }, 850);
+  }, 2200);
+})();
 })();
