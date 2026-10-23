@@ -1,126 +1,159 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planes y proyectos | Municipalidad de Rapa Nui</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#282A60">
+  <meta name="description" content="Conoce los planes, instrumentos de planificación e iniciativas municipales de Rapa Nui.">
+  <title>Planes municipales | Municipalidad de Rapa Nui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
-  <header class="topline">
-    <div class="header-inner">
-      <a class="identity" href="index.html">
-        <span class="seal">RN</span>
-        <span class="brand">
-          <strong>RAPA NUI</strong>
-          <small>MUNICIPALIDAD</small>
-        </span>
+<body id="top">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="header-topline" aria-hidden="true"></div>
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48">
+          <path d="M24 4 41 14v20L24 44 7 34V14z"/>
+          <path d="M16 18h16M16 24h16M16 30h10"/>
+        </svg>
+      </span>
+      <span class="brand-name">Municipalidad <strong>de Rapa Nui</strong></span>
+    </a>
+    <div class="header-tools" aria-label="Canales de contacto">
+      <a class="icon-link" href="contacto.html" aria-label="Información de contacto">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="1"/>
+          <path d="m4 7 8 6 8-6"/>
+        </svg>
       </a>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="tramites.html">Trámites y servicios</a>
-        <a href="direcciones.html">Direcciones</a>
-        <a href="comunidad.html">Comunidad</a>
-        <a href="desarrollo.html">Desarrollo</a>
-        <a class="active" href="planes.html">Planes</a>
-        <a href="explora.html">Explora</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">PLANIFICACIÓN Y FUTURO</p>
-        <h1>PLANES Y<br>PROYECTOS</h1>
-        <p>
-          Conoce las áreas de planificación que permiten
-          imaginar y construir el futuro del territorio.
-        </p>
-      </div>
-    </section>
-
-    <section class="page-content container">
-      <div class="section">
-        <p class="eyebrow">UNA MIRADA A LARGO PLAZO</p>
-        <h2>Proyectar el territorio</h2>
-        <p>
-          Este espacio organiza información sobre planificación,
-          iniciativas y proyectos de interés para la comunidad.
-        </p>
-      </div>
-
-      <div class="listings">
-        <article class="listing">
-          <p class="eyebrow">01 · TERRITORIO</p>
-          <h3>Planificación territorial</h3>
-          <p>
-            Información relacionada con el ordenamiento,
-            el espacio público y el desarrollo del territorio.
-          </p>
-          <span class="side">Documentación oficial por incorporar</span>
-        </article>
-
-        <article class="listing">
-          <p class="eyebrow">02 · COMUNIDAD</p>
-          <h3>Iniciativas comunitarias</h3>
-          <p>
-            Proyectos orientados a mejorar los espacios,
-            servicios y oportunidades para la comunidad.
-          </p>
-          <span class="side">Información referencial</span>
-        </article>
-
-        <article class="listing">
-          <p class="eyebrow">03 · MEDIOAMBIENTE</p>
-          <h3>Sostenibilidad y entorno</h3>
-          <p>
-            Acciones de planificación que consideran el cuidado
-            ambiental y las particularidades de una isla.
-          </p>
-          <span class="side">Documentación oficial por incorporar</span>
-        </article>
-
-        <article class="listing">
-          <p class="eyebrow">04 · DESARROLLO</p>
-          <h3>Proyectos de desarrollo local</h3>
-          <p>
-            Un espacio para presentar objetivos, etapas,
-            avances y resultados de proyectos municipales.
-          </p>
-          <span class="side">Información referencial</span>
-        </article>
-      </div>
-
-      <div class="notice">
-        <h3>Información transparente y accesible</h3>
-        <p>
-          Cada proyecto publicado debería incluir su objetivo,
-          estado de avance, fechas relevantes y documentos asociados,
-          cuando esa información esté disponible oficialmente.
-        </p>
-        <a class="button" href="transparencia.html">Ver transparencia</a>
-      </div>
-
-      <p class="side">
-        Prototipo académico. Los planes, proyectos, fechas y estados
-        deben completarse con información oficial verificada.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <a class="identity" href="index.html">
-        <span class="seal">RN</span>
-        <span class="brand">
-          <strong>RAPA NUI</strong>
-          <small>MUNICIPALIDAD</small>
-        </span>
+      <a class="icon-link" href="contacto.html" aria-label="Teléfono de contacto">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/>
+        </svg>
       </a>
-      <p>Propuesta de diseño web municipal · Prototipo académico</p>
-      <a href="index.html">Volver al inicio ↑</a>
     </div>
-  </footer>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="menu-toggle-lines" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menú</span>
+    </button>
+    <nav class="main-nav" id="menu-principal" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="tramites.html">Trámites y servicios</a>
+      <a href="direcciones.html">Direcciones</a>
+      <a href="comunidad.html">Comunidad</a>
+      <a href="desarrollo.html">Desarrollo</a>
+      <a href="planes.html" aria-current="page">Planes</a>
+      <a href="explora.html">Explora</a>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+  <section class="interior-hero">
+    <div class="interior-hero-inner reveal">
+      <p class="eyebrow">Planificación y futuro</p>
+      <h1>Planificar hoy para construir el mañana.</h1>
+      <p class="interior-lead">La planificación municipal permite organizar prioridades, orientar iniciativas y proyectar acciones que respondan a las necesidades de la comuna y su comunidad.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a>
+        <span>/</span>
+        <span aria-current="page">Planes municipales</span>
+      </div>
+    </div>
+    <div class="interior-mark" aria-hidden="true">PLANES</div>
+  </section>
+  <section class="section interior-section">
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">Instrumentos y prioridades</p>
+        <h2>Una visión compartida<br>para la comuna.</h2>
+      </div>
+      <p>Los planes y proyectos permiten identificar desafíos, establecer objetivos y orientar el trabajo municipal. Aquí se organizan áreas de interés para comprender cómo se proyecta el desarrollo comunal.</p>
+    </div>
+    <div class="detail-grid">
+      <article class="detail-card reveal">
+        <span class="detail-index">01</span>
+        <h2>Planificación comunal</h2>
+        <p>Conoce el propósito de la planificación territorial y su relación con las necesidades actuales y futuras de la comuna.</p>
+        <a class="text-link" href="desarrollo.html">Explorar el desarrollo comunal</a>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-index">02</span>
+        <h2>Proyectos municipales</h2>
+        <p>Las iniciativas municipales contribuyen a orientar mejoras y responder a distintos desafíos del territorio.</p>
+        <a class="text-link" href="desarrollo.html">Conocer áreas de desarrollo</a>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-index">03</span>
+        <h2>Desarrollo sostenible</h2>
+        <p>La planificación considera la importancia de compatibilizar las necesidades de la comunidad con el cuidado del entorno.</p>
+        <a class="text-link" href="explora.html">Conocer el territorio</a>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-index">04</span>
+        <h2>Espacio público</h2>
+        <p>La organización de los espacios compartidos influye en la movilidad, la convivencia y la calidad de vida de las personas.</p>
+        <a class="text-link" href="desarrollo.html">Explorar iniciativas territoriales</a>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-index">05</span>
+        <h2>Participación ciudadana</h2>
+        <p>La participación de la comunidad permite incorporar distintas experiencias y perspectivas en las decisiones que afectan a la comuna.</p>
+        <a class="text-link" href="comunidad.html">Conocer espacios de participación</a>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-index">06</span>
+        <h2>Transparencia y seguimiento</h2>
+        <p>El acceso a la información pública permite conocer antecedentes, revisar documentos y comprender la gestión municipal.</p>
+        <a class="text-link" href="transparencia.html">Ir a transparencia</a>
+      </article>
+    </div>
+  </section>
+  <section class="contact-band reveal">
+    <div>
+      <p class="eyebrow">Construcción colectiva</p>
+      <h2>El futuro de la comuna se construye entre todos.</h2>
+      <p>Infórmate, participa y conoce los espacios disponibles para aportar a las iniciativas de la comunidad.</p>
+    </div>
+    <a class="button button-dark" href="comunidad.html">Participar en comunidad</a>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="footer-kicker">Municipalidad de</span>
+      <strong>Rapa Nui</strong>
+      <p>Información y servicios para la comunidad.</p>
+    </div>
+    <div class="footer-column">
+      <h2>Explorar</h2>
+      <a href="tramites.html">Trámites y servicios</a>
+      <a href="direcciones.html">Direcciones</a>
+      <a href="planes.html">Planes municipales</a>
+    </div>
+    <div class="footer-column">
+      <h2>Información</h2>
+      <a href="noticias.html">Noticias</a>
+      <a href="transparencia.html">Transparencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div class="footer-column">
+      <h2>Comunidad</h2>
+      <a href="comunidad.html">Participación</a>
+      <a href="desarrollo.html">Desarrollo</a>
+      <a href="explora.html">Explora Rapa Nui</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Municipalidad de Rapa Nui</span>
+    <a href="#top">Volver al inicio</a>
+  </div>
+</footer>
 </body>
 </html>
