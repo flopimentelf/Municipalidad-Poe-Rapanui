@@ -1,12 +1,12 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#282A60">
-  <meta name="description" content="Servicios, información pública y participación ciudadana de la Municipalidad de Rapa Nui.">
-  <title>Municipalidad de Rapa Nui | Territorio y comunidad</title>
+  <meta name="description" content="Sitio oficial de la Municipalidad de Rapa Nui. Información municipal, servicios, noticias y vida comunitaria de la isla.">
+  <title>Municipalidad de Rapa Nui | He Rapa Nui</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,458 +15,344 @@
   <script src="script.js" defer></script>
 </head>
 
-<body id="top" class="home-page">
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
-      <span class="brand-symbol" aria-hidden="true">
-        <svg viewBox="0 0 48 48">
-          <path d="M24 3 44 14.5v19L24 45 4 33.5v-19L24 3Z"/>
-          <path d="M13 18h22M13 24h15M13 30h19"/>
-        </svg>
-      </span>
-      <span class="brand-copy">
-        <strong>RAPA NUI</strong>
-        <small>MUNICIPALIDAD</small>
-      </span>
-    </a>
-
-    <div class="header-actions">
-      <a class="social-link" href="contacto.html" aria-label="Contacto municipal">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3.5" y="5" width="17" height="14" rx="1.5"/>
-          <path d="m4 6 8 7 8-7"/>
-        </svg>
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 52 52" fill="none">
+            <path d="M7 38V14L26 4L45 14V38L26 48L7 38Z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M16 33V20L26 14L36 20V33L26 39L16 33Z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M7 14L26 25L45 14M26 25V48" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>Municipalidad</strong>
+          <span>de Rapa Nui</span>
+        </span>
       </a>
 
-      <a class="social-link" href="contacto.html" aria-label="Atención municipal">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2-2-5Z"/>
-        </svg>
-      </a>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
-        <span class="menu-toggle-lines" aria-hidden="true"></span>
-        <span>Menú</span>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
       </button>
-    </div>
 
-    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-      <a href="tramites.html">Trámites</a>
-      <a href="direcciones.html">Direcciones</a>
-      <a href="comunidad.html">Comunidad</a>
-      <a href="desarrollo.html">Desarrollo</a>
-      <a href="planes.html">Planes</a>
-      <a href="explora.html">Explora Rapa Nui</a>
-    </nav>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#municipio">Municipio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#territorio">Territorio</a>
+        <a href="#actualidad">Actualidad</a>
+        <a class="nav-contact" href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </header>
 
   <main id="contenido">
-
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-backdrop" aria-hidden="true">
-        <div class="hero-sun"></div>
-        <div class="hero-horizon"></div>
-
-        <svg class="hero-landscape" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice">
-          <path d="M0 380 110 330 190 350 300 255 400 330 520 285 650 360 760 300 890 335 1020 245 1140 325 1280 280 1440 350V600H0Z"/>
-          <path d="M0 440 160 390 300 415 470 350 610 430 780 365 920 425 1090 350 1240 415 1440 370V600H0Z"/>
-          <path d="M0 500 180 450 350 480 520 435 700 490 880 450 1080 475 1250 435 1440 470V600H0Z"/>
+    <section class="hero">
+      <div class="hero-background" aria-hidden="true">
+        <div class="hero-orbit hero-orbit-one"></div>
+        <div class="hero-orbit hero-orbit-two"></div>
+        <svg class="hero-landscape" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice">
+          <path class="landscape-back" d="M0 360C145 315 225 346 350 288C465 234 535 280 660 322C785 365 865 294 1005 305C1140 317 1270 244 1440 280V520H0Z"/>
+          <path class="landscape-mid" d="M0 405C165 365 270 404 420 350C540 306 650 378 790 359C930 340 1045 390 1170 330C1280 277 1365 325 1440 312V520H0Z"/>
+          <path class="landscape-front" d="M0 444C170 405 285 453 430 411C590 364 720 440 855 408C1005 373 1090 433 1220 390C1320 357 1380 382 1440 370V520H0Z"/>
+          <path class="landscape-line" d="M0 405C165 365 270 404 420 350C540 306 650 378 790 359C930 340 1045 390 1170 330C1280 277 1365 325 1440 312"/>
+          <circle cx="1100" cy="175" r="42"/>
+          <circle cx="1100" cy="175" r="57"/>
+          <path d="M1100 97V75M1100 275V253M1022 175H1000M1200 175H1178" stroke="currentColor" stroke-width="1.5"/>
         </svg>
       </div>
 
-      <div class="hero-index" aria-hidden="true">
-        <span>27° 07′ S</span>
-        <span>109° 22′ O</span>
-      </div>
-
-      <div class="hero-content">
-        <p class="eyebrow reveal">Territorio / Comunidad / Futuro</p>
-
-        <h1 id="hero-title" class="hero-title">
-          <span class="title-line"><span>Una isla.</span></span>
-          <span class="title-line title-offset"><span>Muchas</span></span>
-          <span class="title-line"><span class="title-accent">conexiones.</span></span>
-        </h1>
-
-        <div class="hero-bottom reveal">
-          <p>Un municipio que escucha, conecta y construye junto a su comunidad.</p>
-
-          <a class="round-link" href="#servicios" aria-label="Descender a los servicios municipales">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3v17M5 13l7 7 7-7"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-footer">
-        <span>Municipalidad de Rapa Nui</span>
-        <span>Isla / Pacífico / Chile</span>
-      </div>
-    </section>
-
-    <section class="intro-section section-pad" aria-labelledby="intro-title">
-      <div class="section-kicker reveal">
-        <span>01</span>
-        <span>Un lugar para encontrarnos</span>
-      </div>
-
-      <div class="intro-layout">
-        <h2 id="intro-title" class="display-title reveal">
-          El territorio<br>
-          no termina<br>
-          <em>en el mapa.</em>
-        </h2>
-
-        <div class="intro-copy reveal">
-          <p>También está en las personas, las decisiones compartidas y las formas en que cuidamos el lugar que habitamos.</p>
-          <p>Esta plataforma reúne servicios, información pública y espacios de participación para acercar la gestión municipal a la comunidad.</p>
-
-          <a class="text-link" href="comunidad.html">
-            Conoce la comunidad
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 12h15M13 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <svg class="story-line story-line-intro" viewBox="0 0 120 260" aria-hidden="true">
-        <path d="M60 0V110C60 150 20 150 20 190S60 220 60 260"/>
-      </svg>
-    </section>
-
-    <section class="services-section section-pad" id="servicios" aria-labelledby="services-title">
-      <div class="section-kicker reveal">
-        <span>02</span>
-        <span>Servicios municipales</span>
-      </div>
-
-      <div class="services-heading reveal">
-        <h2 id="services-title" class="display-title">
-          ¿Qué necesitas<br>
-          <em>resolver hoy?</em>
-        </h2>
-        <p>Accede directamente a los servicios y la información que buscas.</p>
-      </div>
-
-      <div class="service-grid">
-        <a class="service-card service-card-large reveal" href="tramites.html">
-          <span class="card-number">01</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <rect x="10" y="6" width="28" height="36" rx="2"/>
-              <path d="M17 16h14M17 23h14M17 30h9"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Trámites y servicios</strong>
-            <span>Encuentra orientación y gestiones municipales.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
-
-        <a class="service-card reveal" href="direcciones.html">
-          <span class="card-number">02</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M8 42V15l16-9 16 9v27M17 42V27h14v15"/>
-              <path d="M16 17h.1M24 17h.1M32 17h.1"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Direcciones municipales</strong>
-            <span>Conoce las áreas y sus funciones.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
-
-        <a class="service-card reveal" href="comunidad.html">
-          <span class="card-number">03</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <circle cx="18" cy="16" r="7"/>
-              <circle cx="33" cy="19" r="5"/>
-              <path d="M5 42c0-9 5-14 13-14s13 5 13 14M30 31c7-1 12 3 13 11"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Comunidad</strong>
-            <span>Participación, iniciativas y vida local.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
-
-        <a class="service-card reveal" href="desarrollo.html">
-          <span class="card-number">04</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M7 40V23l12 7V18l12 8V9h10v31Z"/>
-              <path d="M14 35h.1M24 35h.1M35 16h.1M35 23h.1M35 30h.1"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Desarrollo local</strong>
-            <span>Iniciativas y oportunidades para el territorio.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
-
-        <a class="service-card reveal" href="planes.html">
-          <span class="card-number">05</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M8 8h32v32H8zM16 17h16M16 24h16M16 31h10"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Planes municipales</strong>
-            <span>Consulta planes y líneas de trabajo.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
-
-        <a class="service-card service-card-dark reveal" href="explora.html">
-          <span class="card-number">06</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <circle cx="24" cy="24" r="18"/>
-              <path d="m31 15-5 11-11 7 5-12Z"/>
-            </svg>
-          </span>
-          <span class="service-card-content">
-            <strong>Explora Rapa Nui</strong>
-            <span>Territorio, entorno e identidad.</span>
-          </span>
-          <span class="card-visit" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-          </span>
-        </a>
-      </div>
-    </section>
-
-    <section class="orbit-section section-pad" id="territorio" aria-labelledby="orbit-title">
-      <div class="section-kicker reveal">
-        <span>03</span>
-        <span>Territorio en movimiento</span>
-      </div>
-
-      <div class="orbit-layout">
-        <div class="orbit-intro">
-          <h2 id="orbit-title" class="display-title reveal">
-            Todo está<br>
-            <em>conectado.</em>
-          </h2>
-          <p class="reveal">Territorio, comunidad y naturaleza forman parte de una misma red. Explora cada dimensión y descubre cómo se relacionan.</p>
-          <p class="orbit-hint reveal">Selecciona un nodo o continúa desplazándote.</p>
-          <div class="orbit-progress" aria-hidden="true">
-            <span id="orbit-progress-bar"></span>
-          </div>
-        </div>
-
-        <div class="orbit-experience" id="orbit-experience">
-          <svg class="orbit-svg" viewBox="0 0 600 600" role="group" aria-label="Diagrama interactivo de territorio, comunidad y naturaleza">
-            <circle class="orbit-path orbit-path-outer" cx="300" cy="300" r="220"/>
-            <ellipse class="orbit-path orbit-path-middle" cx="300" cy="300" rx="170" ry="220" transform="rotate(55 300 300)"/>
-            <ellipse class="orbit-path orbit-path-inner" cx="300" cy="300" rx="115" ry="220" transform="rotate(-55 300 300)"/>
-
-            <path class="orbit-drawing" d="M300 80C425 80 520 180 520 300S420 520 300 520 80 420 80 300 180 80 300 80"/>
-
-            <circle class="orbit-center" cx="300" cy="300" r="78"/>
-            <text class="orbit-center-label" x="300" y="294" text-anchor="middle">RAPA</text>
-            <text class="orbit-center-label" x="300" y="322" text-anchor="middle">NUI</text>
-
-            <g class="orbit-node" data-topic="territory" role="button" tabindex="0" aria-label="Explorar territorio" aria-pressed="false">
-              <circle class="orbit-node-halo" cx="300" cy="80" r="30"/>
-              <circle class="orbit-node-dot" cx="300" cy="80" r="10"/>
-              <text class="orbit-node-label" x="300" y="43" text-anchor="middle">TERRITORIO</text>
-            </g>
-
-            <g class="orbit-node" data-topic="community" role="button" tabindex="0" aria-label="Explorar comunidad" aria-pressed="false">
-              <circle class="orbit-node-halo" cx="490" cy="410" r="30"/>
-              <circle class="orbit-node-dot" cx="490" cy="410" r="10"/>
-              <text class="orbit-node-label" x="485" y="455" text-anchor="middle">COMUNIDAD</text>
-            </g>
-
-            <g class="orbit-node" data-topic="nature" role="button" tabindex="0" aria-label="Explorar naturaleza" aria-pressed="false">
-              <circle class="orbit-node-halo" cx="110" cy="410" r="30"/>
-              <circle class="orbit-node-dot" cx="110" cy="410" r="10"/>
-              <text class="orbit-node-label" x="115" y="455" text-anchor="middle">NATURALEZA</text>
-            </g>
-          </svg>
-
-          <div class="orbit-detail" aria-live="polite" aria-atomic="true">
-            <p class="eyebrow" id="orbit-detail-label">Una isla, muchas conexiones</p>
-            <h3 id="orbit-detail-title">El territorio nos conecta.</h3>
-            <p id="orbit-detail-text">Selecciona uno de los nodos para conocer cada dimensión.</p>
-            <a class="text-link" id="orbit-detail-link" href="explora.html">
-              Explorar Rapa Nui
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 12h15M13 5l7 7-7 7"/>
-              </svg>
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Municipalidad de Rapa Nui</p>
+          <h1>Una isla.<br><span>Muchas conexiones.</span></h1>
+          <p class="hero-description">Un territorio vivo, una comunidad que se encuentra y un futuro que construimos en conjunto.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#municipio">
+              Conoce el municipio
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg>
             </a>
+            <a class="text-link" href="#servicios">Explorar servicios</a>
           </div>
+        </div>
+
+        <div class="hero-index reveal" aria-label="Identidad territorial">
+          <span class="hero-index-number">27°</span>
+          <span class="hero-index-label">Sur del Pacífico</span>
+          <span class="hero-index-rule"></span>
+          <span class="hero-index-note">Territorio insular<br>Chile</span>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <span>Rapa Nui, Chile</span>
+        <a href="#municipio" class="scroll-cue">
+          <span>Descubre el territorio</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V20M5 13L12 20L19 13"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="intro-section section-pad" id="municipio">
+      <div class="section-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Nuestro municipio</p>
+          <h2>Un territorio con identidad, <span>una comunidad con voz.</span></h2>
+        </div>
+        <div class="intro-copy reveal">
+          <p class="intro-lead">Rapa Nui es mucho más que un lugar en el mapa. Es memoria, cultura, paisaje y comunidad.</p>
+          <p>La municipalidad trabaja junto a sus habitantes para cuidar el territorio, facilitar el acceso a la información y acompañar el desarrollo de la isla con respeto por su identidad y su patrimonio.</p>
+          <a class="underlined-link" href="municipio.html">
+            Conoce nuestra gestión
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="values-strip reveal">
+        <div class="value-item">
+          <span class="value-number">01</span>
+          <div><h3>Comunidad</h3><p>Participación y encuentro.</p></div>
+        </div>
+        <div class="value-item">
+          <span class="value-number">02</span>
+          <div><h3>Territorio</h3><p>Cuidado de nuestro entorno.</p></div>
+        </div>
+        <div class="value-item">
+          <span class="value-number">03</span>
+          <div><h3>Identidad</h3><p>Patrimonio y cultura viva.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="news-section section-pad" aria-labelledby="news-title">
-      <div class="section-kicker reveal">
-        <span>04</span>
-        <span>Información municipal</span>
+    <section class="services-section section-pad" id="servicios">
+      <div class="section-topline reveal">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> Atención a la comunidad</p>
+          <h2>¿Qué necesitas resolver?</h2>
+        </div>
+        <p class="section-aside">Encuentra información municipal y accede a los servicios más consultados.</p>
       </div>
 
-      <div class="news-heading reveal">
-        <h2 id="news-title" class="display-title">
-          Lo que pasa<br>
-          <em>en la isla.</em>
-        </h2>
-        <a class="text-link" href="noticias.html">
-          Ver todas las noticias
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 12h15M13 5l7 7-7 7"/>
+      <div class="services-grid">
+        <a class="service-card reveal" href="servicios.html">
+          <span class="card-index">01 / SERVICIOS</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 20L24 7L40 20V41H8V20Z"/><path d="M18 41V27H30V41M4 21L24 3L44 21"/></svg>
+          </span>
+          <h3>Servicios municipales</h3>
+          <p>Orientación sobre trámites, solicitudes y atención ciudadana.</p>
+          <span class="card-link">Ver servicios <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg></span>
+        </a>
+
+        <a class="service-card reveal" href="transparencia.html">
+          <span class="card-index">02 / INFORMACIÓN</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M12 5H29L38 14V43H12V5Z"/><path d="M28 5V15H38M18 23H32M18 30H32M18 37H28"/></svg>
+          </span>
+          <h3>Transparencia</h3>
+          <p>Información pública, documentos y antecedentes de la gestión municipal.</p>
+          <span class="card-link">Consultar información <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg></span>
+        </a>
+
+        <a class="service-card reveal" href="noticias.html">
+          <span class="card-index">03 / ACTUALIDAD</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="7" y="8" width="34" height="33" rx="1"/><path d="M14 16H34M14 23H34M14 30H25M14 36H30"/></svg>
+          </span>
+          <h3>Noticias y avisos</h3>
+          <p>Entérate de los anuncios, actividades y novedades de la isla.</p>
+          <span class="card-link">Ver actualidad <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg></span>
+        </a>
+
+        <a class="service-card reveal" href="contacto.html">
+          <span class="card-index">04 / CONTACTO</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="5" y="10" width="38" height="28" rx="2"/><path d="M6 13L24 27L42 13"/></svg>
+          </span>
+          <h3>Contacto y consultas</h3>
+          <p>Encuentra los canales de comunicación con el municipio.</p>
+          <span class="card-link">Cómo contactarnos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="territory-section section-pad" id="territorio">
+      <div class="territory-copy reveal">
+        <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> Territorio y cultura</p>
+        <h2>La isla se vive.<br>La identidad se cuida.</h2>
+        <p>Conocer Rapa Nui es reconocer la relación profunda entre su paisaje, su historia y las personas que lo habitan. El territorio es parte de una herencia que se transmite y se protege día a día.</p>
+        <a class="button button-light" href="territorio.html">
+          Explorar el territorio
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="orbit-panel reveal" data-orbit>
+        <div class="orbit-heading">
+          <span>Rapa Nui</span>
+          <span class="orbit-status"><span></span> Territorio vivo</span>
+        </div>
+        <div class="orbit-stage">
+          <svg class="orbit-graphic" viewBox="0 0 500 500" role="img" aria-label="Diagrama vectorial de conexiones entre comunidad, cultura, territorio y futuro">
+            <circle class="orbit-ring orbit-ring-outer" cx="250" cy="250" r="202"/>
+            <circle class="orbit-ring orbit-ring-middle" cx="250" cy="250" r="150"/>
+            <circle class="orbit-ring orbit-ring-inner" cx="250" cy="250" r="94"/>
+            <path class="orbit-cross" d="M250 27V473M27 250H473"/>
+            <path class="orbit-diagonal" d="M91 91L409 409M409 91L91 409"/>
+            <circle class="orbit-center-halo" cx="250" cy="250" r="65"/>
+            <circle class="orbit-center" cx="250" cy="250" r="47"/>
+            <text class="orbit-center-label" x="250" y="245" text-anchor="middle">RAPA</text>
+            <text class="orbit-center-label" x="250" y="267" text-anchor="middle">NUI</text>
+
+            <g class="orbit-node orbit-node-community" tabindex="0" role="button" aria-label="Comunidad" aria-pressed="false" data-orbit-node="comunidad">
+              <circle class="node-halo" cx="250" cy="48" r="25"/>
+              <circle class="node-dot" cx="250" cy="48" r="8"/>
+              <text x="250" y="86" text-anchor="middle">Comunidad</text>
+            </g>
+            <g class="orbit-node orbit-node-culture" tabindex="0" role="button" aria-label="Cultura" aria-pressed="false" data-orbit-node="cultura">
+              <circle class="node-halo" cx="452" cy="250" r="25"/>
+              <circle class="node-dot" cx="452" cy="250" r="8"/>
+              <text x="418" y="290" text-anchor="middle">Cultura</text>
+            </g>
+            <g class="orbit-node orbit-node-territory" tabindex="0" role="button" aria-label="Territorio" aria-pressed="false" data-orbit-node="territorio">
+              <circle class="node-halo" cx="250" cy="452" r="25"/>
+              <circle class="node-dot" cx="250" cy="452" r="8"/>
+              <text x="250" y="416" text-anchor="middle">Territorio</text>
+            </g>
+            <g class="orbit-node orbit-node-future" tabindex="0" role="button" aria-label="Futuro" aria-pressed="false" data-orbit-node="futuro">
+              <circle class="node-halo" cx="48" cy="250" r="25"/>
+              <circle class="node-dot" cx="48" cy="250" r="8"/>
+              <text x="82" y="290" text-anchor="middle">Futuro</text>
+            </g>
           </svg>
+        </div>
+        <div class="orbit-caption">
+          <p class="orbit-description" data-orbit-description>Cuatro dimensiones conectadas por una misma comunidad.</p>
+          <span class="orbit-hint">Selecciona un nodo para explorar</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section section-pad" id="actualidad">
+      <div class="section-topline reveal">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> Lo que está pasando</p>
+          <h2>Actualidad municipal</h2>
+        </div>
+        <a class="underlined-link" href="noticias.html">
+          Todas las noticias
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg>
         </a>
       </div>
 
       <div class="news-grid">
-        <a class="news-card news-card-feature reveal" href="noticias.html">
+        <article class="news-card news-card-featured reveal">
           <div class="news-art news-art-landscape" aria-hidden="true">
-            <span class="news-art-sun"></span>
-            <span class="news-art-hill"></span>
-            <span class="news-art-hill news-art-hill-back"></span>
-          </div>
-          <div class="news-card-copy">
-            <span class="eyebrow">01 / Actualidad</span>
-            <h3>Noticias y avisos municipales</h3>
-            <p>Información y novedades para la comunidad.</p>
-            <span class="text-link">
-              Ver actualidad
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <a class="news-card reveal" href="transparencia.html">
-          <div class="news-art news-art-grid" aria-hidden="true">
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-          </div>
-          <div class="news-card-copy">
-            <span class="eyebrow">02 / Información pública</span>
-            <h3>Transparencia y gestión</h3>
-            <p>Consulta la información pública municipal.</p>
-            <span class="text-link">
-              Consultar información
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <a class="news-card reveal" href="comunidad.html">
-          <div class="news-art news-art-lines" aria-hidden="true">
-            <svg viewBox="0 0 320 220">
-              <path d="M0 160C80 160 60 40 150 40S210 180 320 70"/>
-              <path d="M0 180C100 180 80 60 160 60S220 200 320 90"/>
-              <path d="M0 200C110 200 100 80 170 80S240 220 320 110"/>
+            <svg viewBox="0 0 640 320" preserveAspectRatio="xMidYMid slice">
+              <circle cx="490" cy="74" r="32"/>
+              <path d="M0 215L105 150L185 192L300 105L410 190L505 145L640 205V320H0Z"/>
+              <path d="M0 250L120 210L240 240L370 185L500 230L640 205V320H0Z"/>
+              <path d="M0 276L170 250L310 270L455 235L640 260V320H0Z"/>
+              <path d="M60 320V246M82 320V239M104 320V246" stroke="currentColor" stroke-width="2"/>
             </svg>
+            <span class="art-label">Territorio</span>
           </div>
-          <div class="news-card-copy">
-            <span class="eyebrow">03 / Participación</span>
-            <h3>La comunidad construye</h3>
-            <p>Conoce espacios e iniciativas de participación.</p>
-            <span class="text-link">
-              Conocer iniciativas
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg>
-            </span>
+          <div class="news-card-content">
+            <p class="news-meta">Información municipal</p>
+            <h3>Noticias, actividades y anuncios de la comunidad</h3>
+            <p>Revisa las novedades publicadas por la municipalidad y mantente al tanto de la información relevante para la isla.</p>
+            <a class="underlined-link" href="noticias.html">Leer novedades <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg></a>
           </div>
-        </a>
+        </article>
+
+        <article class="news-card reveal">
+          <div class="news-art news-art-pattern" aria-hidden="true">
+            <svg viewBox="0 0 320 190">
+              <circle cx="160" cy="95" r="66"/>
+              <circle cx="160" cy="95" r="47"/>
+              <circle cx="160" cy="95" r="28"/>
+              <path d="M20 95H300M160 12V178"/>
+            </svg>
+            <span class="art-label">Comunidad</span>
+          </div>
+          <div class="news-card-content">
+            <p class="news-meta">Participación ciudadana</p>
+            <h3>Una municipalidad conectada con sus habitantes</h3>
+            <p>Accede a canales de información y conoce las distintas áreas de atención.</p>
+            <a class="underlined-link" href="participacion.html">Conocer más <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg></a>
+          </div>
+        </article>
       </div>
+      <p class="content-note reveal">Los contenidos de esta portada son una estructura inicial de demostración. Reemplaza estas tarjetas por noticias y avisos oficiales verificados antes de publicar el sitio como canal institucional.</p>
     </section>
 
-    <section class="contact-band section-pad reveal" aria-labelledby="contact-title">
-      <div class="contact-band-copy">
-        <p class="eyebrow">Estamos para orientarte</p>
-        <h2 id="contact-title" class="display-title">
-          Hablemos<br>
-          <em>de lo que importa.</em>
-        </h2>
+    <section class="contact-band" id="contacto">
+      <div class="contact-band-inner reveal">
+        <div>
+          <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> Estamos para orientarte</p>
+          <h2>La información<br>nos conecta.</h2>
+        </div>
+        <div class="contact-band-action">
+          <p>¿Tienes una consulta o necesitas orientación? Encuentra los canales de contacto municipal.</p>
+          <a class="button button-light" href="contacto.html">
+            Contactar al municipio
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H19M12 5L19 12L12 19"/></svg>
+          </a>
+        </div>
       </div>
-
-      <a class="contact-cta" href="contacto.html">
-        <span>Canales de contacto</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 12h15M13 5l7 7-7 7"/>
-        </svg>
-      </a>
-
-      <svg class="contact-line" viewBox="0 0 500 200" aria-hidden="true">
-        <path d="M5 170C80 170 75 30 180 30S280 180 360 110 430 40 495 40"/>
+      <svg class="contact-decoration" viewBox="0 0 400 400" aria-hidden="true">
+        <circle cx="200" cy="200" r="150"/>
+        <circle cx="200" cy="200" r="115"/>
+        <circle cx="200" cy="200" r="80"/>
+        <path d="M200 10V390M10 200H390M66 66L334 334M334 66L66 334"/>
       </svg>
     </section>
-
   </main>
 
   <footer class="site-footer">
     <div class="footer-main">
       <a class="brand brand-footer" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
         <span class="brand-symbol" aria-hidden="true">
-          <svg viewBox="0 0 48 48">
-            <path d="M24 3 44 14.5v19L24 45 4 33.5v-19L24 3Z"/>
-            <path d="M13 18h22M13 24h15M13 30h19"/>
+          <svg viewBox="0 0 52 52" fill="none">
+            <path d="M7 38V14L26 4L45 14V38L26 48L7 38Z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M16 33V20L26 14L36 20V33L26 39L16 33Z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M7 14L26 25L45 14M26 25V48" stroke="currentColor" stroke-width="1.5"/>
           </svg>
         </span>
         <span class="brand-copy">
-          <strong>RAPA NUI</strong>
-          <small>MUNICIPALIDAD</small>
+          <strong>Municipalidad</strong>
+          <span>de Rapa Nui</span>
         </span>
       </a>
-      <p>Información y servicios para la comunidad.</p>
-    </div>
 
-    <div class="footer-links">
-      <div>
-        <h2>Servicios</h2>
-        <a href="tramites.html">Trámites y servicios</a>
-        <a href="direcciones.html">Direcciones</a>
-        <a href="planes.html">Planes municipales</a>
+      <div class="footer-column">
+        <h2>Explorar</h2>
+        <a href="municipio.html">Municipio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="territorio.html">Territorio</a>
+        <a href="noticias.html">Noticias</a>
       </div>
 
-      <div>
+      <div class="footer-column">
         <h2>Información</h2>
-        <a href="noticias.html">Noticias</a>
         <a href="transparencia.html">Transparencia</a>
+        <a href="participacion.html">Participación ciudadana</a>
         <a href="contacto.html">Contacto</a>
       </div>
 
-      <div>
-        <h2>Comunidad</h2>
-        <a href="comunidad.html">Participación</a>
-        <a href="desarrollo.html">Desarrollo local</a>
-        <a href="explora.html">Explora Rapa Nui</a>
+      <div class="footer-column footer-note">
+        <h2>Rapa Nui</h2>
+        <p>Información municipal para una comunidad conectada con su territorio.</p>
       </div>
     </div>
-
     <div class="footer-bottom">
       <span>Municipalidad de Rapa Nui</span>
-      <a href="#top">
-        Volver al inicio
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 20V4M5 11l7-7 7 7"/>
-        </svg>
+      <a href="#inicio">Volver al inicio
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4M5 11L12 4L19 11"/></svg>
       </a>
     </div>
   </footer>
