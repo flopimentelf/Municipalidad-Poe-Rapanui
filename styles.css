@@ -1136,3 +1136,154 @@ img, svg { max-width: 100%; }
   }
 }
 
+/* ==========================================
+   INTERACCIONES Y ANIMACIONES
+   ========================================== */
+
+/* Órbita con profundidad y respuesta al cursor */
+.orbit-art {
+  --orbit-tilt-x: 0deg;
+  --orbit-tilt-y: 0deg;
+  --orbit-shift-x: 0px;
+  --orbit-shift-y: 0px;
+
+  transform:
+    perspective(1000px)
+    rotateY(var(--orbit-tilt-x))
+    rotateX(var(--orbit-tilt-y));
+  transition: transform 450ms cubic-bezier(.2, .7, .2, 1);
+  will-change: transform;
+}
+
+.orbit-art:hover .orbit-core {
+  box-shadow:
+    0 0 0 12px rgba(40, 42, 96, .06),
+    0 0 35px rgba(35, 166, 160, .2);
+}
+
+.orbit-core {
+  transition: box-shadow 450ms ease, background 350ms ease;
+}
+
+/* Los anillos reaccionan al tema seleccionado */
+#orbit-experience[data-active-topic="territory"] .orbit-one {
+  border-color: var(--navy);
+  filter: drop-shadow(0 0 5px rgba(40, 42, 96, .15));
+}
+
+#orbit-experience[data-active-topic="community"] .orbit-two {
+  border-color: var(--turquoise);
+  filter: drop-shadow(0 0 6px rgba(35, 166, 160, .45));
+}
+
+#orbit-experience[data-active-topic="nature"] .orbit-three {
+  border-color: var(--sand);
+  filter: drop-shadow(0 0 6px rgba(213, 166, 90, .45));
+}
+
+/* Puntos orbitales más claros al interactuar */
+.orbit-point {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.orbit-point[aria-pressed="true"] {
+  transform: scale(1.08);
+}
+
+.point-territory[aria-pressed="true"] {
+  translate: 0 0;
+}
+
+.point-community[aria-pressed="true"] {
+  translate: 0 0;
+}
+
+.point-nature[aria-pressed="true"] {
+  translate: 0 0;
+}
+
+/* Cambio suave del contenido al seleccionar un punto */
+.orbit-detail {
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    border-color 300ms ease;
+}
+
+.orbit-detail.is-changing {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.orbit-detail h3 {
+  text-wrap: balance;
+}
+
+.orbit-detail .link-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  transition: transform 250ms ease;
+}
+
+.orbit-detail .text-link:hover .link-icon {
+  transform: translate(3px, -3px);
+}
+
+/* Revelado progresivo de secciones */
+.reveal {
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  will-change: auto;
+}
+
+/* Evita que el movimiento orbital interfiera con el móvil */
+@media (max-width: 760px) {
+  .orbit-art {
+    transform: none;
+    will-change: auto;
+  }
+
+  .orbit-point:hover {
+    scale: 1.03;
+  }
+
+  .orbit-detail {
+    min-height: 0;
+  }
+}
+
+/* Respeto por la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .orbit-art {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .orbit-one,
+  .orbit-two,
+  .orbit-three {
+    animation: none !important;
+  }
+
+  .orbit-detail,
+  .orbit-point,
+  .orbit-core,
+  .reveal {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
