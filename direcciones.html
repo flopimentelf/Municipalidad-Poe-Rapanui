@@ -1,71 +1,172 @@
 
-.territory-section {
-  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.6fr);
-  gap: clamp(24px, 4vw, 64px);
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#282A60">
+  <meta name="description" content="Conoce la organización municipal de Poʻe Rapa Nui, sus áreas de trabajo y sus funciones.">
+  <title>Direcciones municipales | Municipalidad Poʻe Rapa Nui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-.orbit-experience {
-  width: 100%;
-  grid-template-columns: minmax(0, 1.25fr) minmax(200px, 0.75fr);
-  gap: 20px;
-  align-items: center;
-}
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Volver al inicio">
+        <span class="brand-mark">PR</span>
+        <span class="brand-text">
+          <strong>Municipalidad</strong>
+          <span>Poʻe Rapa Nui</span>
+        </span>
+      </a>
 
-.orbit-art {
-  width: 100%;
-  max-width: 760px;
-  aspect-ratio: 1;
-  transform-style: preserve-3d;
-}
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-.orbit-one {
-  width: 88%;
-  height: 88%;
-  animation: orbit-spin-one 2.8s linear infinite;
-}
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="tramites.html">Trámites</a>
+        <a href="direcciones.html" aria-current="page">Direcciones</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="noticias.html">Noticias</a>
+        <a class="nav-cta" href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-.orbit-two {
-  width: 76%;
-  height: 76%;
-  animation: orbit-spin-two 2.2s linear infinite;
-}
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-content reveal">
+        <p class="eyebrow">Municipalidad Poʻe Rapa Nui</p>
+        <h1>Una municipalidad, distintas áreas de trabajo.</h1>
+        <p class="page-intro">
+          Conoce las áreas municipales, sus funciones y cómo orientarte
+          para encontrar la información que necesitas.
+        </p>
+        <a class="button button-primary" href="#areas">Conocer las áreas</a>
+      </div>
+      <div class="page-hero-decoration" aria-hidden="true">
+        <span class="decoration-circle circle-one"></span>
+        <span class="decoration-circle circle-two"></span>
+        <span class="decoration-circle circle-three"></span>
+        <span class="decoration-label">Rapa Nui</span>
+      </div>
+    </section>
 
-.orbit-three {
-  width: 64%;
-  height: 64%;
-  animation: orbit-spin-three 3.2s linear infinite;
-}
+    <section class="page-section" id="areas">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Organización municipal</p>
+        <h2>Áreas y direcciones</h2>
+        <p>
+          Explora las principales áreas de gestión municipal. La información
+          específica de cada dirección se podrá incorporar y actualizar
+          cuando estén confirmados sus nombres, funciones y canales de atención.
+        </p>
+      </div>
 
-.orbit-point {
-  width: clamp(58px, 7vw, 82px);
-  height: clamp(58px, 7vw, 82px);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+      <div class="directory-grid">
+        <article class="directory-card reveal">
+          <span class="directory-number">01</span>
+          <div class="directory-symbol" aria-hidden="true">01</div>
+          <h3>Administración municipal</h3>
+          <p>
+            Coordinación de la gestión interna y apoyo al funcionamiento
+            de los servicios municipales.
+          </p>
+          <a href="contacto.html">Consultar información</a>
+        </article>
 
-.orbit-point svg {
-  width: 70%;
-  height: 70%;
-  display: block;
-}
+        <article class="directory-card reveal">
+          <span class="directory-number">02</span>
+          <div class="directory-symbol" aria-hidden="true">02</div>
+          <h3>Desarrollo comunitario</h3>
+          <p>
+            Área vinculada al trabajo con personas, organizaciones y
+            necesidades de la comunidad.
+          </p>
+          <a href="comunidad.html">Explorar comunidad</a>
+        </article>
 
-.orbit-point:hover,
-.orbit-point:focus-visible,
-.orbit-point[aria-pressed="true"] {
-  transform: scale(1.2);
-  z-index: 5;
-}
+        <article class="directory-card reveal">
+          <span class="directory-number">03</span>
+          <div class="directory-symbol" aria-hidden="true">03</div>
+          <h3>Planificación y desarrollo</h3>
+          <p>
+            Información relacionada con la planificación, los proyectos
+            y el desarrollo del territorio.
+          </p>
+          <a href="desarrollo.html">Ver desarrollo</a>
+        </article>
 
-@media (max-width: 760px) {
-  .territory-section {
-    grid-template-columns: 1fr;
-  }
+        <article class="directory-card reveal">
+          <span class="directory-number">04</span>
+          <div class="directory-symbol" aria-hidden="true">04</div>
+          <h3>Servicios municipales</h3>
+          <p>
+            Orientación para identificar trámites, solicitudes y
+            servicios disponibles para la comunidad.
+          </p>
+          <a href="tramites.html">Revisar trámites</a>
+        </article>
 
-  .orbit-experience {
-    grid-template-columns: 1fr;
-  }
+        <article class="directory-card reveal">
+          <span class="directory-number">05</span>
+          <div class="directory-symbol" aria-hidden="true">05</div>
+          <h3>Territorio y entorno</h3>
+          <p>
+            Un espacio para reunir información sobre el territorio,
+            su entorno y las iniciativas relacionadas.
+          </p>
+          <a href="explora.html">Explorar el territorio</a>
+        </article>
 
-  .orbit-art {
-    max-width: 620px;
-    margin-inline: auto;
-  }
-}
+        <article class="directory-card reveal">
+          <span class="directory-number">06</span>
+          <div class="directory-symbol" aria-hidden="true">06</div>
+          <h3>Información y transparencia</h3>
+          <p>
+            Acceso a información institucional y antecedentes de
+            interés público.
+          </p>
+          <a href="transparencia.html">Ir a transparencia</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="directory-contact reveal">
+      <div>
+        <p class="eyebrow">¿Necesitas orientación?</p>
+        <h2>Te ayudamos a encontrar el área adecuada.</h2>
+        <p>
+          Si no sabes a qué dirección acudir, revisa los canales de contacto
+          disponibles para encontrar orientación.
+        </p>
+      </div>
+      <a class="button button-light" href="contacto.html">Ir a contacto</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark">PR</span>
+        <span class="brand-text">
+          <strong>Municipalidad</strong>
+          <span>Poʻe Rapa Nui</span>
+        </span>
+      </a>
+      <p>Municipalidad Poʻe Rapa Nui</p>
+      <a href="index.html">Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
