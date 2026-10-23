@@ -149,9 +149,6 @@
       orbitArt.style.setProperty("--orbit-tilt-y", "0deg");
     });
   }
-
-  const initialPoint = experience.querySelector('.orbit-point[data-topic="territory"]');
-  if (initialPoint) selectTopic(initialPoint);
   (() => {
   const welcome = document.getElementById("welcome-screen");
   if (!welcome || sessionStorage.getItem("welcome-seen")) {
@@ -163,7 +160,8 @@
     welcome.classList.add("is-hidden");
     window.setTimeout(() => {
       welcome.remove();
-    }, 850);
-  }, 2200);
+    }, 500);
+  }, 1000);
+})();
 })();
 })();
