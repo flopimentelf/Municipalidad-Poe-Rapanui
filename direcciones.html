@@ -1,122 +1,71 @@
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Direcciones municipales | Rapa Nui</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="topline">
-    <div class="header-inner">
-      <a class="identity" href="index.html">
-        <span class="seal">RN</span>
-        <span class="brand">
-          <strong>RAPA NUI</strong>
-          <small>MUNICIPALIDAD</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="tramites.html">Trámites y servicios</a>
-        <a class="active" href="direcciones.html">Direcciones</a>
-        <a href="comunidad.html">Comunidad</a>
-        <a href="desarrollo.html">Desarrollo</a>
-        <a href="planes.html">Planes</a>
-        <a href="explora.html">Explora</a>
-      </nav>
-    </div>
-  </header>
+.territory-section {
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.6fr);
+  gap: clamp(24px, 4vw, 64px);
+}
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">ORGANIZACIÓN MUNICIPAL</p>
-        <h1>DIRECCIONES<br>MUNICIPALES</h1>
-        <p>
-          Conoce las áreas de trabajo que contribuyen
-          al funcionamiento y desarrollo de Rapa Nui.
-        </p>
-      </div>
-    </section>
+.orbit-experience {
+  width: 100%;
+  grid-template-columns: minmax(0, 1.25fr) minmax(200px, 0.75fr);
+  gap: 20px;
+  align-items: center;
+}
 
-    <section class="page-content container">
-      <div class="section">
-        <p class="eyebrow">NUESTRA MUNICIPALIDAD</p>
-        <h2>Áreas de gestión</h2>
-        <p>
-          Encuentra orientación sobre las distintas áreas
-          municipales y sus funciones.
-        </p>
-      </div>
+.orbit-art {
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+}
 
-      <div class="grid">
-        <article class="tile">
-          <span class="tile-number">01</span>
-          <h3>Administración municipal</h3>
-          <p>Gestión interna y coordinación de las funciones municipales.</p>
-        </article>
+.orbit-one {
+  width: 88%;
+  height: 88%;
+  animation: orbit-spin-one 2.8s linear infinite;
+}
 
-        <article class="tile">
-          <span class="tile-number">02</span>
-          <h3>Desarrollo comunitario</h3>
-          <p>Orientación sobre programas sociales y apoyo a la comunidad.</p>
-        </article>
+.orbit-two {
+  width: 76%;
+  height: 76%;
+  animation: orbit-spin-two 2.2s linear infinite;
+}
 
-        <article class="tile">
-          <span class="tile-number">03</span>
-          <h3>Obras y territorio</h3>
-          <p>Información general sobre planificación y gestión territorial.</p>
-        </article>
+.orbit-three {
+  width: 64%;
+  height: 64%;
+  animation: orbit-spin-three 3.2s linear infinite;
+}
 
-        <article class="tile">
-          <span class="tile-number">04</span>
-          <h3>Medioambiente</h3>
-          <p>Iniciativas relacionadas con el cuidado del entorno insular.</p>
-        </article>
+.orbit-point {
+  width: clamp(58px, 7vw, 82px);
+  height: clamp(58px, 7vw, 82px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-        <article class="tile">
-          <span class="tile-number">05</span>
-          <h3>Cultura y patrimonio</h3>
-          <p>Acciones vinculadas con la identidad y el patrimonio de Rapa Nui.</p>
-        </article>
+.orbit-point svg {
+  width: 70%;
+  height: 70%;
+  display: block;
+}
 
-        <article class="tile">
-          <span class="tile-number">06</span>
-          <h3>Atención a la ciudadanía</h3>
-          <p>Orientación para consultas y solicitudes municipales.</p>
-        </article>
-      </div>
+.orbit-point:hover,
+.orbit-point:focus-visible,
+.orbit-point[aria-pressed="true"] {
+  transform: scale(1.2);
+  z-index: 5;
+}
 
-      <div class="notice">
-        <h3>¿Necesitas contactar un área?</h3>
-        <p>
-          Revisa los canales de contacto para solicitar
-          información y orientación.
-        </p>
-        <a class="button" href="contacto.html">Ver contacto</a>
-      </div>
+@media (max-width: 760px) {
+  .territory-section {
+    grid-template-columns: 1fr;
+  }
 
-      <p class="side">
-        Contenido referencial para el prototipo académico.
-        Los nombres oficiales, las funciones y los datos de cada
-        dirección deben verificarse antes de publicar el sitio.
-      </p>
-    </section>
-  </main>
+  .orbit-experience {
+    grid-template-columns: 1fr;
+  }
 
-  <footer>
-    <div class="container">
-      <a class="identity" href="index.html">
-        <span class="seal">RN</span>
-        <span class="brand">
-          <strong>RAPA NUI</strong>
-          <small>MUNICIPALIDAD</small>
-        </span>
-      </a>
-      <p>Propuesta de diseño web municipal · Prototipo académico</p>
-      <a href="index.html">Volver al inicio ↑</a>
-    </div>
-  </footer>
-</body>
-</html>
+  .orbit-art {
+    max-width: 620px;
+    margin-inline: auto;
+  }
+}
