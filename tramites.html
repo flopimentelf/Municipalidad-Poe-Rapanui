@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#282A60">
-  <meta name="description" content="Trámites y servicios de la Municipalidad de Rapa Nui.">
+  <meta name="description" content="Guía de trámites municipales de Rapa Nui: licencias de conducir, permisos de circulación, patentes comerciales y permisos de edificación.">
   <title>Trámites y servicios | Municipalidad de Rapa Nui</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,39 +13,312 @@
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
+
 <body id="top">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 <header class="site-header">
   <div class="header-topline" aria-hidden="true"></div>
   <div class="header-inner">
     <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 4 41 14v20L24 44 7 34V14z"/><path d="M16 18h16M16 24h16M16 30h10"/></svg></span>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48">
+          <path d="M24 4 41 14v20L24 44 7 34V14z"/>
+          <path d="M16 18h16M16 24h16M16 30h10"/>
+        </svg>
+      </span>
       <span class="brand-name">Municipalidad <strong>de Rapa Nui</strong></span>
     </a>
+
     <div class="header-tools" aria-label="Canales de contacto">
-      <a class="icon-link" href="#" aria-label="Facebook oficial pendiente"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1z"/></svg></a>
-      <a class="icon-link" href="#" aria-label="Instagram oficial pendiente"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-      <a class="icon-link" href="contacto.html" aria-label="Teléfono"><svg viewBox="0 0 24 24"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/></svg></a>
-      <a class="icon-link" href="contacto.html" aria-label="Correo"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg></a>
+      <a class="icon-link" href="https://www.facebook.com/profile.php?id=100069192400123" target="_blank" rel="noopener noreferrer" aria-label="Facebook municipal">
+        <svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1z"/></svg>
+      </a>
+      <a class="icon-link" href="https://www.instagram.com/haretavana/" target="_blank" rel="noopener noreferrer" aria-label="Instagram municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+      </a>
+      <a class="icon-link" href="contacto.html" aria-label="Teléfono y contacto">
+        <svg viewBox="0 0 24 24"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/></svg>
+      </a>
+      <a class="icon-link" href="contacto.html" aria-label="Correo municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg>
+      </a>
     </div>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal"><span class="menu-toggle-lines" aria-hidden="true"></span><span class="menu-toggle-label">Menú</span></button>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="menu-toggle-lines" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menú</span>
+    </button>
+
     <nav class="main-nav" id="menu-principal" aria-label="Navegación principal">
-      <a href="tramites.html" aria-current="page">Trámites y servicios</a><a href="direcciones.html">Direcciones</a><a href="comunidad.html">Comunidad</a><a href="desarrollo.html">Desarrollo</a><a href="planes.html">Planes</a><a href="explora.html">Explora</a>
+      <a href="tramites.html" aria-current="page">Trámites y servicios</a>
+      <a href="direcciones.html">Direcciones</a>
+      <a href="comunidad.html">Comunidad</a>
+      <a href="desarrollo.html">Desarrollo</a>
+      <a href="planes.html">Planes</a>
+      <a href="explora.html">Explora</a>
     </nav>
   </div>
 </header>
+
 <main id="contenido">
-  <section class="interior-hero"><div class="interior-hero-inner reveal"><p class="eyebrow">Atención municipal</p><h1>Trámites y servicios</h1><p class="interior-lead">Encuentra orientación para realizar gestiones y acceder a los servicios municipales.</p><div class="breadcrumb"><a href="index.html">Inicio</a><span>/</span><span aria-current="page">Trámites y servicios</span></div></div><div class="interior-mark" aria-hidden="true">TRÁMITES</div></section>
+
+  <section class="interior-hero">
+    <div class="interior-hero-inner reveal">
+      <p class="eyebrow">Atención municipal</p>
+      <h1>Trámites y servicios</h1>
+      <p class="interior-lead">
+        Encuentra requisitos, documentación y orientación para realizar
+        tus gestiones en la Municipalidad de Rapa Nui.
+      </p>
+      <div class="breadcrumb">
+        <a href="index.html">Inicio</a>
+        <span>/</span>
+        <span aria-current="page">Trámites y servicios</span>
+      </div>
+    </div>
+    <div class="interior-mark" aria-hidden="true">TRÁMITES</div>
+  </section>
+
   <section class="section interior-section">
-    <div class="section-heading reveal"><div><p class="eyebrow">Accesos frecuentes</p><h2>¿Por dónde<br>comenzamos?</h2></div><p>Revisa la información disponible antes de iniciar una gestión. Los requisitos específicos deben confirmarse con la unidad municipal correspondiente.</p></div>
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">Accesos oficiales</p>
+        <h2>¿Qué necesitas<br>resolver?</h2>
+      </div>
+      <p>
+        Selecciona el trámite que necesitas y consulta los requisitos
+        publicados por la municipalidad. La documentación puede variar
+        según el tipo de solicitud.
+      </p>
+    </div>
+
     <div class="detail-grid">
-      <article class="detail-card reveal"><span class="detail-index">01</span><h2>Solicitudes y consultas</h2><p>Orientación para conocer los pasos de cada gestión municipal.</p><a class="text-link" href="contacto.html">Consultar <span>↗</span></a></article>
-      <article class="detail-card reveal"><span class="detail-index">02</span><h2>Documentación</h2><p>Revisa los antecedentes que podrían ser necesarios para una solicitud.</p><a class="text-link" href="contacto.html">Pedir orientación <span>↗</span></a></article>
-      <article class="detail-card reveal"><span class="detail-index">03</span><h2>Atención municipal</h2><p>Encuentra el canal adecuado para resolver dudas sobre tus gestiones.</p><a class="text-link" href="contacto.html">Canales de contacto <span>↗</span></a></article>
+
+      <article class="detail-card reveal">
+        <span class="detail-index">01</span>
+        <h2>Licencia de conducir</h2>
+        <p>
+          Consulta información sobre la primera licencia, renovaciones,
+          duplicados y otras clases de licencia.
+        </p>
+        <p>
+          Para la primera obtención, la municipalidad publica requisitos
+          como cédula vigente, certificado de estudios, antecedentes del
+          conductor y exámenes correspondientes.
+        </p>
+        <a class="text-link" href="https://www.rapanui.net/secciones/8413" target="_blank" rel="noopener noreferrer">
+          Ver requisitos oficiales <span>↗</span>
+        </a>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-index">02</span>
+        <h2>Permiso de circulación</h2>
+        <p>
+          Revisa la documentación publicada para solicitar o renovar
+          el permiso de circulación de tu vehículo.
+        </p>
+        <p>
+          La guía municipal menciona el padrón o certificado de anotaciones
+          vigente, revisión técnica al día, SOAP y permiso anterior.
+        </p>
+        <a class="text-link" href="https://www.rapanui.net/secciones/8413" target="_blank" rel="noopener noreferrer">
+          Consultar documentación <span>↗</span>
+        </a>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-index">03</span>
+        <h2>Patentes comerciales</h2>
+        <p>
+          Información para personas que necesitan iniciar o regularizar
+          una actividad comercial en la comuna.
+        </p>
+        <p>
+          Los antecedentes requeridos dependen del rubro y de las
+          características de la actividad.
+        </p>
+        <a class="text-link" href="https://rapanui.net/secciones/8338" target="_blank" rel="noopener noreferrer">
+          Revisar requisitos <span>↗</span>
+        </a>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-index">04</span>
+        <h2>Permisos de edificación</h2>
+        <p>
+          Consulta los antecedentes necesarios para obras nuevas,
+          ampliaciones, modificaciones y otros procedimientos de la
+          Dirección de Obras Municipales.
+        </p>
+        <a class="text-link" href="https://www.rapanui.net/secciones/8395" target="_blank" rel="noopener noreferrer">
+          Ver trámites de la DOM <span>↗</span>
+        </a>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-index">05</span>
+        <h2>Patentes ambulantes</h2>
+        <p>
+          Revisa las condiciones y documentos para solicitar permisos
+          de comercio ambulante en los espacios autorizados de la comuna.
+        </p>
+        <a class="text-link" href="https://rapanui.net/secciones/8342" target="_blank" rel="noopener noreferrer">
+          Consultar información oficial <span>↗</span>
+        </a>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-index">06</span>
+        <h2>Servicios municipales</h2>
+        <p>
+          Infórmate sobre servicios como retiro de escombros y vegetales,
+          solicitud de traslado de agua y atención de la Dirección de
+          Operaciones.
+        </p>
+        <a class="text-link" href="https://www.rapanui.net/secciones/8412" target="_blank" rel="noopener noreferrer">
+          Ver servicios disponibles <span>↗</span>
+        </a>
+      </article>
+
     </div>
   </section>
-  <section class="contact-band reveal"><div><p class="eyebrow">¿Necesitas ayuda?</p><h2>Te orientamos en el proceso.</h2></div><a class="button button-dark" href="contacto.html">Contactar <span>↗</span></a></section>
+
+  <section class="section interior-section">
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">Guía municipal</p>
+        <h2>Antes de iniciar<br>tu trámite</h2>
+      </div>
+      <p>
+        Una buena preparación puede evitar visitas innecesarias y
+        facilitar la atención.
+      </p>
+    </div>
+
+    <div class="detail-grid">
+      <article class="detail-card reveal">
+        <span class="detail-index">01</span>
+        <h2>Identifica tu trámite</h2>
+        <p>
+          Revisa cuál es la unidad municipal responsable y consulta
+          la información específica de tu solicitud.
+        </p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-index">02</span>
+        <h2>Prepara tus documentos</h2>
+        <p>
+          Comprueba que los documentos estén vigentes y confirma si
+          necesitas formularios, certificados o antecedentes adicionales.
+        </p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-index">03</span>
+        <h2>Confirma los detalles</h2>
+        <p>
+          Antes de acudir a la oficina, verifica horarios, valores,
+          plazos y requisitos directamente en la página oficial.
+        </p>
+      </article>
+    </div>
+
+    <div class="contact-band reveal">
+      <div>
+        <p class="eyebrow">Información oficial</p>
+        <h2>Consulta la guía completa de trámites.</h2>
+        <p>
+          Accede a los requisitos, plazos y documentación publicados
+          por la Municipalidad de Rapa Nui.
+        </p>
+      </div>
+      <a class="button button-dark" href="https://www.rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">
+        Abrir guía municipal <span>↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section interior-section">
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">Atención a la comunidad</p>
+        <h2>Servicios en<br>tu barrio</h2>
+      </div>
+      <p>
+        Conoce Haka Ara Móvil, iniciativa municipal que acerca servicios
+        y atención pública a los distintos barrios de la comuna.
+      </p>
+    </div>
+
+    <div class="detail-grid">
+      <article class="detail-card reveal">
+        <span class="detail-index">HAKA ARA</span>
+        <h2>Haka Ara Móvil</h2>
+        <p>
+          Infórmate sobre los operativos territoriales y cómo comunicar
+          un requerimiento para tu barrio.
+        </p>
+        <a class="text-link" href="https://www.rapanui.net/secciones/8431" target="_blank" rel="noopener noreferrer">
+          Conocer el programa <span>↗</span>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact-band reveal">
+    <div>
+      <p class="eyebrow">¿Necesitas orientación?</p>
+      <h2>Estamos para ayudarte.</h2>
+      <p>
+        Si no encuentras tu trámite, consulta los canales de atención
+        de la municipalidad.
+      </p>
+    </div>
+    <a class="button button-dark" href="contacto.html">
+      Contactar <span>↗</span>
+    </a>
+  </section>
+
 </main>
-<footer class="site-footer"><div class="footer-main"><div class="footer-brand"><span class="footer-kicker">Municipalidad de</span><strong>Rapa Nui</strong><p>Información y servicios para la comunidad.</p></div><div class="footer-column"><h2>Explorar</h2><a href="tramites.html">Trámites y servicios</a><a href="direcciones.html">Direcciones</a><a href="planes.html">Planes municipales</a></div><div class="footer-column"><h2>Información</h2><a href="noticias.html">Noticias</a><a href="transparencia.html">Transparencia</a><a href="contacto.html">Contacto</a></div><div class="footer-column"><h2>Comunidad</h2><a href="comunidad.html">Participación</a><a href="desarrollo.html">Desarrollo</a><a href="explora.html">Explora Rapa Nui</a></div></div><div class="footer-bottom"><span>Municipalidad de Rapa Nui</span><a href="#top">Volver arriba ↑</a></div></footer>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="footer-kicker">Municipalidad de</span>
+      <strong>Rapa Nui</strong>
+      <p>Información y servicios para la comunidad.</p>
+    </div>
+
+    <div class="footer-column">
+      <h2>Explorar</h2>
+      <a href="tramites.html">Trámites y servicios</a>
+      <a href="direcciones.html">Direcciones</a>
+      <a href="planes.html">Planes municipales</a>
+    </div>
+
+    <div class="footer-column">
+      <h2>Información</h2>
+      <a href="noticias.html">Noticias</a>
+      <a href="transparencia.html">Transparencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+
+    <div class="footer-column">
+      <h2>Comunidad</h2>
+      <a href="comunidad.html">Participación</a>
+      <a href="desarrollo.html">Desarrollo</a>
+      <a href="explora.html">Explora Rapa Nui</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>Municipalidad de Rapa Nui</span>
+    <a href="#top">Volver arriba ↑</a>
+  </div>
+</footer>
+
 </body>
 </html>
