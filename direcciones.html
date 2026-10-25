@@ -5,16 +5,127 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#282A60">
-  <meta name="description" content="Conoce las áreas de gestión de la Municipalidad de Rapa Nui y encuentra orientación para tus consultas.">
-  <title>Direcciones | Municipalidad de Rapa Nui</title>
+  <meta name="description" content="Conoce a las autoridades y las direcciones municipales de Rapa Nui.">
+  <title>Direcciones y autoridades | Municipalidad de Rapa Nui</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
-</head>
-<body id="top">
 
+  <style>
+    .authority-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 36px;
+      align-items: center;
+      margin-top: 35px;
+    }
+
+    .authority-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+      background: #DCEBE9;
+    }
+
+    .authority-copy h3 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.12;
+      margin: 12px 0 18px;
+    }
+
+    .authority-copy p {
+      line-height: 1.8;
+    }
+
+    .authority-label {
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .75rem;
+      font-weight: 800;
+      color: #23A6A0;
+    }
+
+    .council-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .council-card {
+      border: 1px solid rgba(40,42,96,.18);
+      padding: 24px;
+      min-width: 0;
+    }
+
+    .council-card h3 {
+      font-size: 1.1rem;
+      margin: 0 0 10px;
+    }
+
+    .council-card p {
+      line-height: 1.65;
+      margin: 0 0 16px;
+    }
+
+    .authority-note {
+      font-size: .85rem;
+      line-height: 1.7;
+      opacity: .8;
+      margin-top: 24px;
+    }
+
+    .direction-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .direction-card .text-link {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .official-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      margin-bottom: 20px;
+      background: #DCEBE9;
+    }
+
+    @media (max-width: 760px) {
+      .authority-feature {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .authority-photo {
+        min-height: 220px;
+        max-height: 380px;
+      }
+
+      .council-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .council-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <header class="site-header">
@@ -32,16 +143,17 @@
     </a>
 
     <div class="header-tools" aria-label="Canales de contacto">
-      <a class="icon-link" href="contacto.html" aria-label="Información de contacto">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="5" width="18" height="14" rx="1"/>
-          <path d="m4 7 8 6 8-6"/>
-        </svg>
+      <a class="icon-link" href="https://www.facebook.com/profile.php?id=100069192400123" target="_blank" rel="noopener noreferrer" aria-label="Facebook municipal">
+        <svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1z"/></svg>
+      </a>
+      <a class="icon-link" href="https://www.instagram.com/haretavana/" target="_blank" rel="noopener noreferrer" aria-label="Instagram municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
       </a>
       <a class="icon-link" href="contacto.html" aria-label="Teléfono de contacto">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/></svg>
+      </a>
+      <a class="icon-link" href="contacto.html" aria-label="Correo municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg>
       </a>
     </div>
 
@@ -67,10 +179,10 @@
   <section class="interior-hero">
     <div class="interior-hero-inner reveal">
       <p class="eyebrow">Organización municipal</p>
-      <h1>Direcciones y áreas de gestión</h1>
+      <h1>Autoridades y direcciones</h1>
       <p class="interior-lead">
-        Conoce las áreas de trabajo municipal y encuentra orientación
-        para identificar dónde realizar tus consultas.
+        Conoce a las autoridades comunales y encuentra las áreas municipales
+        responsables de los servicios, la planificación y la atención ciudadana.
       </p>
       <div class="breadcrumb">
         <a href="index.html">Inicio</a>
@@ -78,9 +190,118 @@
         <span aria-current="page">Direcciones</span>
       </div>
     </div>
-    <div class="interior-mark" aria-hidden="true">DIRECCIONES</div>
+    <div class="interior-mark" aria-hidden="true">MUNICIPIO</div>
   </section>
 
+  <!-- AUTORIDADES -->
+  <section class="section interior-section">
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">Gobierno comunal</p>
+        <h2>Autoridades<br>municipales</h2>
+      </div>
+      <p>
+        Las autoridades municipales representan a la comunidad y participan
+        en la conducción y fiscalización de la gestión local.
+        Consulta las publicaciones oficiales para conocer sus actividades
+        y la información institucional vigente.
+      </p>
+    </div>
+
+    <article class="authority-feature reveal">
+      <div>
+        <img
+          class="authority-photo"
+          src="https://ligup-v2.s3.sa-east-1.amazonaws.com/municipalidadderapanui/media/06_12_2024_13_52_18_44A594ED-7F90-4EA8-9567-68AF50DA2DEC.jpeg"
+          alt="Fotografía publicada por la Municipalidad de Rapa Nui con motivo de la asunción de las nuevas autoridades municipales"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="authority-copy">
+        <span class="authority-label">Alcaldía</span>
+        <h3>Elizabeth Arévalo Pakarati</h3>
+        <p>
+          Alcaldesa de la Municipalidad de Rapa Nui para el período
+          municipal 2024-2028, según la publicación institucional
+          de su asunción al cargo.
+        </p>
+        <p>
+          Revisa sus actividades, anuncios y compromisos en las noticias
+          publicadas por el municipio.
+        </p>
+        <a class="text-link"
+           href="https://www.rapanui.net/noticias/19545"
+           target="_blank"
+           rel="noopener noreferrer">
+          Leer publicación oficial <span>↗</span>
+        </a>
+      </div>
+    </article>
+
+    <div class="section-heading reveal" style="margin-top: 65px;">
+      <div>
+        <p class="eyebrow">Concejo municipal</p>
+        <h2>Representación<br>comunal</h2>
+      </div>
+      <p>
+        El Concejo Municipal participa en las decisiones y en la fiscalización
+        de la gestión municipal. Estos son los nombres que aparecen en la
+        publicación oficial sobre la instalación del concejo para el período
+        2024-2028.
+      </p>
+    </div>
+
+    <div class="council-grid">
+      <article class="council-card reveal">
+        <h3>Omar Veriveri Durán</h3>
+        <p>Concejal mencionado en la publicación institucional.</p>
+        <a class="text-link" href="https://www.rapanui.net/noticias/19545" target="_blank" rel="noopener noreferrer">
+          Fuente oficial <span>↗</span>
+        </a>
+      </article>
+
+      <article class="council-card reveal">
+        <h3>Moiko Jara Pate</h3>
+        <p>Concejal mencionado en la publicación institucional.</p>
+        <a class="text-link" href="https://www.rapanui.net/noticias/19545" target="_blank" rel="noopener noreferrer">
+          Fuente oficial <span>↗</span>
+        </a>
+      </article>
+
+      <article class="council-card reveal">
+        <h3>Simón Riroroko Campos</h3>
+        <p>Concejal mencionado en la publicación institucional.</p>
+        <a class="text-link" href="https://www.rapanui.net/noticias/19545" target="_blank" rel="noopener noreferrer">
+          Fuente oficial <span>↗</span>
+        </a>
+      </article>
+
+      <article class="council-card reveal">
+        <h3>Ivonne Nahoe Zamora</h3>
+        <p>Concejala mencionada en la publicación institucional.</p>
+        <a class="text-link" href="https://www.rapanui.net/noticias/19545" target="_blank" rel="noopener noreferrer">
+          Fuente oficial <span>↗</span>
+        </a>
+      </article>
+
+      <article class="council-card reveal">
+        <h3>Javiera Lira Hucke</h3>
+        <p>Concejala mencionada en la publicación institucional.</p>
+        <a class="text-link" href="https://www.rapanui.net/noticias/19545" target="_blank" rel="noopener noreferrer">
+          Fuente oficial <span>↗</span>
+        </a>
+      </article>
+    </div>
+
+    <p class="authority-note">
+      Nota: la nómina anterior se basa en una publicación municipal sobre
+      la instalación del concejo para el período 2024-2028. Para confirmar
+      su composición actual, revisa las noticias y comunicaciones oficiales.
+    </p>
+  </section>
+
+  <!-- DIRECCIONES Y SERVICIOS -->
   <section class="section interior-section">
     <div class="section-heading reveal">
       <div>
@@ -88,73 +309,83 @@
         <h2>Un área para<br>cada necesidad</h2>
       </div>
       <p>
-        La gestión municipal reúne distintas funciones orientadas al
-        funcionamiento de la comuna, la atención de las personas y el
-        desarrollo del territorio. Estas categorías te ayudarán a encontrar
-        la sección más relacionada con tu consulta.
+        Accede a las páginas institucionales de distintas áreas municipales
+        para consultar trámites, servicios y documentación.
       </p>
     </div>
 
     <div class="detail-grid">
 
-      <article class="detail-card reveal">
+      <article class="detail-card direction-card reveal">
         <span class="detail-index">01</span>
-        <h2>Administración municipal</h2>
+        <h2>Dirección de Tránsito</h2>
         <p>
-          Información general sobre la coordinación institucional,
-          el funcionamiento interno y la gestión municipal.
+          Información sobre licencias de conducir, renovaciones, duplicados,
+          permisos de circulación y otros trámites relacionados con vehículos.
         </p>
-        <a class="text-link" href="contacto.html">Solicitar orientación</a>
+        <a class="text-link" href="https://www.rapanui.net/secciones/8413" target="_blank" rel="noopener noreferrer">
+          Visitar Tránsito <span>↗</span>
+        </a>
       </article>
 
-      <article class="detail-card reveal">
+      <article class="detail-card direction-card reveal">
         <span class="detail-index">02</span>
-        <h2>Comunidad y participación</h2>
+        <h2>Dirección de Obras Municipales</h2>
         <p>
-          Información sobre participación ciudadana, iniciativas
-          comunitarias y vinculación con organizaciones locales.
+          Consulta formularios e información sobre permisos de edificación,
+          ampliaciones, obras menores, subdivisiones y regularizaciones.
         </p>
-        <a class="text-link" href="comunidad.html">Conocer la sección</a>
+        <a class="text-link" href="https://www.rapanui.net/secciones/8395" target="_blank" rel="noopener noreferrer">
+          Visitar Obras Municipales <span>↗</span>
+        </a>
       </article>
 
-      <article class="detail-card reveal">
+      <article class="detail-card direction-card reveal">
         <span class="detail-index">03</span>
-        <h2>Desarrollo comunal</h2>
+        <h2>Dirección de Operaciones</h2>
         <p>
-          Contenidos relacionados con iniciativas, proyectos y acciones
-          que contribuyen al desarrollo de la comuna.
+          Información sobre servicios de retiro de escombros y vegetales,
+          traslado de agua y coordinación de servicios municipales.
         </p>
-        <a class="text-link" href="desarrollo.html">Explorar desarrollo</a>
+        <a class="text-link" href="https://www.rapanui.net/secciones/8412" target="_blank" rel="noopener noreferrer">
+          Visitar Operaciones <span>↗</span>
+        </a>
       </article>
 
-      <article class="detail-card reveal">
+      <article class="detail-card direction-card reveal">
         <span class="detail-index">04</span>
-        <h2>Planificación y proyectos</h2>
+        <h2>Guía de trámites municipales</h2>
         <p>
-          Información sobre planes municipales, proyectos e iniciativas
-          vinculadas con la planificación del territorio.
+          Acceso centralizado a requisitos, documentación, plazos y orientación
+          para diferentes solicitudes y servicios municipales.
         </p>
-        <a class="text-link" href="planes.html">Revisar los planes</a>
+        <a class="text-link" href="https://www.rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">
+          Abrir guía oficial <span>↗</span>
+        </a>
       </article>
 
-      <article class="detail-card reveal">
+      <article class="detail-card direction-card reveal">
         <span class="detail-index">05</span>
-        <h2>Trámites y servicios</h2>
+        <h2>Noticias y gestión municipal</h2>
         <p>
-          Orientación para realizar gestiones, resolver consultas
-          y conocer los servicios municipales disponibles.
+          Conoce anuncios, actividades, iniciativas y comunicaciones
+          de las autoridades y los equipos municipales.
         </p>
-        <a class="text-link" href="tramites.html">Ver trámites y servicios</a>
+        <a class="text-link" href="https://www.rapanui.net/" target="_blank" rel="noopener noreferrer">
+          Visitar sitio oficial <span>↗</span>
+        </a>
       </article>
 
-      <article class="detail-card reveal">
+      <article class="detail-card direction-card reveal">
         <span class="detail-index">06</span>
-        <h2>Información pública</h2>
+        <h2>Atención y orientación</h2>
         <p>
-          Acceso a contenidos institucionales y a la información
-          disponible en materia de transparencia municipal.
+          Si no sabes qué unidad necesitas, utiliza los canales de contacto
+          de esta página para orientarte antes de iniciar tu gestión.
         </p>
-        <a class="text-link" href="transparencia.html">Consultar transparencia</a>
+        <a class="text-link" href="contacto.html">
+          Contactar al municipio <span>↗</span>
+        </a>
       </article>
 
     </div>
@@ -165,18 +396,19 @@
       <p class="eyebrow">Orientación municipal</p>
       <h2>¿No sabes dónde comenzar?</h2>
       <p>
-        Consulta los canales de contacto para encontrar orientación
-        sobre el área relacionada con tu solicitud.
+        Revisa la información institucional o contáctanos para encontrar
+        orientación sobre el área relacionada con tu solicitud.
       </p>
     </div>
-    <a class="button button-dark" href="contacto.html">Ir a contacto</a>
+    <a class="button button-dark" href="contacto.html">
+      Ir a contacto <span>↗</span>
+    </a>
   </section>
 
 </main>
 
 <footer class="site-footer">
   <div class="footer-main">
-
     <div class="footer-brand">
       <span class="footer-kicker">Municipalidad de</span>
       <strong>Rapa Nui</strong>
@@ -203,12 +435,11 @@
       <a href="desarrollo.html">Desarrollo</a>
       <a href="explora.html">Explora Rapa Nui</a>
     </div>
-
   </div>
 
   <div class="footer-bottom">
     <span>Municipalidad de Rapa Nui</span>
-    <a href="#top">Volver al inicio</a>
+    <a href="#top">Volver al inicio ↑</a>
   </div>
 </footer>
 
