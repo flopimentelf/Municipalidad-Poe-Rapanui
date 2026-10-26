@@ -2032,3 +2032,10 @@ body {
   flex: 0 0 55px;
   display: block;
 }
+.site-header .brand-logo {
+  width: 55px;
+  height: 55px;
+  max-width: 55px;
+  object-fit: contain;
+  flex: 0 0 55px;
+}
