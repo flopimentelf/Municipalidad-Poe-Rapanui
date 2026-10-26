@@ -1,21 +1,470 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#282A60">
-  <meta name="description" content="Conoce los planes, instrumentos de planificación e iniciativas municipales de Rapa Nui.">
+  <meta name="description" content="Conoce los instrumentos de planificación de la Municipalidad de Rapa Nui: PLADECO, PLADETUR y Plan Regulador.">
   <title>Planes municipales | Municipalidad de Rapa Nui</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+
+  <style>
+    :root {
+      --plans-navy: #282A60;
+      --plans-teal: #23A6A0;
+      --plans-aqua: #DCEBE9;
+      --plans-cream: #F7F6F0;
+    }
+
+    .plans-page {
+      color: var(--plans-navy);
+      overflow: hidden;
+    }
+
+    .plans-hero {
+      min-height: 570px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      isolation: isolate;
+      color: white;
+      background: var(--plans-navy);
+      padding: clamp(30px, 7vw, 90px);
+    }
+
+    .plans-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(24,26,62,.91), rgba(24,26,62,.36)),
+        url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+    }
+
+    .plans-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(0deg, rgba(22,24,55,.42), transparent 65%);
+    }
+
+    .plans-hero-content {
+      max-width: 850px;
+    }
+
+    .plans-kicker {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: .75rem;
+      font-weight: 800;
+      color: #82DED5;
+      margin-bottom: 16px;
+    }
+
+    .plans-hero h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      margin: 0 0 24px;
+    }
+
+    .plans-hero p {
+      max-width: 680px;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .plans-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .plans-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      min-height: 48px;
+      padding: 14px 20px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      background: var(--plans-teal);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+
+    .plans-button:hover {
+      background: #168983;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .plans-button-light {
+      color: white;
+      background: transparent;
+      border-color: rgba(255,255,255,.7);
+    }
+
+    .plans-button-light:hover {
+      color: var(--plans-navy);
+      background: white;
+    }
+
+    .plans-section {
+      padding: clamp(55px, 8vw, 100px) clamp(20px, 6vw, 85px);
+    }
+
+    .plans-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .plans-eyebrow {
+      color: var(--plans-teal);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .plans-title {
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      margin: 12px 0 20px;
+    }
+
+    .plans-intro {
+      display: grid;
+      grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+      align-items: start;
+      gap: 50px;
+    }
+
+    .plans-intro-copy {
+      line-height: 1.85;
+    }
+
+    .plans-intro-copy p:first-child {
+      margin-top: 0;
+    }
+
+    .plans-summary {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .plans-summary-item {
+      padding: 20px;
+      background: var(--plans-aqua);
+    }
+
+    .plans-summary-item strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .plans-summary-item span {
+      font-size: .84rem;
+      line-height: 1.65;
+      display: block;
+    }
+
+    .plans-documents {
+      background: var(--plans-cream);
+    }
+
+    .plans-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+
+    .plans-heading-row > div {
+      max-width: 750px;
+    }
+
+    .plans-heading-row > p {
+      max-width: 450px;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 24px;
+    }
+
+    .plans-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      background: white;
+      border: 1px solid rgba(40,42,96,.13);
+    }
+
+    .plans-card-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: block;
+      object-fit: cover;
+      background: var(--plans-aqua);
+    }
+
+    .plans-card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+      padding: 26px;
+    }
+
+    .plans-card-number {
+      color: var(--plans-teal);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .plans-card h3 {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      margin: 14px 0;
+    }
+
+    .plans-card p {
+      font-size: .94rem;
+      line-height: 1.85;
+      margin: 0 0 22px;
+    }
+
+    .plans-card-label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 10px;
+      background: var(--plans-aqua);
+      color: var(--plans-navy);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .plans-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: auto;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--plans-teal);
+      color: var(--plans-navy);
+      font-size: .9rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .plans-link:hover {
+      color: #168983;
+    }
+
+    .plans-explainer {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .plans-explainer-image {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      display: block;
+      object-fit: cover;
+      background: var(--plans-aqua);
+    }
+
+    .plans-explainer-copy p {
+      line-height: 1.85;
+    }
+
+    .plans-steps {
+      margin-top: 26px;
+      border-top: 1px solid rgba(40,42,96,.16);
+    }
+
+    .plans-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(40,42,96,.16);
+    }
+
+    .plans-step-number {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--plans-aqua);
+      color: var(--plans-navy);
+      font-weight: 800;
+    }
+
+    .plans-step h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .plans-step p {
+      margin: 0;
+      font-size: .91rem;
+      line-height: 1.75;
+    }
+
+    .plans-note-panel {
+      padding: clamp(28px,5vw,55px);
+      background: var(--plans-navy);
+      color: white;
+    }
+
+    .plans-note-panel h2 {
+      font-size: clamp(1.8rem,4vw,3.2rem);
+      line-height: 1.1;
+      margin: 12px 0 20px;
+    }
+
+    .plans-note-panel p {
+      max-width: 800px;
+      line-height: 1.85;
+    }
+
+    .plans-note-panel .plans-link {
+      color: white;
+      margin-top: 15px;
+    }
+
+    .plans-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: clamp(35px,6vw,70px);
+      background: var(--plans-teal);
+      color: white;
+    }
+
+    .plans-cta h2 {
+      font-size: clamp(1.8rem,4vw,3rem);
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    .plans-cta p {
+      max-width: 680px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .plans-cta .plans-button {
+      flex-shrink: 0;
+      background: var(--plans-navy);
+    }
+
+    .plans-cta .plans-button:hover {
+      color: var(--plans-navy);
+      background: white;
+    }
+
+    .plans-note {
+      font-size: .82rem;
+      line-height: 1.7;
+      opacity: .8;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 950px) {
+      .plans-intro,
+      .plans-explainer {
+        grid-template-columns: 1fr;
+      }
+
+      .plans-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      .plans-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .plans-hero {
+        min-height: 520px;
+        padding: 28px 22px 42px;
+      }
+
+      .plans-hero h1 {
+        font-size: clamp(2.8rem,14vw,4.5rem);
+      }
+
+      .plans-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .plans-button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .plans-grid,
+      .plans-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .plans-cta {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .plans-button {
+        transition: none;
+      }
+    }
+  </style>
 </head>
-<body id="top">
+
+<body id="top" class="plans-page">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 <header class="site-header">
   <div class="header-topline" aria-hidden="true"></div>
+
   <div class="header-inner">
     <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
       <span class="brand-mark" aria-hidden="true">
@@ -26,104 +475,378 @@
       </span>
       <span class="brand-name">Municipalidad <strong>de Rapa Nui</strong></span>
     </a>
+
     <div class="header-tools" aria-label="Canales de contacto">
-      <a class="icon-link" href="contacto.html" aria-label="Información de contacto">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="5" width="18" height="14" rx="1"/>
-          <path d="m4 7 8 6 8-6"/>
-        </svg>
+      <a class="icon-link" href="https://www.facebook.com/profile.php?id=100069192400123" target="_blank" rel="noopener noreferrer" aria-label="Facebook municipal">
+        <svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1z"/></svg>
+      </a>
+      <a class="icon-link" href="https://www.instagram.com/haretavana/" target="_blank" rel="noopener noreferrer" aria-label="Instagram municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
       </a>
       <a class="icon-link" href="contacto.html" aria-label="Teléfono de contacto">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/></svg>
+      </a>
+      <a class="icon-link" href="contacto.html" aria-label="Correo municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg>
       </a>
     </div>
+
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
       <span class="menu-toggle-lines" aria-hidden="true"></span>
       <span class="menu-toggle-label">Menú</span>
     </button>
+
     <nav class="main-nav" id="menu-principal" aria-label="Navegación principal">
       <a href="index.html">Inicio</a>
       <a href="tramites.html">Trámites y servicios</a>
       <a href="direcciones.html">Direcciones</a>
-      <a href="comunidad.html">Comunidad</a>
+      <a href="comunidad.html">Participación</a>
       <a href="desarrollo.html">Desarrollo</a>
-      <a href="planes.html" aria-current="page">Planes</a>
-      <a href="explora.html">Explora</a>
+      <a href="planes.html" aria-current="page">Planes municipales</a>
+      <a href="explora.html">Explora Rapa Nui</a>
     </nav>
   </div>
 </header>
+
 <main id="contenido">
-  <section class="interior-hero">
-    <div class="interior-hero-inner reveal">
-      <p class="eyebrow">Planificación y futuro</p>
-      <h1>Planificar hoy para construir el mañana.</h1>
-      <p class="interior-lead">La planificación municipal permite organizar prioridades, orientar iniciativas y proyectar acciones que respondan a las necesidades de la comuna y su comunidad.</p>
-      <div class="breadcrumb">
-        <a href="index.html">Inicio</a>
-        <span>/</span>
-        <span aria-current="page">Planes municipales</span>
+
+  <!-- PORTADA -->
+  <section class="plans-hero">
+    <div class="plans-hero-content">
+      <span class="plans-kicker">Territorio · Planificación · Futuro</span>
+      <h1>Planificar<br>para avanzar.</h1>
+      <p>
+        Conoce los instrumentos que orientan el desarrollo de Rapa Nui,
+        la planificación turística y la organización territorial de la comuna.
+        Accede a los documentos y publicaciones oficiales.
+      </p>
+
+      <div class="plans-hero-actions">
+        <a class="plans-button" href="#instrumentos">
+          Conocer los planes <span aria-hidden="true">↘</span>
+        </a>
+        <a class="plans-button plans-button-light"
+           href="https://rapanui.net/#"
+           target="_blank" rel="noopener noreferrer">
+          Sitio municipal oficial <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </div>
-    <div class="interior-mark" aria-hidden="true">PLANES</div>
   </section>
-  <section class="section interior-section">
-    <div class="section-heading reveal">
+
+  <!-- INTRODUCCIÓN -->
+  <section class="plans-section">
+    <div class="plans-inner plans-intro">
       <div>
-        <p class="eyebrow">Instrumentos y prioridades</p>
-        <h2>Una visión compartida<br>para la comuna.</h2>
+        <span class="plans-eyebrow">Planificación comunal</span>
+        <h2 class="plans-title">Una visión compartida para el territorio.</h2>
       </div>
-      <p>Los planes y proyectos permiten identificar desafíos, establecer objetivos y orientar el trabajo municipal. Aquí se organizan áreas de interés para comprender cómo se proyecta el desarrollo comunal.</p>
-    </div>
-    <div class="detail-grid">
-      <article class="detail-card reveal">
-        <span class="detail-index">01</span>
-        <h2>Planificación comunal</h2>
-        <p>Conoce el propósito de la planificación territorial y su relación con las necesidades actuales y futuras de la comuna.</p>
-        <a class="text-link" href="desarrollo.html">Explorar el desarrollo comunal</a>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-index">02</span>
-        <h2>Proyectos municipales</h2>
-        <p>Las iniciativas municipales contribuyen a orientar mejoras y responder a distintos desafíos del territorio.</p>
-        <a class="text-link" href="desarrollo.html">Conocer áreas de desarrollo</a>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-index">03</span>
-        <h2>Desarrollo sostenible</h2>
-        <p>La planificación considera la importancia de compatibilizar las necesidades de la comunidad con el cuidado del entorno.</p>
-        <a class="text-link" href="explora.html">Conocer el territorio</a>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-index">04</span>
-        <h2>Espacio público</h2>
-        <p>La organización de los espacios compartidos influye en la movilidad, la convivencia y la calidad de vida de las personas.</p>
-        <a class="text-link" href="desarrollo.html">Explorar iniciativas territoriales</a>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-index">05</span>
-        <h2>Participación ciudadana</h2>
-        <p>La participación de la comunidad permite incorporar distintas experiencias y perspectivas en las decisiones que afectan a la comuna.</p>
-        <a class="text-link" href="comunidad.html">Conocer espacios de participación</a>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-index">06</span>
-        <h2>Transparencia y seguimiento</h2>
-        <p>El acceso a la información pública permite conocer antecedentes, revisar documentos y comprender la gestión municipal.</p>
-        <a class="text-link" href="transparencia.html">Ir a transparencia</a>
-      </article>
+
+      <div class="plans-intro-copy">
+        <p>
+          La planificación comunal reúne instrumentos que ayudan a orientar
+          las decisiones públicas, establecer objetivos y organizar las
+          prioridades de desarrollo de un territorio.
+        </p>
+        <p>
+          En esta sección encontrarás tres accesos principales: el Plan de
+          Desarrollo Comunal (PLADECO), el Plan de Desarrollo Turístico
+          (PLADETUR) y el Plan Regulador. Cada instrumento aborda una escala
+          distinta de planificación y debe consultarse en su fuente oficial
+          para revisar sus contenidos, versiones y estado de vigencia.
+        </p>
+
+        <div class="plans-summary">
+          <div class="plans-summary-item">
+            <strong>Comunidad</strong>
+            <span>Objetivos y prioridades para el desarrollo comunal.</span>
+          </div>
+          <div class="plans-summary-item">
+            <strong>Turismo</strong>
+            <span>Orientaciones para la planificación turística.</span>
+          </div>
+          <div class="plans-summary-item">
+            <strong>Territorio</strong>
+            <span>Planificación y ordenamiento territorial.</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <section class="contact-band reveal">
-    <div>
-      <p class="eyebrow">Construcción colectiva</p>
-      <h2>El futuro de la comuna se construye entre todos.</h2>
-      <p>Infórmate, participa y conoce los espacios disponibles para aportar a las iniciativas de la comunidad.</p>
+
+  <!-- INSTRUMENTOS -->
+  <section class="plans-section plans-documents" id="instrumentos">
+    <div class="plans-inner">
+      <div class="plans-heading-row">
+        <div>
+          <span class="plans-eyebrow">Documentos oficiales</span>
+          <h2 class="plans-title">Tres instrumentos, distintas escalas.</h2>
+        </div>
+        <p>
+          Accede a las páginas institucionales para revisar los documentos
+          publicados, conocer sus antecedentes y consultar la información
+          disponible.
+        </p>
+      </div>
+
+      <div class="plans-grid">
+
+        <!-- PLADECO -->
+        <article class="plans-card">
+          <img
+            class="plans-card-image"
+            src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=85"
+            alt="Paisaje insular, imagen ilustrativa para la planificación comunal"
+            loading="lazy">
+
+          <div class="plans-card-content">
+            <span class="plans-card-number">01 / DESARROLLO COMUNAL</span>
+            <h3>PLADECO</h3>
+            <span class="plans-card-label">Plan de Desarrollo Comunal</span>
+            <p>
+              El PLADECO es un instrumento de planificación y gestión
+              municipal que orienta el desarrollo de la comuna, sus
+              prioridades y objetivos a mediano plazo.
+            </p>
+            <p>
+              Consulta la publicación oficial para revisar el contenido
+              disponible y los antecedentes del plan.
+            </p>
+            <a class="plans-link"
+               href="https://rapanui.net/secciones/pladeco-8115"
+               target="_blank" rel="noopener noreferrer">
+              Consultar PLADECO <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PLADETUR -->
+        <article class="plans-card">
+          <img
+            class="plans-card-image"
+            src="https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg"
+            alt="Paisaje costero de Rapa Nui, imagen relacionada con el turismo"
+            loading="lazy">
+
+          <div class="plans-card-content">
+            <span class="plans-card-number">02 / DESARROLLO TURÍSTICO</span>
+            <h3>PLADETUR</h3>
+            <span class="plans-card-label">Plan de Desarrollo Turístico</span>
+            <p>
+              Instrumento vinculado a la planificación del turismo comunal.
+              Permite abordar el desarrollo de la actividad turística
+              considerando el territorio, la comunidad y el patrimonio.
+            </p>
+            <p>
+              Revisa el contenido publicado por la municipalidad para
+              conocer sus orientaciones y antecedentes.
+            </p>
+            <a class="plans-link"
+               href="https://rapanui.net/secciones/pladetur-8252"
+               target="_blank" rel="noopener noreferrer">
+              Consultar PLADETUR <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PLAN REGULADOR -->
+        <article class="plans-card">
+          <img
+            class="plans-card-image"
+            src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=85"
+            alt="Vista urbana ilustrativa para la sección de planificación territorial"
+            loading="lazy">
+
+          <div class="plans-card-content">
+            <span class="plans-card-number">03 / ORDENAMIENTO TERRITORIAL</span>
+            <h3>Plan Regulador</h3>
+            <span class="plans-card-label">Planificación territorial</span>
+            <p>
+              Instrumento relacionado con la planificación urbana y la
+              organización del territorio, de acuerdo con sus disposiciones
+              y antecedentes oficiales.
+            </p>
+            <p>
+              Consulta la página municipal para revisar los documentos
+              disponibles y verificar las disposiciones aplicables.
+            </p>
+            <a class="plans-link"
+               href="https://rapanui.net/secciones/plan-regulador-8184"
+               target="_blank" rel="noopener noreferrer">
+              Consultar Plan Regulador <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="plans-note">
+        Las fotografías son ilustrativas y no constituyen documentación
+        cartográfica ni imágenes oficiales de los instrumentos. Para decisiones
+        sobre uso de suelo, permisos o vigencia normativa, consulta directamente
+        los documentos oficiales y las unidades municipales competentes.
+      </p>
     </div>
-    <a class="button button-dark" href="comunidad.html">Participar en comunidad</a>
   </section>
+
+  <!-- CÓMO UTILIZAR LA SECCIÓN -->
+  <section class="plans-section">
+    <div class="plans-inner plans-explainer">
+      <div>
+        <img
+          class="plans-explainer-image"
+          src="https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg"
+          alt="Paisaje de Rapa Nui que acompaña la información sobre planificación comunal"
+          loading="lazy">
+      </div>
+
+      <div class="plans-explainer-copy">
+        <span class="plans-eyebrow">Orientación ciudadana</span>
+        <h2 class="plans-title">¿Qué plan necesitas consultar?</h2>
+        <p>
+          Cada instrumento responde a preguntas diferentes. Identifica el
+          ámbito que necesitas revisar y entra en su publicación oficial.
+        </p>
+
+        <div class="plans-steps">
+          <div class="plans-step">
+            <span class="plans-step-number">01</span>
+            <div>
+              <h3>Si buscas objetivos para la comuna</h3>
+              <p>
+                Comienza por el PLADECO y revisa los documentos y antecedentes
+                relacionados con el desarrollo comunal.
+              </p>
+            </div>
+          </div>
+
+          <div class="plans-step">
+            <span class="plans-step-number">02</span>
+            <div>
+              <h3>Si buscas planificación turística</h3>
+              <p>
+                Consulta el PLADETUR para encontrar la información municipal
+                relacionada con el desarrollo turístico.
+              </p>
+            </div>
+          </div>
+
+          <div class="plans-step">
+            <span class="plans-step-number">03</span>
+            <div>
+              <h3>Si necesitas información territorial</h3>
+              <p>
+                Revisa el Plan Regulador y confirma con la municipalidad
+                cuáles son las disposiciones y documentos vigentes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANIFICACIÓN Y TERRITORIO -->
+  <section class="plans-section" style="padding-top: 0;">
+    <div class="plans-inner">
+      <div class="plans-note-panel">
+        <span class="plans-kicker">Información y transparencia</span>
+        <h2>Consulta siempre la fuente oficial.</h2>
+        <p>
+          Los instrumentos pueden tener documentos complementarios,
+          modificaciones, anexos o versiones diferentes. Antes de utilizar
+          sus contenidos para un proyecto, trámite o decisión, verifica la
+          fecha, el alcance y el estado de vigencia directamente con la
+          Municipalidad de Rapa Nui.
+        </p>
+        <a class="plans-link"
+           href="https://rapanui.net/#"
+           target="_blank" rel="noopener noreferrer">
+          Visitar Municipalidad de Rapa Nui <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONEXIONES -->
+  <section class="plans-section" style="padding-top: 0;">
+    <div class="plans-inner">
+      <div class="plans-heading-row">
+        <div>
+          <span class="plans-eyebrow">Explora el sitio municipal</span>
+          <h2 class="plans-title">La planificación se conecta con la comunidad.</h2>
+        </div>
+        <p>
+          Encuentra otras secciones de tu portal municipal para conocer
+          los servicios, las direcciones y las iniciativas relacionadas
+          con el desarrollo de Rapa Nui.
+        </p>
+      </div>
+
+      <div class="plans-grid">
+        <article class="plans-card">
+          <div class="plans-card-content">
+            <span class="plans-card-number">01 / GESTIÓN</span>
+            <h3>Direcciones municipales</h3>
+            <p>
+              Encuentra las áreas municipales y accede a la información
+              institucional de sus servicios.
+            </p>
+            <a class="plans-link" href="direcciones.html">
+              Ver direcciones <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="plans-card">
+          <div class="plans-card-content">
+            <span class="plans-card-number">02 / COMUNIDAD</span>
+            <h3>Participación ciudadana</h3>
+            <p>
+              Explora la sección dedicada a la comunidad, las corporaciones
+              y las iniciativas de participación.
+            </p>
+            <a class="plans-link" href="comunidad.html">
+              Ir a comunidad <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="plans-card">
+          <div class="plans-card-content">
+            <span class="plans-card-number">03 / TERRITORIO</span>
+            <h3>Explora Rapa Nui</h3>
+            <p>
+              Conoce el patrimonio, los sitios de visitación y la información
+              turística vinculada al territorio.
+            </p>
+            <a class="plans-link" href="explora.html">
+              Explorar Rapa Nui <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="plans-section" style="padding-top: 0;">
+    <div class="plans-inner plans-cta">
+      <div>
+        <h2>¿Necesitas orientación municipal?</h2>
+        <p>
+          Si no encuentras el documento que buscas, utiliza el canal de
+          contacto municipal para consultar dónde obtener información oficial.
+        </p>
+      </div>
+      <a class="plans-button" href="contacto.html">
+        Ir a contacto <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
 </main>
+
 <footer class="site-footer">
   <div class="footer-main">
     <div class="footer-brand">
@@ -131,18 +854,21 @@
       <strong>Rapa Nui</strong>
       <p>Información y servicios para la comunidad.</p>
     </div>
+
     <div class="footer-column">
       <h2>Explorar</h2>
       <a href="tramites.html">Trámites y servicios</a>
       <a href="direcciones.html">Direcciones</a>
-      <a href="planes.html">Planes municipales</a>
+      <a href="planes.html" aria-current="page">Planes municipales</a>
     </div>
+
     <div class="footer-column">
       <h2>Información</h2>
       <a href="noticias.html">Noticias</a>
       <a href="transparencia.html">Transparencia</a>
       <a href="contacto.html">Contacto</a>
     </div>
+
     <div class="footer-column">
       <h2>Comunidad</h2>
       <a href="comunidad.html">Participación</a>
@@ -150,10 +876,13 @@
       <a href="explora.html">Explora Rapa Nui</a>
     </div>
   </div>
+
   <div class="footer-bottom">
     <span>Municipalidad de Rapa Nui</span>
-    <a href="#top">Volver al inicio</a>
+    <a href="#top">Volver al inicio ↑</a>
   </div>
 </footer>
+
 </body>
 </html>
+```
