@@ -14,39 +14,17 @@
   <style>
     .community-hero {
       position: relative;
-      isolation: isolate;
       display: flex;
       align-items: center;
       min-height: 580px;
       padding: clamp(35px, 7vw, 90px);
       overflow: hidden;
       color: #FAF9F5;
-      background: #282A60;
-    }
-
-    .community-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
+      background-color: #282A60;
       background-image: url("https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg");
       background-position: center 52%;
       background-size: cover;
       background-repeat: no-repeat;
-    }
-
-    .community-hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(
-        90deg,
-        rgba(40, 42, 96, 0.94) 0%,
-        rgba(40, 42, 96, 0.82) 35%,
-        rgba(40, 42, 96, 0.45) 68%,
-        rgba(40, 42, 96, 0.12) 100%
-      );
     }
 
     .community-hero-content {
@@ -100,6 +78,15 @@
       letter-spacing: -0.04em;
     }
 
+    .community-intro .eyebrow,
+    .community-section-heading .eyebrow {
+      color: #168B87;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
     .community-intro-copy p {
       margin: 0 0 18px;
       color: #55566B;
@@ -115,15 +102,6 @@
     .community-section-heading {
       max-width: 740px;
       margin-bottom: 42px;
-    }
-
-    .community-section-heading .eyebrow,
-    .community-intro .eyebrow {
-      color: #168B87;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
     }
 
     .community-section-heading p {
@@ -307,15 +285,6 @@
         min-height: 540px;
       }
 
-      .community-hero::after {
-        background: linear-gradient(
-          90deg,
-          rgba(40, 42, 96, 0.95) 0%,
-          rgba(40, 42, 96, 0.8) 50%,
-          rgba(40, 42, 96, 0.38) 100%
-        );
-      }
-
       .community-intro {
         grid-template-columns: 1fr;
         gap: 28px;
@@ -340,19 +309,7 @@
       .community-hero {
         min-height: 580px;
         padding: 25px;
-      }
-
-      .community-hero::before {
         background-position: 58% center;
-      }
-
-      .community-hero::after {
-        background: linear-gradient(
-          90deg,
-          rgba(40, 42, 96, 0.94) 0%,
-          rgba(40, 42, 96, 0.82) 65%,
-          rgba(40, 42, 96, 0.55) 100%
-        );
       }
 
       .community-hero-content {
@@ -535,8 +492,8 @@
       </div>
     </section>
 
-    <section class="section-container" id="participacion">
-      <div class="community-participation">
+    <section class="section-container" style="padding-top: 80px; padding-bottom: 80px;">
+      <div class="community-participation" id="participacion">
         <div class="community-participation-image" role="img" aria-label="Paisaje de Rapa Nui"></div>
         <div class="community-participation-content">
           <span class="eyebrow">Tu voz importa</span>
