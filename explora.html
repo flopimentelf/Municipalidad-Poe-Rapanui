@@ -1,178 +1,481 @@
-
- <!doctype html>
+```html
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#282A60">
-  <meta name="description" content="Explora Rapa Nui, su territorio, patrimonio cultural y entorno natural.">
+  <meta name="description" content="Explora Rapa Nui: sitios patrimoniales, paisajes, cultura, Tāpati y turismo responsable.">
   <title>Explora Rapa Nui | Municipalidad de Rapa Nui</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
-</head>
-<body id="top">
-<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<header class="site-header">
-  <div class="header-topline" aria-hidden="true"></div>
-  <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48">
-          <path d="M24 4 41 14v20L24 44 7 34V14z"/>
-          <path d="M16 18h16M16 24h16M16 30h10"/>
-        </svg>
-      </span>
-      <span class="brand-name">Municipalidad <strong>de Rapa Nui</strong></span>
-    </a>
+  <style>
+    :root {
+      --explora-navy: #282A60;
+      --explora-teal: #23A6A0;
+      --explora-aqua: #DCEBE9;
+      --explora-cream: #F7F6F0;
+    }
 
-    <div class="header-tools" aria-label="Canales de contacto">
-      <a class="icon-link" href="contacto.html" aria-label="Información de contacto">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="5" width="18" height="14" rx="1"/>
-          <path d="m4 7 8 6 8-6"/>
-        </svg>
-      </a>
-      <a class="icon-link" href="contacto.html" aria-label="Teléfono de contacto">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/>
-        </svg>
-      </a>
-    </div>
+    .explora-page {
+      color: var(--explora-navy);
+      overflow: hidden;
+    }
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-      <span class="menu-toggle-lines" aria-hidden="true"></span>
-      <span class="menu-toggle-label">Menú</span>
-    </button>
+    .explora-hero {
+      min-height: 650px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      isolation: isolate;
+      color: white;
+      background: var(--explora-navy);
+      padding: clamp(30px, 7vw, 90px);
+    }
 
-    <nav class="main-nav" id="menu-principal" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-      <a href="tramites.html">Trámites y servicios</a>
-      <a href="direcciones.html">Direcciones</a>
-      <a href="comunidad.html">Comunidad</a>
-      <a href="desarrollo.html">Desarrollo</a>
-      <a href="planes.html">Planes</a>
-      <a href="explora.html" aria-current="page">Explora</a>
-    </nav>
-  </div>
-</header>
+    .explora-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(24,26,62,.88), rgba(24,26,62,.20)),
+        url("https://www.easterisland.travel/images/media/images/archaeology/easter-island-statues-ahu-tongariki-fallen-moai.jpg")
+        center 55% / cover no-repeat;
+    }
 
-<main id="contenido">
-  <section class="interior-hero">
-    <div class="interior-hero-inner reveal">
-      <p class="eyebrow">Territorio, cultura y naturaleza</p>
-      <h1>Conoce Rapa Nui desde su territorio y su memoria.</h1>
-      <p class="interior-lead">Un espacio para descubrir la identidad de la isla, reconocer el valor de su patrimonio y comprender la importancia de cuidar el entorno que compartimos.</p>
-      <div class="breadcrumb">
-        <a href="index.html">Inicio</a>
-        <span>/</span>
-        <span aria-current="page">Explora</span>
-      </div>
-    </div>
-    <div class="interior-mark" aria-hidden="true">RAPA NUI</div>
-  </section>
+    .explora-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(0deg, rgba(22,24,55,.45), transparent 65%);
+    }
 
-  <section class="section interior-section">
-    <div class="section-heading reveal">
-      <div>
-        <p class="eyebrow">Una isla, múltiples dimensiones</p>
-        <h2>Descubrir también<br>es aprender a cuidar.</h2>
-      </div>
-      <p>El territorio de Rapa Nui reúne paisajes, conocimientos, prácticas culturales y una historia viva. Conocerlo implica acercarse a su identidad con respeto y responsabilidad.</p>
-    </div>
+    .explora-hero-content {
+      max-width: 850px;
+    }
 
-    <div class="detail-grid">
-      <article class="detail-card reveal">
-        <span class="detail-index">01</span>
-        <h2>Territorio y paisaje</h2>
-        <p>Reconoce la relación entre el paisaje insular, los espacios habitados y la vida cotidiana de la comunidad.</p>
-        <a class="text-link" href="desarrollo.html">Conocer el desarrollo territorial</a>
-      </article>
+    .explora-kicker {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .75rem;
+      font-weight: 800;
+      color: #82DED5;
+      margin-bottom: 16px;
+    }
 
-      <article class="detail-card reveal">
-        <span class="detail-index">02</span>
-        <h2>Patrimonio cultural</h2>
-        <p>Acércate a la identidad rapanui y al valor de proteger las expresiones culturales que forman parte de su memoria.</p>
-        <a class="text-link" href="comunidad.html">Conocer la comunidad</a>
-      </article>
+    .explora-hero h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      max-width: 800px;
+      margin: 0 0 24px;
+    }
 
-      <article class="detail-card reveal">
-        <span class="detail-index">03</span>
-        <h2>Entorno natural</h2>
-        <p>Comprende la importancia de cuidar los ecosistemas de la isla y de promover una relación responsable con la naturaleza.</p>
-        <a class="text-link" href="desarrollo.html">Explorar iniciativas de desarrollo</a>
-      </article>
+    .explora-hero p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.8;
+      max-width: 660px;
+      margin: 0;
+    }
 
-      <article class="detail-card reveal">
-        <span class="detail-index">04</span>
-        <h2>Historia y memoria</h2>
-        <p>La historia del territorio y los conocimientos transmitidos entre generaciones son parte esencial de la identidad de Rapa Nui.</p>
-        <a class="text-link" href="comunidad.html">Conocer iniciativas comunitarias</a>
-      </article>
+    .explora-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
 
-      <article class="detail-card reveal">
-        <span class="detail-index">05</span>
-        <h2>Cuidado del entorno</h2>
-        <p>La protección del patrimonio y de los espacios compartidos requiere compromiso, respeto y participación de todas las personas.</p>
-        <a class="text-link" href="contacto.html">Contactar a la municipalidad</a>
-      </article>
+    .explora-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      min-height: 48px;
+      padding: 14px 20px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      background: var(--explora-teal);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+    }
 
-      <article class="detail-card reveal">
-        <span class="detail-index">06</span>
-        <h2>Información para visitantes</h2>
-        <p>Conocer las características y el valor del territorio ayuda a promover una visita consciente y respetuosa con la comunidad.</p>
-        <a class="text-link" href="contacto.html">Consultar información</a>
-      </article>
-    </div>
-  </section>
+    .explora-button:hover {
+      background: #168983;
+      color: white;
+      transform: translateY(-2px);
+    }
 
-  <section class="contact-band reveal">
-    <div>
-      <p class="eyebrow">Un compromiso compartido</p>
-      <h2>Explorar Rapa Nui también significa respetarla.</h2>
-      <p>Conocer el territorio es el primer paso para valorar su patrimonio y contribuir a su cuidado.</p>
-    </div>
-    <a class="button button-dark" href="comunidad.html">Conoce la comunidad</a>
-  </section>
-</main>
+    .explora-button-light {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,.7);
+    }
 
-<footer class="site-footer">
-  <div class="footer-main">
-    <div class="footer-brand">
-      <span class="footer-kicker">Municipalidad de</span>
-      <strong>Rapa Nui</strong>
-      <p>Información y servicios para la comunidad.</p>
-    </div>
+    .explora-button-light:hover {
+      background: white;
+      color: var(--explora-navy);
+    }
 
-    <div class="footer-column">
-      <h2>Explorar</h2>
-      <a href="tramites.html">Trámites y servicios</a>
-      <a href="direcciones.html">Direcciones</a>
-      <a href="planes.html">Planes municipales</a>
-    </div>
+    .explora-section {
+      padding: clamp(55px, 8vw, 100px) clamp(20px, 6vw, 85px);
+    }
 
-    <div class="footer-column">
-      <h2>Información</h2>
-      <a href="noticias.html">Noticias</a>
-      <a href="transparencia.html">Transparencia</a>
-      <a href="contacto.html">Contacto</a>
-    </div>
+    .explora-section-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
 
-    <div class="footer-column">
-      <h2>Comunidad</h2>
-      <a href="comunidad.html">Participación</a>
-      <a href="desarrollo.html">Desarrollo</a>
-      <a href="explora.html">Explora Rapa Nui</a>
-    </div>
-  </div>
+    .explora-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: .74rem;
+      font-weight: 800;
+      color: var(--explora-teal);
+    }
 
-  <div class="footer-bottom">
-    <span>Municipalidad de Rapa Nui</span>
-    <a href="#top">Volver al inicio</a>
-  </div>
-</footer>
-</body>
-</html>
+    .explora-section-title,
+    .explora-intro h2 {
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      margin: 10px 0 20px;
+    }
+
+    .explora-intro {
+      display: grid;
+      grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+      gap: 50px;
+      align-items: start;
+    }
+
+    .explora-intro-copy,
+    .explora-section-lead {
+      line-height: 1.85;
+      max-width: 760px;
+    }
+
+    .explora-stats {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .explora-stat {
+      padding: 20px;
+      background: var(--explora-aqua);
+    }
+
+    .explora-stat strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 7px;
+    }
+
+    .explora-stat span {
+      display: block;
+      font-size: .84rem;
+      line-height: 1.6;
+    }
+
+    .explora-places {
+      background: var(--explora-cream);
+    }
+
+    .explora-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 34px;
+    }
+
+    .explora-heading-row > div {
+      max-width: 760px;
+    }
+
+    .explora-heading-row p {
+      line-height: 1.8;
+      max-width: 450px;
+      margin-bottom: 8px;
+    }
+
+    .explora-place-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 22px;
+    }
+
+    .explora-place-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      background: white;
+      border: 1px solid rgba(40,42,96,.12);
+    }
+
+    .explora-place-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--explora-aqua);
+    }
+
+    .explora-place-copy {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px;
+    }
+
+    .explora-place-number {
+      color: var(--explora-teal);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .explora-place-card h3 {
+      font-size: 1.35rem;
+      line-height: 1.25;
+      margin: 12px 0;
+    }
+
+    .explora-place-card p {
+      font-size: .94rem;
+      line-height: 1.8;
+      margin: 0 0 22px;
+    }
+
+    .explora-text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: auto;
+      color: var(--explora-navy);
+      font-size: .9rem;
+      font-weight: 800;
+      text-decoration: none;
+      border-bottom: 2px solid var(--explora-teal);
+      padding-bottom: 5px;
+    }
+
+    .explora-text-link:hover {
+      color: #168983;
+    }
+
+    .explora-tapati {
+      display: grid;
+      grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr);
+      background: var(--explora-navy);
+      color: white;
+    }
+
+    .explora-tapati-image {
+      min-height: 480px;
+      background:
+        linear-gradient(0deg,rgba(24,26,62,.12),rgba(24,26,62,.12)),
+        url("https://services.meteored.com/img/article/asi-ha-sido-el-inicio-de-tapati-rapa-nui-2026-el-festival-cultural-mas-potente-de-la-isla-de-pascua-1770293662094_1024.jpg")
+        center / cover no-repeat;
+    }
+
+    .explora-tapati-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: clamp(30px,6vw,75px);
+    }
+
+    .explora-tapati-copy h2 {
+      font-size: clamp(2.2rem,4vw,4rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin: 12px 0 22px;
+    }
+
+    .explora-tapati-copy p {
+      line-height: 1.85;
+      margin: 0 0 18px;
+    }
+
+    .explora-tapati-copy .explora-text-link {
+      color: white;
+      margin-top: 10px;
+    }
+
+    .explora-responsible {
+      background: var(--explora-aqua);
+    }
+
+    .explora-responsible-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 20px;
+      margin-top: 34px;
+    }
+
+    .explora-rule {
+      padding: 26px;
+      background: rgba(255,255,255,.78);
+      border-top: 3px solid var(--explora-teal);
+    }
+
+    .explora-rule .rule-number {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--explora-teal);
+      margin-bottom: 18px;
+    }
+
+    .explora-rule h3 {
+      font-size: 1.1rem;
+      margin: 0 0 12px;
+    }
+
+    .explora-rule p {
+      font-size: .93rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .explora-visit {
+      display: grid;
+      grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
+      gap: 45px;
+      align-items: start;
+    }
+
+    .explora-checklist {
+      list-style: none;
+      margin: 24px 0;
+      padding: 0;
+    }
+
+    .explora-checklist li {
+      position: relative;
+      padding: 15px 0 15px 30px;
+      border-bottom: 1px solid rgba(40,42,96,.14);
+      line-height: 1.7;
+    }
+
+    .explora-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 15px;
+      font-weight: 800;
+      color: var(--explora-teal);
+    }
+
+    .explora-info-panel {
+      padding: clamp(25px,4vw,42px);
+      background: var(--explora-cream);
+    }
+
+    .explora-info-panel h3 {
+      font-size: 1.5rem;
+      margin: 0 0 15px;
+    }
+
+    .explora-info-panel p {
+      line-height: 1.8;
+    }
+
+    .explora-info-panel .explora-button {
+      margin: 10px 0 18px;
+    }
+
+    .explora-final-cta {
+      background: var(--explora-teal);
+      color: white;
+      padding: clamp(35px,6vw,70px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .explora-final-cta h2 {
+      font-size: clamp(1.8rem,4vw,3.2rem);
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    .explora-final-cta p {
+      max-width: 680px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .explora-final-cta .explora-button {
+      flex-shrink: 0;
+      background: var(--explora-navy);
+    }
+
+    .explora-final-cta .explora-button:hover {
+      background: white;
+      color: var(--explora-navy);
+    }
+
+    .explora-note {
+      font-size: .82rem;
+      line-height: 1.7;
+      opacity: .8;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .explora-hero {
+        min-height: 540px;
+      }
+
+      .explora-intro,
+      .explora-tapati,
+      .explora-visit {
+        grid-template-columns: 1fr;
+      }
+
+      .explora-place-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      .explora-responsible-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .explora-tapati-image {
+        min-height: 350px;
+      }
+
+      .explora-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .explora-hero {
+        min-height: 540px;
+        padding: 28px 22px 42px;
+      }
+
+      .explora-hero h1 {
+        font-size: clamp(2.7rem,14vw,4.5rem);
+      }
+
+      .expl
