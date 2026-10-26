@@ -478,4 +478,561 @@
         font-size: clamp(2.7rem,14vw,4.5rem);
       }
 
-      .expl
+      .explora-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .explora-button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .explora-place-grid,
+      .explora-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .explora-final-cta {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .explora-tapati-image {
+        min-height: 280px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .explora-button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body id="top" class="explora-page">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="header-topline" aria-hidden="true"></div>
+
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48">
+          <path d="M24 4 41 14v20L24 44 7 34V14z"/>
+          <path d="M16 18h16M16 24h16M16 30h10"/>
+        </svg>
+      </span>
+      <span class="brand-name">Municipalidad <strong>de Rapa Nui</strong></span>
+    </a>
+
+    <div class="header-tools" aria-label="Canales de contacto">
+      <a class="icon-link" href="https://www.facebook.com/profile.php?id=100069192400123" target="_blank" rel="noopener noreferrer" aria-label="Facebook municipal">
+        <svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1z"/></svg>
+      </a>
+      <a class="icon-link" href="https://www.instagram.com/haretavana/" target="_blank" rel="noopener noreferrer" aria-label="Instagram municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+      </a>
+      <a class="icon-link" href="contacto.html" aria-label="Teléfono de contacto">
+        <svg viewBox="0 0 24 24"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/></svg>
+      </a>
+      <a class="icon-link" href="contacto.html" aria-label="Correo municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg>
+      </a>
+    </div>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="menu-toggle-lines" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menú</span>
+    </button>
+
+    <nav class="main-nav" id="menu-principal" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="tramites.html">Trámites y servicios</a>
+      <a href="direcciones.html">Direcciones</a>
+      <a href="comunidad.html">Participación</a>
+      <a href="desarrollo.html">Desarrollo</a>
+      <a href="planes.html">Planes municipales</a>
+      <a href="explora.html" aria-current="page">Explora Rapa Nui</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- PORTADA -->
+  <section class="explora-hero">
+    <div class="explora-hero-content">
+      <span class="explora-kicker">Territorio · Cultura · Naturaleza</span>
+      <h1>Explora<br>Rapa Nui</h1>
+      <p>
+        Un territorio de memoria viva, paisajes volcánicos y patrimonio ancestral.
+        Conoce sus lugares, descubre sus tradiciones y prepara una visita que
+        respete la cultura y el entorno de la isla.
+      </p>
+      <div class="explora-hero-actions">
+        <a class="explora-button" href="#sitios">
+          Descubrir los sitios <span aria-hidden="true">↘</span>
+        </a>
+        <a class="explora-button explora-button-light"
+           href="https://rapanui.net/secciones/tpati-8170"
+           target="_blank" rel="noopener noreferrer">
+          Conocer Tāpati <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCCIÓN -->
+  <section class="explora-section">
+    <div class="explora-section-inner explora-intro">
+      <div>
+        <span class="explora-eyebrow">Un territorio único</span>
+        <h2>Más que un destino, una cultura viva.</h2>
+      </div>
+
+      <div class="explora-intro-copy">
+        <p>
+          Rapa Nui se encuentra en medio del océano Pacífico y reúne un
+          patrimonio arqueológico, cultural y natural de gran valor. Sus mōai,
+          ahu, volcanes, cavernas, costas y tradiciones forman parte de la
+          historia viva del pueblo Rapa Nui.
+        </p>
+        <p>
+          Esta sección reúne accesos a información turística, sitios de
+          visitación y contenidos culturales para que residentes y visitantes
+          puedan orientarse y conocer mejor el territorio.
+        </p>
+
+        <div class="explora-stats">
+          <div class="explora-stat">
+            <strong>Patrimonio</strong>
+            <span>Historia, arqueología y memoria ancestral.</span>
+          </div>
+          <div class="explora-stat">
+            <strong>Naturaleza</strong>
+            <span>Volcanes, costa y paisajes oceánicos.</span>
+          </div>
+          <div class="explora-stat">
+            <strong>Cultura viva</strong>
+            <span>Lengua, arte, música y tradiciones.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITIOS DE VISITACIÓN -->
+  <section class="explora-section explora-places" id="sitios">
+    <div class="explora-section-inner">
+      <div class="explora-heading-row">
+        <div>
+          <span class="explora-eyebrow">Lugares para descubrir</span>
+          <h2 class="explora-section-title">Paisajes que cuentan historias.</h2>
+        </div>
+        <p>
+          Cada sitio tiene su propio significado cultural y natural.
+          Consulta la información de la administración del Parque Nacional
+          antes de organizar tu recorrido.
+        </p>
+      </div>
+
+      <div class="explora-place-grid">
+
+        <article class="explora-place-card">
+          <img
+            src="https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg"
+            alt="Playa Anakena en Rapa Nui"
+            loading="lazy">
+          <div class="explora-place-copy">
+            <span class="explora-place-number">01 / COSTA</span>
+            <h3>Haŋa Rau y Anakena</h3>
+            <p>
+              Descubre el sector de Anakena, sus playas y el patrimonio
+              arqueológico de Ahu Nau Nau.
+            </p>
+            <a class="explora-text-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Explorar el sitio <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-place-card">
+          <img
+            src="https://www.easterisland.travel/images/media/images/archaeology/easter-island-statues-ahu-tongariki-fallen-moai.jpg"
+            alt="Mōai de Ahu Tongariki en Rapa Nui"
+            loading="lazy">
+          <div class="explora-place-copy">
+            <span class="explora-place-number">02 / MŌAI</span>
+            <h3>Ahu Tongariki</h3>
+            <p>
+              Conoce uno de los conjuntos ceremoniales más reconocidos de
+              Rapa Nui y consulta las normas para recorrerlo.
+            </p>
+            <a class="explora-text-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Ver sitios oficiales <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-place-card">
+          <img
+            src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85"
+            alt="Olas del océano en una costa"
+            loading="lazy">
+          <div class="explora-place-copy">
+            <span class="explora-place-number">03 / VOLCÁN</span>
+            <h3>Rano Kau y ꞌŌroŋo</h3>
+            <p>
+              Infórmate sobre el cráter volcánico y la aldea ceremonial
+              vinculada a la tradición del Taŋata Manu.
+            </p>
+            <a class="explora-text-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Explorar el sitio <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-place-card">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85"
+            alt="Paisaje de montañas y relieve natural, imagen ilustrativa"
+            loading="lazy">
+          <div class="explora-place-copy">
+            <span class="explora-place-number">04 / ARQUEOLOGÍA</span>
+            <h3>Rano Raraku</h3>
+            <p>
+              Conoce la cantera volcánica asociada a la elaboración de los
+              mōai y su relevancia dentro del patrimonio de la isla.
+            </p>
+            <a class="explora-text-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Ver sitios oficiales <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-place-card">
+          <img
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85"
+            alt="Paisaje natural, imagen ilustrativa"
+            loading="lazy">
+          <div class="explora-place-copy">
+            <span class="explora-place-number">05 / PATRIMONIO</span>
+            <h3>Ahu Akivi</h3>
+            <p>
+              Consulta la información oficial de este conjunto arqueológico
+              y planifica tu visita siguiendo las indicaciones vigentes.
+            </p>
+            <a class="explora-text-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Ver sitios oficiales <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-place-card">
+          <img
+            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85"
+            alt="Mar y costa oceánica, imagen ilustrativa"
+            loading="lazy">
+          <div class="explora-place-copy">
+            <span class="explora-place-number">06 / RECORRIDOS</span>
+            <h3>Tahai, Vinapu y Puna Pau</h3>
+            <p>
+              Descubre otros espacios patrimoniales y revisa las condiciones
+              de acceso a través de los canales oficiales.
+            </p>
+            <a class="explora-text-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Ver todos los sitios <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="explora-note">
+        Las imágenes alojadas en servicios externos pueden cambiar o dejar de
+        estar disponibles. Las fotografías ilustrativas deben reemplazarse
+        por imágenes verificadas de Rapa Nui antes de publicar.
+      </p>
+    </div>
+  </section>
+
+  <!-- TĀPATI -->
+  <section class="explora-tapati" id="tapati">
+    <div class="explora-tapati-image"
+         role="img"
+         aria-label="Fotografía de una actividad cultural de Tāpati Rapa Nui"></div>
+
+    <div class="explora-tapati-copy">
+      <span class="explora-kicker">Identidad · Tradición · Encuentro</span>
+      <h2>Tāpati Rapa Nui</h2>
+      <p>
+        Tāpati es una celebración cultural que reúne expresiones artísticas,
+        competencias tradicionales y prácticas vinculadas a la identidad
+        Rapa Nui. Es una oportunidad para reconocer la continuidad de los
+        saberes y la participación de la comunidad.
+      </p>
+      <p>
+        Las fechas, actividades y programación pueden cambiar cada año.
+        Consulta la información oficial para conocer las novedades de cada
+        edición.
+      </p>
+      <a class="explora-text-link"
+         href="https://rapanui.net/secciones/tpati-8170"
+         target="_blank" rel="noopener noreferrer">
+        Visitar la página oficial de Tāpati <span aria-hidden="true">↗</span>
+      </a>
+      <a class="explora-text-link"
+         href="https://culturarapanui.com/"
+         target="_blank" rel="noopener noreferrer">
+        Explorar cultura y actividades <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- TURISMO RESPONSABLE -->
+  <section class="explora-section explora-responsible">
+    <div class="explora-section-inner">
+      <span class="explora-eyebrow">Cuidar también es conocer</span>
+      <h2 class="explora-section-title">Visita con respeto.</h2>
+      <p class="explora-section-lead">
+        El patrimonio de Rapa Nui es parte de la memoria y la vida del pueblo.
+        Una visita responsable comienza por informarse, respetar las normas
+        y seguir las indicaciones de quienes cuidan los sitios.
+      </p>
+
+      <div class="explora-responsible-grid">
+        <article class="explora-rule">
+          <span class="rule-number">01</span>
+          <h3>Protege el patrimonio</h3>
+          <p>
+            No toques, escales ni te apoyes en los mōai, ahu u otras
+            estructuras. No retires piedras ni elementos naturales o
+            arqueológicos.
+          </p>
+        </article>
+
+        <article class="explora-rule">
+          <span class="rule-number">02</span>
+          <h3>Respeta los recorridos</h3>
+          <p>
+            Permanece en los senderos habilitados, respeta los cierres y
+            sigue las indicaciones del personal del Parque Nacional.
+          </p>
+        </article>
+
+        <article class="explora-rule">
+          <span class="rule-number">03</span>
+          <h3>Planifica antes de salir</h3>
+          <p>
+            Verifica el estado de los sitios, los requisitos de entrada,
+            las condiciones del tiempo y las necesidades de cada recorrido.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMACIÓN PARA VISITANTES -->
+  <section class="explora-section">
+    <div class="explora-section-inner explora-visit">
+      <div>
+        <span class="explora-eyebrow">Antes de tu recorrido</span>
+        <h2 class="explora-section-title">Prepara tu visita.</h2>
+        <p class="explora-section-lead">
+          Los requisitos y las condiciones de acceso pueden actualizarse.
+          Revisa siempre las instrucciones vigentes en los canales oficiales
+          antes de visitar el Parque Nacional.
+        </p>
+
+        <ul class="explora-checklist">
+          <li>Consulta las condiciones de ingreso y compra del ticket.</li>
+          <li>Confirma qué sitios se encuentran habilitados ese día.</li>
+          <li>Organiza la visita con un guía local o tour operador autorizado.</li>
+          <li>Lleva agua, protección solar y calzado apropiado para el recorrido.</li>
+          <li>Respeta las indicaciones del personal y las normas patrimoniales.</li>
+        </ul>
+      </div>
+
+      <aside class="explora-info-panel">
+        <span class="explora-eyebrow">Información oficial</span>
+        <h3>Parque Nacional Rapa Nui</h3>
+        <p>
+          Ma’u Henua administra el Parque Nacional y publica información
+          sobre los sitios de visitación, los tickets, las normas de acceso
+          y las condiciones de los recorridos.
+        </p>
+        <a class="explora-button"
+           href="https://mauhenuarapanui.com/"
+           target="_blank" rel="noopener noreferrer">
+          Sitio oficial Ma’u Henua <span aria-hidden="true">↗</span>
+        </a>
+
+        <p>
+          Para conocer antecedentes del Parque Nacional y su patrimonio,
+          consulta también la información de la Subdirección de Fomento
+          y Gestión Patrimonial.
+        </p>
+        <a class="explora-text-link"
+           href="https://www.sfgp.gob.cl/servicios/descubre-el-parque-nacional-rapa-nui"
+           target="_blank" rel="noopener noreferrer">
+          Información del Parque Nacional <span aria-hidden="true">↗</span>
+        </a>
+
+        <p>
+          ¿Buscas orientación turística? Ma’u Henua publica información
+          para visitantes y consultas generales.
+        </p>
+        <a class="explora-text-link"
+           href="https://mauhenuarapanui.com/turismo/"
+           target="_blank" rel="noopener noreferrer">
+          Unidad de Turismo <span aria-hidden="true">↗</span>
+        </a>
+
+        <p class="explora-note">
+          Comprueba las condiciones y los horarios vigentes directamente con
+          los organismos responsables. La disponibilidad de los sitios puede
+          cambiar por seguridad, clima o mantención.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CONEXIONES MUNICIPALES -->
+  <section class="explora-section" style="padding-top: 0;">
+    <div class="explora-section-inner">
+      <div class="explora-heading-row">
+        <div>
+          <span class="explora-eyebrow">Conoce más</span>
+          <h2 class="explora-section-title">Continúa explorando.</h2>
+        </div>
+        <p>
+          Accede a otras secciones municipales para conocer la planificación
+          turística, las actividades de la comunidad y la información
+          institucional de Rapa Nui.
+        </p>
+      </div>
+
+      <div class="explora-place-grid">
+        <article class="explora-place-card">
+          <div class="explora-place-copy">
+            <span class="explora-place-number">01 / MUNICIPIO</span>
+            <h3>Dirección de Turismo</h3>
+            <p>
+              Accede a la información institucional de la unidad municipal
+              relacionada con el turismo.
+            </p>
+            <a class="explora-text-link"
+               href="https://rapanui.net/secciones/direccion-de-turismo-7726"
+               target="_blank" rel="noopener noreferrer">
+              Consultar dirección <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-place-card">
+          <div class="explora-place-copy">
+            <span class="explora-place-number">02 / PLANIFICACIÓN</span>
+            <h3>Plan de Desarrollo Turístico</h3>
+            <p>
+              Conoce el PLADETUR y su relación con la planificación del
+              desarrollo turístico comunal.
+            </p>
+            <a class="explora-text-link"
+               href="https://rapanui.net/secciones/pladetur-8252"
+               target="_blank" rel="noopener noreferrer">
+              Consultar PLADETUR <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-place-card">
+          <div class="explora-place-copy">
+            <span class="explora-place-number">03 / COMUNIDAD</span>
+            <h3>Arte y cultura</h3>
+            <p>
+              Revisa información cultural, festivales y actividades de la
+              Corporación Municipal de Arte y Cultura Rapa Nui.
+            </p>
+            <a class="explora-text-link"
+               href="https://culturarapanui.com/"
+               target="_blank" rel="noopener noreferrer">
+              Visitar corporación <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="explora-section" style="padding-top: 0;">
+    <div class="explora-section-inner explora-final-cta">
+      <div>
+        <h2>Rapa Nui se descubre con respeto.</h2>
+        <p>
+          Conoce el territorio, escucha sus historias y contribuye a proteger
+          el patrimonio natural y cultural para las próximas generaciones.
+        </p>
+      </div>
+      <a class="explora-button" href="contacto.html">
+        Contactar al municipio <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="footer-kicker">Municipalidad de</span>
+      <strong>Rapa Nui</strong>
+      <p>Información y servicios para la comunidad.</p>
+    </div>
+
+    <div class="footer-column">
+      <h2>Explorar</h2>
+      <a href="tramites.html">Trámites y servicios</a>
+      <a href="direcciones.html">Direcciones</a>
+      <a href="planes.html">Planes municipales</a>
+    </div>
+
+    <div class="footer-column">
+      <h2>Información</h2>
+      <a href="noticias.html">Noticias</a>
+      <a href="transparencia.html">Transparencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+
+    <div class="footer-column">
+      <h2>Comunidad</h2>
+      <a href="comunidad.html">Participación</a>
+      <a href="desarrollo.html">Desarrollo</a>
+      <a href="explora.html" aria-current="page">Explora Rapa Nui</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>Municipalidad de Rapa Nui</span>
+    <a href="#top">Volver al inicio ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
+```
