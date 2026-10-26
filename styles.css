@@ -3584,30 +3584,38 @@ img {
 }
 
 @media (max-width: 580px) {
-  .hero#inicio {
-    min-height: 530px !important;
-    padding: 30px 22px 55px !important;
-  }
+ 
+.hero#inicio {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #282A60;
+}
 
-  .hero#inicio > .hero-img {
-    object-position: 58% center !important;
-  }
+.hero#inicio > .hero-img {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+}
 
-  .hero#inicio > .hero-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(40, 42, 96, .85),
-        rgba(40, 42, 96, .35)
-      ),
-      linear-gradient(
-        0deg,
-        rgba(40, 42, 96, .5),
-        transparent
-      ) !important;
-  }
+.hero#inicio > .hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(40, 42, 96, .88) 0%,
+    rgba(40, 42, 96, .58) 48%,
+    rgba(40, 42, 96, .12) 100%
+  );
+}
 
-  .hero#inicio > .hero-caption {
-    font-size: .55rem !important;
-  }
+.hero#inicio > .hero-content {
+  position: relative;
+  z-index: 1;
 }
