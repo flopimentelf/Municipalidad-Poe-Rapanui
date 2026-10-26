@@ -5,110 +5,630 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#282A60">
-  <meta name="description" content="Canales oficiales para encontrar orientación y comunicarte con la Municipalidad de Rapa Nui.">
+  <meta name="description" content="Contacta a la Municipalidad de Rapa Nui. Información municipal, teléfonos, correos, emergencias y redes oficiales.">
   <title>Contacto | Municipalidad de Rapa Nui</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+
+  <style>
+    .contact-intro {
+      max-width: 760px;
+    }
+
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .contact-panel {
+      background: #fff;
+      border: 1px solid rgba(40, 42, 96, .12);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 28px rgba(40, 42, 96, .05);
+      min-width: 0;
+    }
+
+    .contact-panel h2 {
+      color: #282A60;
+      font-size: 1.3rem;
+      margin: 0 0 12px;
+    }
+
+    .contact-panel > p {
+      line-height: 1.7;
+    }
+
+    .contact-label {
+      color: #238f8a;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .contact-detail {
+      border-top: 1px solid #e7ecec;
+      padding: 15px 0;
+    }
+
+    .contact-detail:first-of-type {
+      margin-top: 18px;
+    }
+
+    .contact-detail strong {
+      color: #282A60;
+      display: block;
+      font-size: .91rem;
+      margin-bottom: 5px;
+    }
+
+    .contact-detail p {
+      margin: 0;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-detail a,
+    .contact-panel a:not(.button) {
+      color: #167f7a;
+      font-weight: 600;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .contact-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border-radius: 8px;
+      padding: 11px 16px;
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-action-primary {
+      background: #282A60;
+      color: white !important;
+    }
+
+    .contact-action-secondary {
+      background: #DCEBE9;
+      color: #282A60 !important;
+    }
+
+    .emergency-section {
+      background: #f6f8f8;
+    }
+
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .emergency-card {
+      background: white;
+      border: 1px solid rgba(40, 42, 96, .12);
+      border-radius: 14px;
+      padding: 23px;
+    }
+
+    .emergency-number {
+      color: #282A60;
+      display: block;
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+
+    .emergency-card h3 {
+      margin: 0;
+      color: #282A60;
+      font-size: 1rem;
+    }
+
+    .emergency-card p {
+      font-size: .9rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .emergency-card a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .municipal-emergency {
+      border-left: 5px solid #23A6A0;
+      background: #DCEBE9;
+      border-radius: 10px;
+      margin-top: 24px;
+      padding: 22px 24px;
+    }
+
+    .municipal-emergency h3 {
+      color: #282A60;
+      margin-top: 0;
+    }
+
+    .municipal-emergency p {
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .social-card {
+      border: 1px solid rgba(40, 42, 96, .12);
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: white;
+    }
+
+    .social-card h3 {
+      color: #282A60;
+      margin: 0;
+    }
+
+    .social-card p {
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .social-card a {
+      color: #167f7a;
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .contact-note {
+      font-size: .88rem;
+      line-height: 1.7;
+      opacity: .85;
+      margin-top: 22px;
+    }
+
+    .contact-map {
+      border: 0;
+      border-radius: 14px;
+      width: 100%;
+      min-height: 300px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 760px) {
+      .contact-main-grid,
+      .emergency-grid,
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        padding: 22px;
+      }
+
+      .emergency-number {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
 </head>
+
 <body id="top">
+
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 <header class="site-header">
   <div class="header-topline" aria-hidden="true"></div>
+
   <div class="header-inner">
     <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
       <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48"><path d="M24 4 41 14v20L24 44 7 34V14z"/><path d="M16 18h16M16 24h16M16 30h10"/></svg>
+        <svg viewBox="0 0 48 48">
+          <path d="M24 4 41 14v20L24 44 7 34V14z"/>
+          <path d="M16 18h16M16 24h16M16 30h10"/>
+        </svg>
       </span>
       <span class="brand-name">Municipalidad <strong>de Rapa Nui</strong></span>
     </a>
-    <div class="header-tools" aria-label="Canales institucionales">
-      <a class="icon-link" href="https://rapanui.net/" target="_blank" rel="noopener noreferrer" aria-label="Sitio oficial municipal">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" class="solid"/></svg>
+
+    <div class="header-tools" aria-label="Accesos de contacto">
+      <a class="icon-link" href="https://rapanui.net/home" aria-label="Sitio web municipal">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+        </svg>
       </a>
-      <a class="icon-link" href="contacto.html" aria-label="Contacto municipal">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg>
+      <a class="icon-link" href="tel:+56322100226" aria-label="Llamar a la Municipalidad">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/>
+        </svg>
+      </a>
+      <a class="icon-link" href="mailto:contacto@rapanui.net" aria-label="Enviar correo electrónico">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="1"/>
+          <path d="m4 7 8 6 8-6"/>
+        </svg>
       </a>
     </div>
+
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
       <span class="menu-toggle-lines" aria-hidden="true"></span>
       <span class="menu-toggle-label">Menú</span>
     </button>
+
     <nav class="main-nav" id="menu-principal" aria-label="Navegación principal">
       <a href="tramites.html">Trámites y servicios</a>
       <a href="direcciones.html">Direcciones</a>
       <a href="comunidad.html">Comunidad</a>
       <a href="desarrollo.html">Desarrollo</a>
       <a href="planes.html">Planes</a>
-      <a href="explora.html">Explora Rapa Nui</a>
-      <a href="noticias.html">Noticias</a>
-      <a href="transparencia.html">Transparencia</a>
-      <a href="contacto.html" aria-current="page">Contacto</a>
+      <a href="explora.html">Explora</a>
     </nav>
   </div>
 </header>
+
 <main id="contenido">
+
   <section class="interior-hero">
-    <div class="interior-hero-inner reveal">
-      <p class="eyebrow">CANALES DE ATENCIÓN</p>
-      <h1>Conversemos sobre lo que necesitas</h1>
-      <p class="interior-lead">Encuentra los canales institucionales para orientarte y acceder a información municipal.</p>
+    <div class="interior-hero-inner reveal contact-intro">
+      <p class="eyebrow">ESTAMOS PARA AYUDARTE</p>
+      <h1>Contacto municipal</h1>
+      <p class="interior-lead">
+        Encuentra los canales de atención de la Municipalidad de Rapa Nui,
+        contacta con sus equipos y ten a mano los números de emergencia.
+      </p>
       <div class="breadcrumb">
         <a href="index.html">Inicio</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">Contacto</span>
       </div>
+      <div class="contact-actions">
+        <a class="contact-action-primary" href="#contacto-municipal">Contactar al municipio</a>
+        <a class="contact-action-secondary" href="#emergencias">Números de emergencia</a>
+      </div>
     </div>
-    <div class="interior-mark" aria-hidden="true"><span>CONTACTO</span></div>
+    <div class="interior-mark" aria-hidden="true">
+      <span>IORANA</span>
+    </div>
   </section>
-  <section class="section interior-section">
+
+  <section class="section interior-section" id="contacto-municipal">
     <div class="section-heading reveal">
       <div>
-        <p class="eyebrow">Canales oficiales</p>
-        <h2>Información para encontrar tu camino</h2>
+        <p class="eyebrow">CANALES DE ATENCIÓN</p>
+        <h2>Comunícate con la Municipalidad</h2>
       </div>
-      <p>Comienza por el sitio municipal, donde se publican noticias, información institucional y accesos de atención.</p>
+      <p>
+        Para consultas, solicitudes y orientación, utiliza los canales
+        institucionales o acércate a las oficinas municipales.
+      </p>
     </div>
-    <div class="detail-grid">
-      <article class="detail-card reveal">
-        <span class="detail-index">01</span>
-        <h2>Sitio municipal oficial</h2>
-        <p>Consulta la información vigente publicada por la Municipalidad de Rapa Nui.</p>
-        <a class="text-link" href="https://rapanui.net/" target="_blank" rel="noopener noreferrer">Visitar sitio oficial <span aria-hidden="true">↗</span></a>
+
+    <div class="contact-main-grid">
+
+      <article class="contact-panel reveal">
+        <p class="contact-label">Contacto general</p>
+        <h2>Municipalidad de Rapa Nui</h2>
+        <p>
+          Canal de contacto para consultas generales, orientación y
+          derivación hacia las unidades municipales.
+        </p>
+
+        <div class="contact-detail">
+          <strong>Dirección</strong>
+          <p>Atamu Tekena s/n, Hanga Roa, Rapa Nui, Chile.</p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Teléfonos municipales</strong>
+          <p>
+            <a href="tel:+56322100226">+56 32 210 0226</a><br>
+            <a href="tel:+56322100230">+56 32 210 0230</a>
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Correo electrónico</strong>
+          <p>
+            <a href="mailto:contacto@rapanui.net">contacto@rapanui.net</a>
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Correo institucional publicado en el portal municipal</strong>
+          <p>
+            <a href="mailto:iorana@rapanui.net">iorana@rapanui.net</a>
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="contact-action-primary" href="tel:+56322100226">Llamar</a>
+          <a class="contact-action-secondary" href="mailto:contacto@rapanui.net">Enviar correo</a>
+        </div>
       </article>
-      <article class="detail-card reveal">
-        <span class="detail-index">02</span>
-        <h2>Información de trámites</h2>
-        <p>Revisa los procedimientos y orientaciones disponibles antes de iniciar una gestión.</p>
-        <a class="text-link" href="https://rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">Consultar trámites <span aria-hidden="true">↗</span></a>
+
+      <article class="contact-panel reveal">
+        <p class="contact-label">Atención territorial</p>
+        <h2>Gestión Territorial · Haka Ara Móvil</h2>
+        <p>
+          El equipo de Gestión Territorial acerca servicios municipales
+          a los barrios y recibe solicitudes para mejorar el entorno comunitario.
+        </p>
+
+        <div class="contact-detail">
+          <strong>WhatsApp de Gestión Territorial</strong>
+          <p>
+            <a href="https://wa.me/56933772633" target="_blank" rel="noopener noreferrer">
+              +56 9 3377 2633
+            </a>
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>¿Para qué puedes escribir?</strong>
+          <p>
+            Para solicitar la presencia de Haka Ara Móvil en tu barrio,
+            informar necesidades territoriales o pedir apoyo de equipos
+            municipales de Operaciones y Medio Ambiente.
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Información del programa</strong>
+          <p>
+            Revisa cómo funciona el operativo y los servicios que ofrece
+            en la página oficial.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="contact-action-primary" href="https://wa.me/56933772633" target="_blank" rel="noopener noreferrer">
+            Abrir WhatsApp
+          </a>
+          <a class="contact-action-secondary" href="https://www.rapanui.net/secciones/8431" target="_blank" rel="noopener noreferrer">
+            Conocer Haka Ara Móvil
+          </a>
+        </div>
       </article>
-      <article class="detail-card reveal">
-        <span class="detail-index">03</span>
-        <h2>Transparencia</h2>
-        <p>Para solicitudes de información pública, revisa los canales institucionales y la orientación oficial.</p>
-        <a class="text-link" href="transparencia.html">Ir a transparencia <span aria-hidden="true">↗</span></a>
-      </article>
+
+    </div>
+
+    <p class="contact-note">
+      Los teléfonos, correos y canales pueden tener funciones distintas.
+      Si tu solicitud corresponde a una dirección específica, consulta
+      el directorio de unidades municipales.
+    </p>
+
+    <div class="contact-actions reveal">
+      <a class="contact-action-primary" href="direcciones.html">Ver direcciones municipales</a>
+      <a class="contact-action-secondary" href="https://rapanui.net/home" target="_blank" rel="noopener noreferrer">
+        Visitar sitio oficial
+      </a>
     </div>
   </section>
-  <section class="section" style="background: var(--turquoise-light);">
+
+  <section class="section interior-section emergency-section" id="emergencias">
     <div class="section-heading reveal">
       <div>
-        <p class="eyebrow">Orientación</p>
-        <h2>Antes de realizar una consulta</h2>
+        <p class="eyebrow">ATENCIÓN INMEDIATA</p>
+        <h2>Teléfonos de emergencia</h2>
       </div>
-      <p>Explica brevemente el motivo de tu consulta e identifica, si corresponde, la unidad municipal relacionada. Los datos de teléfono, correo y horario deben confirmarse en los canales oficiales vigentes.</p>
+      <p>
+        Si existe riesgo inmediato para una persona, llama al servicio
+        de emergencia correspondiente. No utilices el correo electrónico
+        ni las redes sociales para solicitar asistencia urgente.
+      </p>
+    </div>
+
+    <div class="emergency-grid">
+
+      <article class="emergency-card reveal">
+        <h3>Ambulancia · SAMU</h3>
+        <a class="emergency-number" href="tel:131">131</a>
+        <p>Emergencias médicas y asistencia de ambulancia.</p>
+      </article>
+
+      <article class="emergency-card reveal">
+        <h3>Bomberos</h3>
+        <a class="emergency-number" href="tel:132">132</a>
+        <p>Incendios, rescates y otras emergencias que requieren a Bomberos.</p>
+      </article>
+
+      <article class="emergency-card reveal">
+        <h3>Carabineros</h3>
+        <a class="emergency-number" href="tel:133">133</a>
+        <p>Emergencias policiales y situaciones de riesgo para la seguridad.</p>
+      </article>
+
+      <article class="emergency-card reveal">
+        <h3>Policía de Investigaciones</h3>
+        <a class="emergency-number" href="tel:134">134</a>
+        <p>Contacto de emergencia policial con la PDI.</p>
+      </article>
+
+      <article class="emergency-card reveal">
+        <h3>Emergencias marítimas</h3>
+        <a class="emergency-number" href="tel:137">137</a>
+        <p>Situaciones de emergencia en el mar y el borde costero.</p>
+      </article>
+
+      <article class="emergency-card reveal">
+        <h3>Emergencias municipales</h3>
+        <a class="emergency-number" href="tel:+56950582388">Llamar</a>
+        <p>Contacto de emergencias publicado por la Municipalidad de Rapa Nui.</p>
+      </article>
+
+    </div>
+
+    <div class="municipal-emergency reveal">
+      <h3>Contacto municipal de emergencias</h3>
+      <p>
+        La Municipalidad publica el número
+        <strong><a href="tel:+56950582388">+56 9 5058 2388</a></strong>
+        como contacto de emergencias. Para una emergencia médica, incendio,
+        delito o emergencia marítima, utiliza el número específico del servicio
+        correspondiente.
+      </p>
+    </div>
+
+    <p class="contact-note">
+      Los números nacionales de emergencia se presentan como orientación general.
+      Confirma los canales locales y sus competencias en los sitios institucionales.
+    </p>
+  </section>
+
+  <section class="section interior-section" id="redes">
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">CANALES DIGITALES</p>
+        <h2>Sigue la información municipal</h2>
+      </div>
+      <p>
+        Consulta noticias, actividades, programas comunitarios y anuncios
+        a través de los canales institucionales disponibles.
+      </p>
+    </div>
+
+    <div class="social-grid">
+
+      <article class="social-card reveal">
+        <p class="contact-label">Portal institucional</p>
+        <h3>Sitio web oficial</h3>
+        <p>
+          Noticias, información municipal, trámites, servicios y directorio
+          de unidades de la Municipalidad.
+        </p>
+        <a href="https://rapanui.net/home" target="_blank" rel="noopener noreferrer">
+          Visitar rapanui.net ↗
+        </a>
+      </article>
+
+      <article class="social-card reveal">
+        <p class="contact-label">Noticias y actualidad</p>
+        <h3>Noticias municipales</h3>
+        <p>
+          Revisa anuncios, actividades comunitarias, programas y novedades
+          publicadas por el municipio.
+        </p>
+        <a href="https://rapanui.net/noticias" target="_blank" rel="noopener noreferrer">
+          Ver noticias ↗
+        </a>
+      </article>
+
+      <article class="social-card reveal">
+        <p class="contact-label">Audiovisual</p>
+        <h3>Mata o te Rapa Nui TV</h3>
+        <p>
+          Canal mencionado por la Municipalidad para transmisiones y
+          coberturas de actividades institucionales.
+        </p>
+        <a href="https://www.youtube.com/@mataoterapanuitv" target="_blank" rel="noopener noreferrer">
+          Visitar canal de YouTube ↗
+        </a>
+      </article>
+
+      <article class="social-card reveal">
+        <p class="contact-label">Contacto directo</p>
+        <h3>Correo electrónico</h3>
+        <p>
+          Para consultas generales que no correspondan a una emergencia,
+          puedes escribir al correo de contacto municipal.
+        </p>
+        <a href="mailto:contacto@rapanui.net">
+          contacto@rapanui.net ↗
+        </a>
+      </article>
+
+    </div>
+
+    <p class="contact-note">
+      Se incluyen los canales cuya dirección se pudo identificar en las fuentes
+      consultadas. Para evitar enlazar perfiles equivocados, no se agregan
+      direcciones de Facebook o Instagram que no hayan sido verificadas.
+    </p>
+  </section>
+
+  <section class="section interior-section" id="ubicacion">
+    <div class="section-heading reveal">
+      <div>
+        <p class="eyebrow">VISÍTANOS</p>
+        <h2>¿Dónde está la Municipalidad?</h2>
+      </div>
+      <p>
+        La dirección publicada por el municipio es Atamu Tekena s/n,
+        en Hanga Roa, Rapa Nui.
+      </p>
+    </div>
+
+    <div class="contact-panel reveal">
+      <h2>Municipalidad de Rapa Nui</h2>
+      <p>
+        Atamu Tekena s/n, Hanga Roa, Rapa Nui, Chile.
+      </p>
+      <div class="contact-actions">
+        <a class="contact-action-primary"
+           href="https://www.google.com/maps/search/?api=1&query=Municipalidad+de+Rapa+Nui+Atamu+Tekena"
+           target="_blank" rel="noopener noreferrer">
+          Abrir ubicación en Google Maps
+        </a>
+        <a class="contact-action-secondary" href="tel:+56322100226">
+          Llamar antes de ir
+        </a>
+      </div>
+      <p class="contact-note">
+        No se muestra un horario general de atención porque no se pudo confirmar
+        uno único para todas las unidades. Si necesitas realizar un trámite,
+        consulta previamente el horario de la dirección correspondiente.
+      </p>
     </div>
   </section>
+
   <section class="contact-band reveal">
     <div>
-      <p class="eyebrow">¿Buscas una gestión específica?</p>
-      <h2>Revisa primero los trámites municipales y sus requisitos.</h2>
+      <p class="eyebrow">SERVICIOS MUNICIPALES</p>
+      <h2>¿Necesitas encontrar una unidad específica?</h2>
+      <p>
+        Revisa el directorio municipal para conocer las direcciones
+        y los canales de atención de sus distintas áreas.
+      </p>
     </div>
-    <a class="button button-dark" href="tramites.html">Ver trámites <span aria-hidden="true">↗</span></a>
+    <a class="button button-dark" href="direcciones.html">
+      Ver directorio municipal <span aria-hidden="true">↗</span>
+    </a>
   </section>
+
 </main>
+
 <footer class="site-footer">
   <div class="footer-main">
     <div class="footer-brand">
@@ -116,30 +636,34 @@
       <strong>Rapa Nui</strong>
       <p>Información y servicios para la comunidad.</p>
     </div>
+
     <div class="footer-column">
-      <h2>Servicios</h2>
+      <h2>Explorar</h2>
       <a href="tramites.html">Trámites y servicios</a>
       <a href="direcciones.html">Direcciones</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="planes.html">Planes municipales</a>
     </div>
+
     <div class="footer-column">
       <h2>Información</h2>
       <a href="noticias.html">Noticias</a>
       <a href="transparencia.html">Transparencia</a>
-      <a href="planes.html">Planes municipales</a>
+      <a href="contacto.html">Contacto</a>
     </div>
+
     <div class="footer-column">
       <h2>Comunidad</h2>
       <a href="comunidad.html">Participación</a>
       <a href="desarrollo.html">Desarrollo</a>
       <a href="explora.html">Explora Rapa Nui</a>
-      <a href="https://rapanui.net/" target="_blank" rel="noopener noreferrer">Sitio municipal oficial ↗</a>
     </div>
   </div>
+
   <div class="footer-bottom">
     <span>Municipalidad de Rapa Nui</span>
     <a href="#top">Volver arriba ↑</a>
   </div>
 </footer>
+
 </body>
 </html>
