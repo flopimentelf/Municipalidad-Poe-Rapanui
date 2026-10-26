@@ -1,519 +1,120 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conoce los trámites y servicios municipales de Rapa Nui, revisa sus requisitos y accede a los canales oficiales de atención.">
-  <title>Trámites y Servicios | Municipalidad de Rapa Nui</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#282A60">
+  <meta name="description" content="Acceso claro a información pública, documentos y antecedentes de gestión municipal.">
+  <title>Transparencia | Municipalidad de Rapa Nui</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
-  <style>
-    .procedures-page {
-      color: #282A60;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .procedures-hero {
-      min-height: 430px;
-      display: flex;
-      align-items: center;
-      background-image: url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=85');
-      background-size: cover;
-      background-position: center;
-      padding: 80px 8%;
-    }
-
-    .procedures-hero-content {
-      max-width: 690px;
-      background: #ffffff;
-      padding: 38px;
-      border-radius: 4px;
-    }
-
-    .procedures-eyebrow {
-      display: inline-block;
-      margin-bottom: 14px;
-      color: #23A6A0;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .procedures-hero h1 {
-      margin: 0 0 18px;
-      color: #282A60;
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      line-height: 1.12;
-    }
-
-    .procedures-hero p {
-      margin: 0 0 25px;
-      color: #45465f;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    .procedures-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border: 2px solid #23A6A0;
-      border-radius: 3px;
-      background: #23A6A0;
-      color: #ffffff;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .procedures-button:hover {
-      background: #ffffff;
-      color: #282A60;
-    }
-
-    .procedures-button.secondary {
-      border-color: #282A60;
-      background: #282A60;
-    }
-
-    .procedures-button.secondary:hover {
-      background: #ffffff;
-      color: #282A60;
-    }
-
-    .procedures-section {
-      padding: 75px 8%;
-    }
-
-    .procedures-section.light {
-      background: #DCEBE9;
-    }
-
-    .procedures-heading {
-      max-width: 760px;
-      margin: 0 auto 40px;
-      text-align: center;
-    }
-
-    .procedures-heading h2 {
-      margin: 0 0 16px;
-      color: #282A60;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      line-height: 1.25;
-    }
-
-    .procedures-heading p {
-      margin: 0;
-      color: #55566c;
-      line-height: 1.8;
-    }
-
-    .procedures-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .procedure-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-height: 250px;
-      padding: 28px;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 4px;
-    }
-
-    .procedure-card-number {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 43px;
-      height: 43px;
-      margin-bottom: 22px;
-      background: #DCEBE9;
-      color: #282A60;
-      font-size: 1rem;
-      font-weight: 800;
-    }
-
-    .procedure-card h3 {
-      margin: 0 0 12px;
-      color: #282A60;
-      font-size: 1.15rem;
-      line-height: 1.4;
-    }
-
-    .procedure-card p {
-      margin: 0 0 22px;
-      color: #5b5c6e;
-      font-size: 0.92rem;
-      line-height: 1.75;
-    }
-
-    .procedure-card a {
-      margin-top: auto;
-      color: #168781;
-      font-size: 0.9rem;
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .procedure-card a:hover {
-      text-decoration: underline;
-    }
-
-    .procedure-card a:focus-visible,
-    .procedures-button:focus-visible {
-      outline: 3px solid #282A60;
-      outline-offset: 4px;
-    }
-
-    .procedure-steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px;
-      margin-top: 35px;
-    }
-
-    .procedure-step {
-      padding-top: 22px;
-      border-top: 3px solid #23A6A0;
-    }
-
-    .procedure-step h3 {
-      margin: 0 0 12px;
-      font-size: 1.1rem;
-    }
-
-    .procedure-step p {
-      margin: 0;
-      color: #55566c;
-      font-size: 0.94rem;
-      line-height: 1.8;
-    }
-
-    .procedures-help {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 40px;
-      padding: 45px;
-      background: #282A60;
-      color: #ffffff;
-      border-radius: 4px;
-    }
-
-    .procedures-help h2 {
-      margin: 0 0 15px;
-      font-size: clamp(1.7rem, 3vw, 2.3rem);
-      line-height: 1.3;
-    }
-
-    .procedures-help p {
-      margin: 0;
-      color: #f0f0f7;
-      line-height: 1.8;
-    }
-
-    .procedures-help-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .procedures-help .procedures-button {
-      border-color: #23A6A0;
-      background: #23A6A0;
-      color: #ffffff;
-    }
-
-    .procedures-help .procedures-button:hover {
-      background: #ffffff;
-      color: #282A60;
-    }
-
-    .procedures-note {
-      max-width: 900px;
-      margin: 28px auto 0;
-      color: #5b5c6e;
-      font-size: 0.85rem;
-      line-height: 1.7;
-      text-align: center;
-    }
-
-    @media (max-width: 900px) {
-      .procedures-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .procedure-steps {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .procedures-help {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .procedures-hero {
-        min-height: 380px;
-        padding: 35px 5%;
-      }
-
-      .procedures-hero-content {
-        padding: 26px;
-      }
-
-      .procedures-section {
-        padding: 55px 5%;
-      }
-
-      .procedures-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .procedure-card {
-        min-height: auto;
-      }
-
-      .procedures-help {
-        padding: 28px;
-      }
-    }
-  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="site-logo" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
-        <img src="assets/logo.png" alt="Municipalidad de Rapa Nui">
-      </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="tramites.html" aria-current="page">Trámites</a>
-        <a href="direcciones.html">Direcciones</a>
-        <a href="desarrollo.html">Desarrollo</a>
-        <a href="comunidad.html">Comunidad</a>
-        <a href="explora.html">Explora Rapa Nui</a>
-        <a href="transparencia.html">Transparencia</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
+<body id="top">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="header-topline" aria-hidden="true"></div>
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 4 41 14v20L24 44 7 34V14z"/><path d="M16 18h16M16 24h16M16 30h10"/></svg></span>
+      <span class="brand-name">Municipalidad <strong>de Rapa Nui</strong></span>
+    </a>
+    <div class="header-tools" aria-label="Canales de contacto">
+      <a class="icon-link" href="#" aria-label="Facebook, enlace oficial pendiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1z"/></svg></a>
+      <a class="icon-link" href="#" aria-label="Instagram, enlace oficial pendiente"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" class="solid"/></svg></a>
+      <a class="icon-link" href="contacto.html" aria-label="Teléfono y contacto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/></svg></a>
+      <a class="icon-link" href="contacto.html" aria-label="Correo y contacto"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg></a>
     </div>
-  </header>
-
-  <main class="procedures-page">
-    <section class="procedures-hero">
-      <div class="procedures-hero-content">
-        <span class="procedures-eyebrow">Municipalidad de Rapa Nui</span>
-        <h1>Trámites y servicios municipales</h1>
-        <p>
-          Encuentra orientación para realizar tus trámites municipales,
-          conocer los requisitos y acceder a la información oficial de cada servicio.
-        </p>
-        <a class="procedures-button" href="https://www.rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">
-          Consultar guía de trámites <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="procedures-section">
-      <div class="procedures-heading">
-        <span class="procedures-eyebrow">Encuentra lo que necesitas</span>
-        <h2>¿Qué trámite buscas?</h2>
-        <p>
-          Accede a las áreas municipales y revisa la información específica
-          publicada por la Municipalidad antes de iniciar una solicitud.
-        </p>
-      </div>
-
-      <div class="procedures-grid">
-        <article class="procedure-card">
-          <div class="procedure-card-number">01</div>
-          <h3>Licencia de conducir</h3>
-          <p>
-            Revisa los requisitos y antecedentes solicitados para obtener,
-            renovar o realizar otros trámites relacionados con tu licencia.
-          </p>
-          <a href="https://www.rapanui.net/secciones/8413" target="_blank" rel="noopener noreferrer">
-            Ver información oficial ↗
-          </a>
-        </article>
-
-        <article class="procedure-card">
-          <div class="procedure-card-number">02</div>
-          <h3>Permiso de circulación</h3>
-          <p>
-            Consulta la documentación requerida y los pasos indicados por
-            la Dirección de Tránsito para gestionar este permiso.
-          </p>
-          <a href="https://www.rapanui.net/secciones/8413" target="_blank" rel="noopener noreferrer">
-            Revisar requisitos ↗
-          </a>
-        </article>
-
-        <article class="procedure-card">
-          <div class="procedure-card-number">03</div>
-          <h3>Permisos de edificación</h3>
-          <p>
-            Infórmate sobre antecedentes, formularios y requisitos asociados
-            a permisos y otras solicitudes de obras municipales.
-          </p>
-          <a href="https://www.rapanui.net/secciones/8395" target="_blank" rel="noopener noreferrer">
-            Consultar trámites DOM ↗
-          </a>
-        </article>
-
-        <article class="procedure-card">
-          <div class="procedure-card-number">04</div>
-          <h3>Patentes comerciales</h3>
-          <p>
-            Consulta la guía municipal para conocer los antecedentes
-            asociados a solicitudes y gestiones de patentes comerciales.
-          </p>
-          <a href="https://www.rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">
-            Ir a la guía municipal ↗
-          </a>
-        </article>
-
-        <article class="procedure-card">
-          <div class="procedure-card-number">05</div>
-          <h3>Certificados y solicitudes</h3>
-          <p>
-            Revisa la información disponible sobre certificados, autorizaciones
-            y otras gestiones que requieren documentación específica.
-          </p>
-          <a href="https://www.rapanui.net/secciones/8395" target="_blank" rel="noopener noreferrer">
-            Ver información DOM ↗
-          </a>
-        </article>
-
-        <article class="procedure-card">
-          <div class="procedure-card-number">06</div>
-          <h3>Servicios para la comunidad</h3>
-          <p>
-            Conoce los servicios municipales y las orientaciones disponibles
-            para realizar solicitudes o resolver consultas.
-          </p>
-          <a href="https://www.rapanui.net/secciones/8412" target="_blank" rel="noopener noreferrer">
-            Conocer servicios ↗
-          </a>
-        </article>
-      </div>
-    </section>
-
-    <section class="procedures-section light">
-      <div class="procedures-heading">
-        <span class="procedures-eyebrow">Antes de comenzar</span>
-        <h2>Prepara tu trámite</h2>
-        <p>
-          Una revisión previa de la información puede ayudarte a identificar
-          los documentos necesarios y el canal adecuado para tu solicitud.
-        </p>
-      </div>
-
-      <div class="procedure-steps">
-        <article class="procedure-step">
-          <h3>1. Identifica el trámite</h3>
-          <p>
-            Busca el servicio que necesitas en la guía oficial y confirma
-            qué unidad municipal se encarga de gestionarlo.
-          </p>
-        </article>
-
-        <article class="procedure-step">
-          <h3>2. Revisa los requisitos</h3>
-          <p>
-            Lee los antecedentes, formularios, plazos y posibles costos
-            informados para el procedimiento correspondiente.
-          </p>
-        </article>
-
-        <article class="procedure-step">
-          <h3>3. Confirma dónde realizarlo</h3>
-          <p>
-            Verifica si la gestión se realiza presencialmente, mediante
-            un canal digital o a través de la unidad municipal responsable.
-          </p>
-        </article>
-      </div>
-
-      <p class="procedures-note">
-        Los requisitos, plazos y valores pueden variar según el trámite.
-        Confirma siempre la información vigente en los canales oficiales
-        antes de presentar tus antecedentes.
-      </p>
-    </section>
-
-    <section class="procedures-section">
-      <div class="procedures-help">
-        <div>
-          <span class="procedures-eyebrow">¿Necesitas orientación?</span>
-          <h2>Te ayudamos a encontrar el canal adecuado</h2>
-          <p>
-            Si no sabes qué unidad municipal corresponde a tu solicitud,
-            comunícate con la Municipalidad para consultar dónde obtener
-            orientación sobre tu trámite.
-          </p>
-        </div>
-        <div class="procedures-help-actions">
-          <a class="procedures-button" href="contacto.html">
-            Contactar a la Municipalidad
-          </a>
-          <a class="procedures-button" href="https://www.rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">
-            Abrir guía oficial ↗
-          </a>
-          <a class="procedures-button" href="transparencia.html">
-            Información y transparencia
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="index.html" aria-label="Volver al inicio">
-          <img src="assets/logo.png" alt="Municipalidad de Rapa Nui">
-        </a>
-        <p>Municipalidad de Rapa Nui</p>
-      </div>
-      <div class="footer-links">
-        <h2>Accesos rápidos</h2>
-        <a href="tramites.html">Trámites</a>
-        <a href="direcciones.html">Direcciones municipales</a>
-        <a href="transparencia.html">Transparencia</a>
-        <a href="contacto.html">Contacto</a>
-      </div>
-      <div class="footer-contact">
-        <h2>Contacto</h2>
-        <p>Atamu Tekena s/n, Rapa Nui</p>
-        <a href="https://www.rapanui.net/home" target="_blank" rel="noopener noreferrer">
-          Sitio oficial ↗
-        </a>
-      </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="menu-toggle-lines" aria-hidden="true"></span><span class="menu-toggle-label">Menú</span>
+    </button>
+    <nav class="main-nav" id="menu-principal" aria-label="Navegación principal">
+      <a href="tramites.html">Trámites y servicios</a>
+      <a href="direcciones.html">Direcciones</a>
+      <a href="comunidad.html">Comunidad</a>
+      <a href="desarrollo.html">Desarrollo</a>
+      <a href="planes.html">Planes</a>
+      <a href="explora.html">Explora</a>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+  <section class="interior-hero">
+    <div class="interior-hero-inner reveal">
+      <p class="eyebrow">INFORMACIÓN PÚBLICA</p>
+      <h1>Transparencia municipal</h1>
+      <p class="interior-lead">Acceso claro a información pública, documentos y antecedentes de gestión municipal.</p>
+      <div class="breadcrumb"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Transparencia</span></div>
     </div>
-    <div class="footer-bottom">
-      <p>Municipalidad de Rapa Nui</p>
+    <div class="interior-mark" aria-hidden="true"><span>TRANSPARENCIA</span></div>
+  </section>
+  <section class="section interior-section">
+    <div class="section-heading reveal">
+      <div><p class="eyebrow">Información municipal</p><h2>Acceso a la información</h2></div>
+      <p>Los enlaces y documentos de esta sección deben apuntar a fuentes oficiales vigentes y verificables.</p>
     </div>
-  </footer>
+    <div class="detail-grid">
+      <article class="detail-card reveal">
+        <span class="detail-index">01</span>
+        <h2>Información institucional</h2>
+        <p>Acceso a información pública de la municipalidad.</p>
+        <a class="text-link" href="https://rapanui.net/" target="_blank" rel="noopener noreferrer">Consultar sitio oficial <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-index">02</span>
+        <h2>Documentos y gestión</h2>
+        <p>Consulta los antecedentes y documentos que el municipio tenga publicados.</p>
+        <a class="text-link" href="https://rapanui.net/" target="_blank" rel="noopener noreferrer">Buscar publicaciones <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-index">03</span>
+        <h2>Solicitudes de información</h2>
+        <p>Infórmate sobre el derecho de acceso a la información pública y los canales de orientación disponibles.</p>
+        <a class="text-link" href="https://www.consejotransparencia.cl/" target="_blank" rel="noopener noreferrer">Consejo para la Transparencia <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
+  </section>
+  <section class="contact-band reveal">
+    <div>
+      <p class="eyebrow">¿No encuentras lo que buscas?</p>
+      <h2>Podemos orientarte.</h2>
+    </div>
+    <a class="button button-dark" href="contacto.html">Contactar <span aria-hidden="true">↗</span></a>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <span class="footer-kicker">Municipalidad de</span>
+      <strong>Rapa Nui</strong>
+      <p>Información y servicios para la comunidad.</p>
+    </div>
+    <div class="footer-column">
+      <h2>Explorar</h2>
+      <a href="tramites.html">Trámites y servicios</a>
+      <a href="direcciones.html">Direcciones</a>
+      <a href="planes.html">Planes municipales</a>
+    </div>
+    <div class="footer-column">
+      <h2>Información</h2>
+      <a href="noticias.html">Noticias</a>
+      <a href="transparencia.html">Transparencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div class="footer-column">
+      <h2>Comunidad</h2>
+      <a href="comunidad.html">Participación</a>
+      <a href="desarrollo.html">Desarrollo</a>
+      <a href="explora.html">Explora Rapa Nui</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Municipalidad de Rapa Nui</span>
+    <a href="#top">Volver arriba ↑</a>
+  </div>
+</footer>
 </body>
 </html>
