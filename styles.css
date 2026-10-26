@@ -2037,3 +2037,31 @@ body {
   object-fit: contain;
   flex: 0 0 55px;
 }
+
+.site-header {
+  background-color: #282A60;
+}
+
+.brand-name {
+  color: #ffffff;
+}
+
+.main-nav a {
+  color: #ffffff;
+}
+
+.header-tools .icon-link {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.header-tools .icon-link svg {
+  color: inherit;
+}
+
+.header-tools .icon-link:hover,
+.header-tools .icon-link:focus-visible {
+  background-color: #23A6A0;
+  color: #ffffff;
+  border-color: #23A6A0;
+}
