@@ -119,34 +119,90 @@
 
   <main id="contenido">
 
-<section
-  class="hero"
-  id="inicio"
+<section class="hero" id="inicio"
   style="
-    background-image:
-      linear-gradient(rgba(25, 35, 75, 0.58), rgba(25, 35, 75, 0.58)),
-      url('https://commons.wikimedia.org/wiki/Special:Redirect/file/AhuTongariki15Moais.jpg');
-    background-size: cover;
-    background-position: center 45%;
-    background-repeat: no-repeat;
-    min-height: 72vh;
+    min-height: 610px;
     display: flex;
-    align-items: center;
-    padding: 70px 6%;
-  "
->
-  <div class="hero-content">
+    align-items: flex-end;
+    padding: clamp(32px, 7vw, 90px);
+    position: relative;
+    isolation: isolate;
+    color: #fff;
+    background: #282A60;
+  ">
+
+  <div class="hero-content" style="
+    width: 100%;
+    max-width: 1100px;
+  ">
+    <p style="
+      color: #82DED5;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    ">
+      Territorio · Cultura · Comunidad
+    </p>
+
     <h1 style="
       color: #9BD0E8;
-      font-size: clamp(38px, 5.2vw, 82px);
-      font-weight: 800;
-      line-height: 1.12;
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin: 0 0 24px;
       text-transform: uppercase;
-      max-width: 1100px;
-    "> HARE TAVANA
+    ">
+      Un territorio único,<br>
+      una comunidad que<br>
+      construye su futuro
     </h1>
   </div>
+
+  <style>
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(24, 26, 62, 0.86),
+          rgba(24, 26, 62, 0.20)
+        ),
+        url("https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg")
+        center 55% / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        0deg,
+        rgba(22, 24, 55, 0.38),
+        transparent 65%
+      );
+      pointer-events: none;
+    }
+
+    @media (max-width: 580px) {
+      .hero {
+        min-height: 530px !important;
+        padding: 30px 22px 40px !important;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 14vw, 4.5rem) !important;
+      }
+    }
+  </style>
+
 </section>
+
 
 
     <section
