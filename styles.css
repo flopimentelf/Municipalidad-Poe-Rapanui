@@ -78,15 +78,14 @@ svg {
   object-fit: contain;
   flex: 0 0 55px;
 }
-
 .header-topline {
-  height: 6px;
-  background: repeating-linear-gradient(
-    135deg,
-    var(--turquoise) 0 5px,
-    var(--navy) 5px 18px,
-    var(--blue) 18px 25px
-  );
+  width: 100%;
+  height: 48px;
+  background-color: #282A60;
+  background-image: url("patron-grecas.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
 }
 
 .header-inner {
