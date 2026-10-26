@@ -71,13 +71,12 @@ svg {
   transform: translateY(0);
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--navy);
-  color: var(--white);
-  box-shadow: 0 4px 18px rgba(40, 42, 96, .12);
+.site-header .brand-logo {
+  width: 55px;
+  height: 55px;
+  max-width: 55px;
+  object-fit: contain;
+  flex: 0 0 55px;
 }
 
 .header-topline {
