@@ -4,354 +4,293 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#282A60">
-  <meta name="description" content="Accede a información pública, documentos institucionales y canales de transparencia de la Municipalidad de Rapa Nui.">
-  <title>Transparencia | Municipalidad de Rapa Nui</title>
+  <meta name="description" content="Conoce los trámites y servicios municipales de Rapa Nui, revisa sus requisitos y accede a los canales oficiales de atención.">
+  <title>Trámites y Servicios | Municipalidad de Rapa Nui</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
   <style>
-    .transparency-hero {
+    .procedures-page {
+      color: #282A60;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .procedures-hero {
+      min-height: 430px;
       display: flex;
       align-items: center;
-      min-height: 450px;
-      padding: clamp(35px, 7vw, 90px);
-      color: #FAF9F5;
-      background-color: #282A60;
-      background-image: url("https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg");
-      background-position: center 50%;
+      background-image: url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=85');
       background-size: cover;
-      background-repeat: no-repeat;
+      background-position: center;
+      padding: 80px 8%;
     }
 
-    .transparency-hero-content {
-      max-width: 780px;
+    .procedures-hero-content {
+      max-width: 690px;
+      background: #ffffff;
+      padding: 38px;
+      border-radius: 4px;
     }
 
-    .transparency-hero .eyebrow {
+    .procedures-eyebrow {
       display: inline-block;
-      margin-bottom: 20px;
-      color: #73D5CB;
-      font-size: 0.78rem;
+      margin-bottom: 14px;
+      color: #23A6A0;
+      font-size: 0.8rem;
       font-weight: 800;
-      letter-spacing: 0.15em;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    .transparency-hero h1 {
-      margin: 0 0 22px;
-      font-size: clamp(2.7rem, 6.5vw, 5rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.05em;
+    .procedures-hero h1 {
+      margin: 0 0 18px;
+      color: #282A60;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.12;
     }
 
-    .transparency-hero p {
-      max-width: 610px;
-      margin: 0 0 28px;
-      font-size: 1.05rem;
-      line-height: 1.85;
+    .procedures-hero p {
+      margin: 0 0 25px;
+      color: #45465f;
+      font-size: 1rem;
+      line-height: 1.8;
     }
 
-    .transparency-intro {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 85px 25px 55px;
+    .procedures-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border: 2px solid #23A6A0;
+      border-radius: 3px;
+      background: #23A6A0;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .procedures-button:hover {
+      background: #ffffff;
+      color: #282A60;
+    }
+
+    .procedures-button.secondary {
+      border-color: #282A60;
+      background: #282A60;
+    }
+
+    .procedures-button.secondary:hover {
+      background: #ffffff;
+      color: #282A60;
+    }
+
+    .procedures-section {
+      padding: 75px 8%;
+    }
+
+    .procedures-section.light {
+      background: #DCEBE9;
+    }
+
+    .procedures-heading {
+      max-width: 760px;
+      margin: 0 auto 40px;
       text-align: center;
     }
 
-    .transparency-intro .eyebrow,
-    .transparency-section-heading .eyebrow {
-      color: #168B87;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .transparency-intro h2,
-    .transparency-section-heading h2 {
-      margin: 14px 0 18px;
+    .procedures-heading h2 {
+      margin: 0 0 16px;
       color: #282A60;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
-      letter-spacing: -0.04em;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.25;
     }
 
-    .transparency-intro p,
-    .transparency-section-heading p {
-      color: #626276;
-      line-height: 1.85;
+    .procedures-heading p {
+      margin: 0;
+      color: #55566c;
+      line-height: 1.8;
     }
 
-    .transparency-access {
-      padding: 35px 0 90px;
-    }
-
-    .transparency-grid {
+    .procedures-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
-    .transparency-card {
+    .procedure-card {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      min-height: 290px;
-      padding: 30px;
-      border: 1px solid rgba(40, 42, 96, 0.12);
-      border-radius: 18px;
-      background: #FFFFFF;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      min-height: 250px;
+      padding: 28px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
     }
 
-    .transparency-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 35px rgba(40, 42, 96, 0.08);
-    }
-
-    .transparency-card-icon {
+    .procedure-card-number {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 23px;
-      border-radius: 14px;
-      color: #282A60;
+      width: 43px;
+      height: 43px;
+      margin-bottom: 22px;
       background: #DCEBE9;
-      font-size: 1.3rem;
-      font-weight: 700;
+      color: #282A60;
+      font-size: 1rem;
+      font-weight: 800;
     }
 
-    .transparency-card h3 {
+    .procedure-card h3 {
       margin: 0 0 12px;
       color: #282A60;
       font-size: 1.15rem;
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
-    .transparency-card p {
+    .procedure-card p {
       margin: 0 0 22px;
-      color: #626276;
-      font-size: 0.93rem;
-      line-height: 1.8;
-    }
-
-    .transparency-card a {
-      margin-top: auto;
-      color: #168B87;
+      color: #5b5c6e;
       font-size: 0.92rem;
-      font-weight: 700;
-      line-height: 1.7;
-      text-decoration: none;
-      overflow-wrap: anywhere;
+      line-height: 1.75;
     }
 
-    .transparency-card a:hover {
-      text-decoration: underline;
-    }
-
-    .transparency-info {
-      padding: 85px 0;
-      background: #FAF9F5;
-    }
-
-    .transparency-section-heading {
-      max-width: 750px;
-      margin-bottom: 40px;
-    }
-
-    .transparency-info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .transparency-info-card {
-      padding: 30px;
-      border-radius: 18px;
-      background: #FFFFFF;
-    }
-
-    .transparency-info-card h3 {
-      margin: 0 0 14px;
-      color: #282A60;
-      font-size: 1.25rem;
-    }
-
-    .transparency-info-card p {
-      margin: 0 0 20px;
-      color: #626276;
-      font-size: 0.95rem;
-      line-height: 1.85;
-    }
-
-    .transparency-info-card a {
-      color: #168B87;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .transparency-info-card a:hover {
-      text-decoration: underline;
-    }
-
-    .transparency-request {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 30px;
-      padding: 38px;
-      border-radius: 20px;
-      color: #FAF9F5;
-      background: #282A60;
-    }
-
-    .transparency-request h2 {
-      margin: 0 0 14px;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      line-height: 1.25;
-    }
-
-    .transparency-request p {
-      max-width: 700px;
-      margin: 0;
-      color: rgba(250, 249, 245, 0.85);
-      line-height: 1.85;
-    }
-
-    .transparency-request a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 13px 22px;
-      border-radius: 8px;
-      color: #282A60;
-      background: #FAF9F5;
-      font-weight: 700;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .transparency-request a:hover {
-      background: #DCEBE9;
-    }
-
-    .transparency-note {
-      margin-top: 24px;
-      padding: 20px 24px;
-      border-left: 4px solid #23A6A0;
-      background: #FFFFFF;
-    }
-
-    .transparency-note p {
-      margin: 0;
-      color: #626276;
+    .procedure-card a {
+      margin-top: auto;
+      color: #168781;
       font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .procedure-card a:hover {
+      text-decoration: underline;
+    }
+
+    .procedure-card a:focus-visible,
+    .procedures-button:focus-visible {
+      outline: 3px solid #282A60;
+      outline-offset: 4px;
+    }
+
+    .procedure-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 35px;
+    }
+
+    .procedure-step {
+      padding-top: 22px;
+      border-top: 3px solid #23A6A0;
+    }
+
+    .procedure-step h3 {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+    }
+
+    .procedure-step p {
+      margin: 0;
+      color: #55566c;
+      font-size: 0.94rem;
       line-height: 1.8;
     }
 
-    .transparency-contact {
-      padding: 65px 25px;
-      color: #FAF9F5;
-      background: #34376F;
+    .procedures-help {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+      padding: 45px;
+      background: #282A60;
+      color: #ffffff;
+      border-radius: 4px;
+    }
+
+    .procedures-help h2 {
+      margin: 0 0 15px;
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      line-height: 1.3;
+    }
+
+    .procedures-help p {
+      margin: 0;
+      color: #f0f0f7;
+      line-height: 1.8;
+    }
+
+    .procedures-help-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .procedures-help .procedures-button {
+      border-color: #23A6A0;
+      background: #23A6A0;
+      color: #ffffff;
+    }
+
+    .procedures-help .procedures-button:hover {
+      background: #ffffff;
+      color: #282A60;
+    }
+
+    .procedures-note {
+      max-width: 900px;
+      margin: 28px auto 0;
+      color: #5b5c6e;
+      font-size: 0.85rem;
+      line-height: 1.7;
       text-align: center;
     }
 
-    .transparency-contact-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .transparency-contact h2 {
-      margin: 0 0 18px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
-    }
-
-    .transparency-contact p {
-      margin: 0 auto 28px;
-      color: rgba(250, 249, 245, 0.85);
-      line-height: 1.85;
-    }
-
-    .transparency-contact a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 13px 24px;
-      border-radius: 8px;
-      color: #282A60;
-      background: #FAF9F5;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .transparency-contact a:hover {
-      background: #DCEBE9;
-    }
-
     @media (max-width: 900px) {
-      .transparency-grid {
+      .procedures-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .transparency-request {
+      .procedure-steps {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
 
-      .transparency-request a {
-        justify-self: start;
+      .procedures-help {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 600px) {
-      .transparency-hero {
-        min-height: 420px;
-        padding: 28px 24px;
-        background-position: 58% center;
+      .procedures-hero {
+        min-height: 380px;
+        padding: 35px 5%;
       }
 
-      .transparency-intro {
-        padding: 60px 24px 35px;
-      }
-
-      .transparency-access {
-        padding: 25px 0 60px;
-      }
-
-      .transparency-grid,
-      .transparency-info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .transparency-card,
-      .transparency-info-card {
-        min-height: 0;
-        padding: 25px;
-      }
-
-      .transparency-info {
-        padding: 60px 0;
-      }
-
-      .transparency-request {
+      .procedures-hero-content {
         padding: 26px;
       }
 
-      .transparency-contact {
-        padding: 55px 24px;
+      .procedures-section {
+        padding: 55px 5%;
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      .transparency-card {
-        transition: none;
+      .procedures-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .procedure-card {
+        min-height: auto;
+      }
+
+      .procedures-help {
+        padding: 28px;
       }
     }
   </style>
@@ -359,189 +298,192 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand">
-        <img src="images/logo-municipalidad.png" alt="Municipalidad de Rapa Nui">
-        <span>Municipalidad de<br>Rapa Nui</span>
+      <a class="site-logo" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
+        <img src="assets/logo.png" alt="Municipalidad de Rapa Nui">
       </a>
-
-      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
-        <a href="tramites.html">Trámites</a>
+        <a href="tramites.html" aria-current="page">Trámites</a>
         <a href="direcciones.html">Direcciones</a>
+        <a href="desarrollo.html">Desarrollo</a>
         <a href="comunidad.html">Comunidad</a>
         <a href="explora.html">Explora Rapa Nui</a>
+        <a href="transparencia.html">Transparencia</a>
+        <a href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="transparency-hero">
-      <div class="transparency-hero-content">
-        <span class="eyebrow">Municipio abierto</span>
-        <h1>Transparencia y acceso a la información.</h1>
+  <main class="procedures-page">
+    <section class="procedures-hero">
+      <div class="procedures-hero-content">
+        <span class="procedures-eyebrow">Municipalidad de Rapa Nui</span>
+        <h1>Trámites y servicios municipales</h1>
         <p>
-          Accede a los canales institucionales para consultar información pública,
-          revisar antecedentes municipales y conocer cómo solicitar información
-          a la Municipalidad de Rapa Nui.
+          Encuentra orientación para realizar tus trámites municipales,
+          conocer los requisitos y acceder a la información oficial de cada servicio.
         </p>
-        <div class="hero-actions">
-          <a href="#accesos" class="btn btn-primary">Consultar información</a>
-          <a href="#solicitudes" class="btn btn-outline">Solicitar información</a>
-        </div>
+        <a class="procedures-button" href="https://www.rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">
+          Consultar guía de trámites <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
 
-    <section class="transparency-intro">
-      <span class="eyebrow">Información pública</span>
-      <h2>Información clara, acceso abierto.</h2>
-      <p>
-        La transparencia permite a las personas conocer la gestión de las
-        instituciones públicas y ejercer su derecho de acceso a la información.
-        Aquí encontrarás accesos a los canales institucionales disponibles
-        para consultar antecedentes municipales.
+    <section class="procedures-section">
+      <div class="procedures-heading">
+        <span class="procedures-eyebrow">Encuentra lo que necesitas</span>
+        <h2>¿Qué trámite buscas?</h2>
+        <p>
+          Accede a las áreas municipales y revisa la información específica
+          publicada por la Municipalidad antes de iniciar una solicitud.
+        </p>
+      </div>
+
+      <div class="procedures-grid">
+        <article class="procedure-card">
+          <div class="procedure-card-number">01</div>
+          <h3>Licencia de conducir</h3>
+          <p>
+            Revisa los requisitos y antecedentes solicitados para obtener,
+            renovar o realizar otros trámites relacionados con tu licencia.
+          </p>
+          <a href="https://www.rapanui.net/secciones/8413" target="_blank" rel="noopener noreferrer">
+            Ver información oficial ↗
+          </a>
+        </article>
+
+        <article class="procedure-card">
+          <div class="procedure-card-number">02</div>
+          <h3>Permiso de circulación</h3>
+          <p>
+            Consulta la documentación requerida y los pasos indicados por
+            la Dirección de Tránsito para gestionar este permiso.
+          </p>
+          <a href="https://www.rapanui.net/secciones/8413" target="_blank" rel="noopener noreferrer">
+            Revisar requisitos ↗
+          </a>
+        </article>
+
+        <article class="procedure-card">
+          <div class="procedure-card-number">03</div>
+          <h3>Permisos de edificación</h3>
+          <p>
+            Infórmate sobre antecedentes, formularios y requisitos asociados
+            a permisos y otras solicitudes de obras municipales.
+          </p>
+          <a href="https://www.rapanui.net/secciones/8395" target="_blank" rel="noopener noreferrer">
+            Consultar trámites DOM ↗
+          </a>
+        </article>
+
+        <article class="procedure-card">
+          <div class="procedure-card-number">04</div>
+          <h3>Patentes comerciales</h3>
+          <p>
+            Consulta la guía municipal para conocer los antecedentes
+            asociados a solicitudes y gestiones de patentes comerciales.
+          </p>
+          <a href="https://www.rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">
+            Ir a la guía municipal ↗
+          </a>
+        </article>
+
+        <article class="procedure-card">
+          <div class="procedure-card-number">05</div>
+          <h3>Certificados y solicitudes</h3>
+          <p>
+            Revisa la información disponible sobre certificados, autorizaciones
+            y otras gestiones que requieren documentación específica.
+          </p>
+          <a href="https://www.rapanui.net/secciones/8395" target="_blank" rel="noopener noreferrer">
+            Ver información DOM ↗
+          </a>
+        </article>
+
+        <article class="procedure-card">
+          <div class="procedure-card-number">06</div>
+          <h3>Servicios para la comunidad</h3>
+          <p>
+            Conoce los servicios municipales y las orientaciones disponibles
+            para realizar solicitudes o resolver consultas.
+          </p>
+          <a href="https://www.rapanui.net/secciones/8412" target="_blank" rel="noopener noreferrer">
+            Conocer servicios ↗
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="procedures-section light">
+      <div class="procedures-heading">
+        <span class="procedures-eyebrow">Antes de comenzar</span>
+        <h2>Prepara tu trámite</h2>
+        <p>
+          Una revisión previa de la información puede ayudarte a identificar
+          los documentos necesarios y el canal adecuado para tu solicitud.
+        </p>
+      </div>
+
+      <div class="procedure-steps">
+        <article class="procedure-step">
+          <h3>1. Identifica el trámite</h3>
+          <p>
+            Busca el servicio que necesitas en la guía oficial y confirma
+            qué unidad municipal se encarga de gestionarlo.
+          </p>
+        </article>
+
+        <article class="procedure-step">
+          <h3>2. Revisa los requisitos</h3>
+          <p>
+            Lee los antecedentes, formularios, plazos y posibles costos
+            informados para el procedimiento correspondiente.
+          </p>
+        </article>
+
+        <article class="procedure-step">
+          <h3>3. Confirma dónde realizarlo</h3>
+          <p>
+            Verifica si la gestión se realiza presencialmente, mediante
+            un canal digital o a través de la unidad municipal responsable.
+          </p>
+        </article>
+      </div>
+
+      <p class="procedures-note">
+        Los requisitos, plazos y valores pueden variar según el trámite.
+        Confirma siempre la información vigente en los canales oficiales
+        antes de presentar tus antecedentes.
       </p>
     </section>
 
-    <section class="transparency-access" id="accesos">
-      <div class="section-container">
-        <div class="transparency-grid">
-          <article class="transparency-card">
-            <div class="transparency-card-icon" aria-hidden="true">↗</div>
-            <h3>Transparencia activa</h3>
-            <p>
-              Accede al portal institucional para buscar información pública
-              disponible sobre la gestión municipal.
-            </p>
-            <a href="https://www.rapanui.net/" target="_blank" rel="noopener noreferrer">Visitar portal municipal →</a>
-          </article>
-
-          <article class="transparency-card">
-            <div class="transparency-card-icon" aria-hidden="true">▤</div>
-            <h3>Información institucional</h3>
-            <p>
-              Consulta la información publicada por el municipio y sus
-              distintas unidades administrativas.
-            </p>
-            <a href="https://www.rapanui.net/home" target="_blank" rel="noopener noreferrer">Consultar sitio oficial →</a>
-          </article>
-
-          <article class="transparency-card">
-            <div class="transparency-card-icon" aria-hidden="true">⌕</div>
-            <h3>Trámites municipales</h3>
-            <p>
-              Revisa información sobre procedimientos, requisitos y
-              gestiones disponibles para la comunidad.
-            </p>
-            <a href="https://www.rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">Ver trámites →</a>
-          </article>
-
-          <article class="transparency-card">
-            <div class="transparency-card-icon" aria-hidden="true">▣</div>
-            <h3>Secretaría Municipal</h3>
-            <p>
-              Encuentra información de la unidad municipal y sus canales
-              institucionales de atención.
-            </p>
-            <a href="https://municipalidadderapanui.ligup2.com/secciones/7720" target="_blank" rel="noopener noreferrer">Consultar información →</a>
-          </article>
-
-          <article class="transparency-card">
-            <div class="transparency-card-icon" aria-hidden="true">◎</div>
-            <h3>Consejo para la Transparencia</h3>
-            <p>
-              Conoce tus derechos de acceso a la información pública y
-              consulta los recursos de orientación del organismo nacional.
-            </p>
-            <a href="https://www.consejotransparencia.cl/" target="_blank" rel="noopener noreferrer">Visitar el Consejo →</a>
-          </article>
-
-          <article class="transparency-card">
-            <div class="transparency-card-icon" aria-hidden="true">✉</div>
-            <h3>Contacto municipal</h3>
-            <p>
-              Si necesitas orientación sobre dónde realizar una consulta,
-              puedes comunicarte con el municipio.
-            </p>
-            <a href="contacto.html">Ver canales de contacto →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="transparency-info">
-      <div class="section-container">
-        <div class="transparency-section-heading">
-          <span class="eyebrow">Conoce tus opciones</span>
-          <h2>¿Qué información necesitas?</h2>
-          <p>
-            Puedes comenzar revisando la información publicada en los portales
-            institucionales. Si no encuentras los antecedentes que buscas,
-            consulta los canales disponibles para realizar una solicitud.
-          </p>
-        </div>
-
-        <div class="transparency-info-grid">
-          <article class="transparency-info-card">
-            <h3>Información publicada</h3>
-            <p>
-              Busca primero en el sitio oficial del municipio. Allí puedes
-              encontrar información institucional, trámites y publicaciones
-              que se encuentren disponibles en línea.
-            </p>
-            <a href="https://www.rapanui.net/home" target="_blank" rel="noopener noreferrer">Explorar información municipal →</a>
-          </article>
-
-          <article class="transparency-info-card">
-            <h3>Información que no encuentras</h3>
-            <p>
-              Si buscas antecedentes que no están publicados, infórmate sobre
-              el procedimiento formal de solicitud de acceso a la información
-              pública y los requisitos correspondientes.
-            </p>
-            <a href="https://www.consejotransparencia.cl/" target="_blank" rel="noopener noreferrer">Consultar orientación oficial →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-container" id="solicitudes" style="padding-top: 75px; padding-bottom: 75px;">
-      <div class="transparency-request">
+    <section class="procedures-section">
+      <div class="procedures-help">
         <div>
-          <h2>¿Necesitas solicitar información pública?</h2>
+          <span class="procedures-eyebrow">¿Necesitas orientación?</span>
+          <h2>Te ayudamos a encontrar el canal adecuado</h2>
           <p>
-            Revisa las orientaciones oficiales para conocer cómo ejercer tu
-            derecho de acceso a la información pública. Verifica el organismo
-            destinatario, los datos que debes incluir y el canal de presentación
-            antes de enviar tu solicitud.
+            Si no sabes qué unidad municipal corresponde a tu solicitud,
+            comunícate con la Municipalidad para consultar dónde obtener
+            orientación sobre tu trámite.
           </p>
         </div>
-        <a href="https://www.consejotransparencia.cl/" target="_blank" rel="noopener noreferrer">Obtener orientación</a>
-      </div>
-
-      <div class="transparency-note">
-        <p>
-          Los enlaces de esta página conducen a portales institucionales.
-          La disponibilidad de documentos, formularios y procedimientos puede
-          variar. Confirma en el sitio oficial de la Municipalidad de Rapa Nui
-          cuál es el canal vigente para cada solicitud.
-        </p>
-      </div>
-    </section>
-
-    <section class="transparency-contact">
-      <div class="transparency-contact-inner">
-        <h2>¿Necesitas ayuda para encontrar información?</h2>
-        <p>
-          Comunícate con la Municipalidad de Rapa Nui para recibir orientación
-          sobre sus unidades y canales de atención.
-        </p>
-        <a href="contacto.html">Ver información de contacto</a>
+        <div class="procedures-help-actions">
+          <a class="procedures-button" href="contacto.html">
+            Contactar a la Municipalidad
+          </a>
+          <a class="procedures-button" href="https://www.rapanui.net/secciones/8414" target="_blank" rel="noopener noreferrer">
+            Abrir guía oficial ↗
+          </a>
+          <a class="procedures-button" href="transparencia.html">
+            Información y transparencia
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -549,35 +491,29 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="images/logo-municipalidad.png" alt="Municipalidad de Rapa Nui">
-        <div>
-          <h2>Municipalidad de Rapa Nui</h2>
-          <p>Al servicio de nuestra comunidad.</p>
-        </div>
+        <a href="index.html" aria-label="Volver al inicio">
+          <img src="assets/logo.png" alt="Municipalidad de Rapa Nui">
+        </a>
+        <p>Municipalidad de Rapa Nui</p>
       </div>
-
       <div class="footer-links">
-        <h3>Accesos rápidos</h3>
-        <a href="tramites.html">Trámites municipales</a>
+        <h2>Accesos rápidos</h2>
+        <a href="tramites.html">Trámites</a>
         <a href="direcciones.html">Direcciones municipales</a>
-        <a href="comunidad.html">Comunidad</a>
-        <a href="planes.html">Planes y proyectos</a>
-      </div>
-
-      <div class="footer-links">
-        <h3>Información</h3>
         <a href="transparencia.html">Transparencia</a>
         <a href="contacto.html">Contacto</a>
-        <a href="https://www.rapanui.net/home" target="_blank" rel="noopener noreferrer">Sitio oficial</a>
-        <a href="https://www.consejotransparencia.cl/" target="_blank" rel="noopener noreferrer">Consejo para la Transparencia</a>
+      </div>
+      <div class="footer-contact">
+        <h2>Contacto</h2>
+        <p>Atamu Tekena s/n, Rapa Nui</p>
+        <a href="https://www.rapanui.net/home" target="_blank" rel="noopener noreferrer">
+          Sitio oficial ↗
+        </a>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <p>© Municipalidad de Rapa Nui. Todos los derechos reservados.</p>
+      <p>Municipalidad de Rapa Nui</p>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
