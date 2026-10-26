@@ -5,92 +5,1100 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#282A60">
-  <meta name="description" content="Un territorio de memoria, cultura viva y naturaleza que merece ser conocido y cuidado.">
+  <meta name="description" content="Explora Rapa Nui: turismo, patrimonio, naturaleza, cultura y Tāpati.">
   <title>Explora Rapa Nui | Municipalidad de Rapa Nui</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+
+  <style>
+    /* AJUSTES EXCLUSIVOS PARA EXPLORA */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body.explora-page {
+      margin: 0;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      color: #282A60;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .explora-page *,
+    .explora-page *::before,
+    .explora-page *::after {
+      box-sizing: border-box;
+    }
+
+    .explora-page main {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      overflow: visible;
+    }
+
+    .explora-page section {
+      position: relative;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      max-height: none;
+      margin: 0;
+      scroll-snap-align: none;
+      scroll-snap-stop: normal;
+    }
+
+    .explora-page img {
+      max-width: 100%;
+    }
+
+    .explora-page a {
+      transition: color .2s ease, background-color .2s ease;
+    }
+
+    .explora-page .explora-hero {
+      min-height: 610px;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(32px, 7vw, 90px);
+      position: relative;
+      isolation: isolate;
+      color: #fff;
+      background: #282A60;
+    }
+
+    .explora-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(24,26,62,.86), rgba(24,26,62,.20)),
+        url("https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg")
+        center 55% / cover no-repeat;
+    }
+
+    .explora-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(0deg, rgba(22,24,55,.38), transparent 65%);
+    }
+
+    .explora-hero-content {
+      width: 100%;
+      max-width: 850px;
+    }
+
+    .explora-kicker {
+      display: inline-block;
+      color: #82DED5;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .explora-hero h1 {
+      color: #fff;
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      margin: 0 0 24px;
+    }
+
+    .explora-hero p {
+      max-width: 660px;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .explora-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .explora-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      min-height: 48px;
+      padding: 14px 20px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      background: #23A6A0;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .explora-button:hover {
+      background: #168983;
+      color: #fff;
+    }
+
+    .explora-button-outline {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,.8);
+    }
+
+    .explora-button-outline:hover {
+      background: #fff;
+      color: #282A60;
+    }
+
+    .explora-section {
+      padding: clamp(55px, 8vw, 95px) clamp(20px, 6vw, 85px);
+    }
+
+    .explora-inner {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .explora-eyebrow {
+      color: #168F89;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .explora-title {
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      margin: 12px 0 20px;
+    }
+
+    .explora-copy {
+      font-size: .98rem;
+      line-height: 1.85;
+    }
+
+    .explora-intro {
+      display: grid;
+      grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .explora-intro .explora-copy p:first-child {
+      margin-top: 0;
+    }
+
+    .explora-stats {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .explora-stat {
+      padding: 20px;
+      background: #DCEBE9;
+    }
+
+    .explora-stat strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .explora-stat span {
+      display: block;
+      font-size: .83rem;
+      line-height: 1.7;
+    }
+
+    .explora-places {
+      background: #F7F6F0;
+    }
+
+    .explora-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    .explora-heading > div {
+      max-width: 750px;
+    }
+
+    .explora-heading > p {
+      max-width: 440px;
+      font-size: .95rem;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    .explora-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .explora-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      height: auto;
+      background: #fff;
+      border: 1px solid rgba(40,42,96,.13);
+      overflow: hidden;
+    }
+
+    .explora-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #DCEBE9;
+    }
+
+    .explora-card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+      padding: 24px;
+    }
+
+    .explora-card-number {
+      color: #168F89;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .explora-card h3 {
+      color: #282A60;
+      font-size: 1.3rem;
+      line-height: 1.3;
+      margin: 12px 0;
+    }
+
+    .explora-card p {
+      font-size: .92rem;
+      line-height: 1.8;
+      margin: 0 0 22px;
+    }
+
+    .explora-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #23A6A0;
+      color: #282A60;
+      font-size: .88rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .explora-link:hover {
+      color: #168983;
+    }
+
+    .explora-tapati {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      align-items: stretch;
+      background: #282A60;
+      color: #fff;
+    }
+
+    .explora-tapati-image {
+      min-height: 430px;
+      background:
+        linear-gradient(rgba(24,26,62,.10),rgba(24,26,62,.10)),
+        url("https://services.meteored.com/img/article/asi-ha-sido-el-inicio-de-tapati-rapa-nui-2026-el-festival-cultural-mas-potente-de-la-isla-de-pascua-1770293662094_1024.jpg")
+        center / cover no-repeat;
+    }
+
+    .explora-tapati-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: clamp(28px, 6vw, 72px);
+    }
+
+    .explora-tapati-copy h2 {
+      color: #fff;
+      font-size: clamp(2.2rem,4.5vw,4rem);
+      line-height: 1.06;
+      letter-spacing: -.04em;
+      margin: 12px 0 20px;
+    }
+
+    .explora-tapati-copy p {
+      line-height: 1.85;
+      margin: 0 0 18px;
+    }
+
+    .explora-tapati-copy .explora-link {
+      color: #fff;
+      margin-top: 12px;
+    }
+
+    .explora-responsible {
+      background: #DCEBE9;
+    }
+
+    .explora-rules {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .explora-rule {
+      padding: 26px;
+      background: rgba(255,255,255,.8);
+      border-top: 3px solid #23A6A0;
+    }
+
+    .explora-rule-number {
+      display: block;
+      color: #168F89;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .explora-rule h3 {
+      font-size: 1.1rem;
+      margin: 0 0 12px;
+    }
+
+    .explora-rule p {
+      font-size: .92rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .explora-visit {
+      display: grid;
+      grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+      gap: 42px;
+      align-items: start;
+    }
+
+    .explora-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
+    }
+
+    .explora-checklist li {
+      position: relative;
+      padding: 14px 0 14px 30px;
+      border-bottom: 1px solid rgba(40,42,96,.14);
+      font-size: .94rem;
+      line-height: 1.75;
+    }
+
+    .explora-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      color: #168F89;
+      font-weight: 800;
+    }
+
+    .explora-info {
+      padding: clamp(25px,4vw,40px);
+      background: #F7F6F0;
+    }
+
+    .explora-info h3 {
+      font-size: 1.5rem;
+      margin: 12px 0;
+    }
+
+    .explora-info p {
+      font-size: .94rem;
+      line-height: 1.85;
+    }
+
+    .explora-info .explora-button {
+      margin: 8px 0 18px;
+    }
+
+    .explora-note {
+      margin-top: 20px;
+      font-size: .81rem;
+      line-height: 1.7;
+      opacity: .8;
+    }
+
+    .explora-final {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      padding: clamp(32px,6vw,65px);
+      background: #23A6A0;
+      color: #fff;
+    }
+
+    .explora-final h2 {
+      color: #fff;
+      font-size: clamp(1.8rem,4vw,3.1rem);
+      line-height: 1.12;
+      margin: 0 0 12px;
+    }
+
+    .explora-final p {
+      max-width: 680px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .explora-final .explora-button {
+      flex-shrink: 0;
+      background: #282A60;
+    }
+
+    .explora-final .explora-button:hover {
+      background: #fff;
+      color: #282A60;
+    }
+
+    .explora-page .site-footer {
+      position: relative;
+      height: auto;
+      min-height: 0;
+      overflow: visible;
+    }
+
+    @media (max-width: 900px) {
+      .explora-intro,
+      .explora-tapati,
+      .explora-visit {
+        grid-template-columns: 1fr;
+      }
+
+      .explora-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      .explora-rules {
+        grid-template-columns: 1fr;
+      }
+
+      .explora-tapati-image {
+        min-height: 340px;
+      }
+
+      .explora-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .explora-page .explora-hero {
+        min-height: 530px;
+        padding: 30px 22px 40px;
+      }
+
+      .explora-page .explora-hero h1 {
+        font-size: clamp(2.8rem,14vw,4.5rem);
+      }
+
+      .explora-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .explora-button {
+        width: 100%;
+      }
+
+      .explora-grid,
+      .explora-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .explora-final {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .explora-tapati-image {
+        min-height: 260px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .explora-page * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
-<body id="top">
+
+<body id="top" class="explora-page">
+
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 <header class="site-header">
   <div class="header-topline" aria-hidden="true"></div>
+
   <div class="header-inner">
     <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 4 41 14v20L24 44 7 34V14z"/><path d="M16 18h16M16 24h16M16 30h10"/></svg></span>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48">
+          <path d="M24 4 41 14v20L24 44 7 34V14z"/>
+          <path d="M16 18h16M16 24h16M16 30h10"/>
+        </svg>
+      </span>
       <span class="brand-name">Municipalidad <strong>de Rapa Nui</strong></span>
     </a>
+
     <div class="header-tools" aria-label="Canales de contacto">
-      <a class="icon-link" href="https://rapanui.net/" target="_blank" rel="noopener noreferrer" aria-label="Sitio municipal oficial"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-      <a class="icon-link" href="contacto.html" aria-label="Contacto municipal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg></a>
+      <a class="icon-link" href="https://www.facebook.com/profile.php?id=100069192400123" target="_blank" rel="noopener noreferrer" aria-label="Facebook municipal">
+        <svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1z"/></svg>
+      </a>
+      <a class="icon-link" href="https://www.instagram.com/haretavana/" target="_blank" rel="noopener noreferrer" aria-label="Instagram municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+      </a>
+      <a class="icon-link" href="contacto.html" aria-label="Teléfono de contacto">
+        <svg viewBox="0 0 24 24"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/></svg>
+      </a>
+      <a class="icon-link" href="contacto.html" aria-label="Correo municipal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg>
+      </a>
     </div>
+
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-      <span class="menu-toggle-lines" aria-hidden="true"></span><span class="menu-toggle-label">Menú</span>
+      <span class="menu-toggle-lines" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menú</span>
     </button>
+
     <nav class="main-nav" id="menu-principal" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
       <a href="tramites.html">Trámites y servicios</a>
       <a href="direcciones.html">Direcciones</a>
-      <a href="comunidad.html">Comunidad</a>
+      <a href="comunidad.html">Participación</a>
       <a href="desarrollo.html">Desarrollo</a>
-      <a href="planes.html">Planes</a>
-      <a href="explora.html" aria-current="page">Explora</a>
-      <a href="noticias.html">Noticias</a>
-      <a href="transparencia.html">Transparencia</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="planes.html">Planes municipales</a>
+      <a href="explora.html" aria-current="page">Explora Rapa Nui</a>
     </nav>
   </div>
 </header>
+
 <main id="contenido">
-  <section class="interior-hero">
-    <div class="interior-hero-inner reveal">
-      <p class="eyebrow">TERRITORIO Y PATRIMONIO</p>
-      <h1>Explora Rapa Nui</h1>
-      <p class="interior-lead">Un territorio de memoria, cultura viva y naturaleza que merece ser conocido y cuidado.</p>
-      <div class="breadcrumb"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Explora Rapa Nui</span></div>
-    </div>
-    <div class="interior-mark" aria-hidden="true"><span>EXPLORA</span></div>
-  </section>
-  <section class="section interior-section">
-    <div class="section-heading reveal">
-      <div><p class="eyebrow">Territorio y cultura</p><h2>Territorio, cultura y naturaleza</h2></div>
-      <p>Una aproximación al patrimonio y al entorno de Rapa Nui desde el respeto, el cuidado y el reconocimiento de su comunidad.</p>
-    </div>
-    <div class="detail-grid">
-      <article class="detail-card reveal">
-        <span class="detail-index">01</span>
-        <h2>Patrimonio</h2>
-        <p>Conoce el valor cultural e histórico del territorio desde fuentes respetuosas y verificadas.</p>
-        <a class="text-link" href="https://rapanui.net/noticias/24652" target="_blank" rel="noopener noreferrer">Leer publicación municipal <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-index">02</span>
-        <h2>Naturaleza</h2>
-        <p>Infórmate sobre el entorno natural y la importancia de respetar las indicaciones de conservación.</p>
-        <a class="text-link" href="https://www.chile.travel/" target="_blank" rel="noopener noreferrer">Consultar Chile Travel <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-index">03</span>
-        <h2>Cultura viva</h2>
-        <p>Acércate a la cultura de Rapa Nui con respeto, contexto y atención a las orientaciones locales.</p>
-        <a class="text-link" href="https://rapanui.net/" target="_blank" rel="noopener noreferrer">Visitar portal municipal <span aria-hidden="true">↗</span></a>
-      </article>
+
+  <!-- 1. PORTADA -->
+  <section class="explora-hero">
+    <div class="explora-hero-content">
+      <span class="explora-kicker">Territorio · Cultura · Naturaleza</span>
+      <h1>Explora<br>Rapa Nui</h1>
+      <p>
+        Un territorio de memoria viva, paisajes volcánicos y patrimonio
+        ancestral. Conoce sus lugares, descubre sus tradiciones y prepara
+        una visita que respete la cultura y el entorno de la isla.
+      </p>
+      <div class="explora-actions">
+        <a class="explora-button" href="#sitios">
+          Descubrir los sitios <span aria-hidden="true">↓</span>
+        </a>
+        <a class="explora-button explora-button-outline"
+           href="https://rapanui.net/secciones/tpati-8170"
+           target="_blank" rel="noopener noreferrer">
+          Conocer Tāpati <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </div>
   </section>
-  <section class="contact-band reveal">
-    <div><p class="eyebrow">Información institucional</p><h2>Descubre más a través de las fuentes oficiales.</h2></div>
-    <a class="button button-dark" href="https://rapanui.net/" target="_blank" rel="noopener noreferrer">Visitar sitio oficial <span aria-hidden="true">↗</span></a>
+
+  <!-- 2. INTRODUCCIÓN -->
+  <section class="explora-section">
+    <div class="explora-inner explora-intro">
+      <div>
+        <span class="explora-eyebrow">Un territorio único</span>
+        <h2 class="explora-title">Más que un destino, una cultura viva.</h2>
+      </div>
+
+      <div class="explora-copy">
+        <p>
+          Rapa Nui se encuentra en medio del océano Pacífico y reúne un
+          patrimonio arqueológico, cultural y natural de gran valor. Sus
+          mōai, ahu, volcanes, cavernas, costas y tradiciones forman parte
+          de la historia viva del pueblo Rapa Nui.
+        </p>
+        <p>
+          Esta sección reúne información turística, sitios de visitación
+          y contenidos culturales para orientar a residentes y visitantes
+          que quieran conocer mejor el territorio.
+        </p>
+
+        <div class="explora-stats">
+          <div class="explora-stat">
+            <strong>Patrimonio</strong>
+            <span>Historia, arqueología y memoria ancestral.</span>
+          </div>
+          <div class="explora-stat">
+            <strong>Naturaleza</strong>
+            <span>Volcanes, costas y paisajes oceánicos.</span>
+          </div>
+          <div class="explora-stat">
+            <strong>Cultura viva</strong>
+            <span>Lengua, arte, música y tradiciones.</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <!-- 3. SITIOS TURÍSTICOS -->
+  <section class="explora-section explora-places" id="sitios">
+    <div class="explora-inner">
+      <div class="explora-heading">
+        <div>
+          <span class="explora-eyebrow">Lugares para descubrir</span>
+          <h2 class="explora-title">Paisajes que cuentan historias.</h2>
+        </div>
+        <p>
+          Cada sitio tiene su propio significado cultural y natural.
+          Consulta la información de la administración del Parque Nacional
+          antes de organizar tu recorrido.
+        </p>
+      </div>
+
+      <div class="explora-grid">
+
+        <article class="explora-card">
+          <img
+            src="https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg"
+            alt="Playa Anakena en Rapa Nui"
+            loading="lazy">
+          <div class="explora-card-body">
+            <span class="explora-card-number">01 / COSTA</span>
+            <h3>Haŋa Rau y Anakena</h3>
+            <p>
+              Descubre la playa de Anakena y su entorno patrimonial,
+              incluido el conjunto arqueológico de Ahu Nau Nau.
+            </p>
+            <a class="explora-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Explorar el sitio ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-card">
+          <img
+            src="https://www.easterisland.travel/images/media/images/archaeology/easter-island-statues-ahu-tongariki-fallen-moai.jpg"
+            alt="Mōai en el conjunto arqueológico de Ahu Tongariki"
+            loading="lazy">
+          <div class="explora-card-body">
+            <span class="explora-card-number">02 / MŌAI</span>
+            <h3>Ahu Tongariki</h3>
+            <p>
+              Conoce uno de los conjuntos ceremoniales más reconocidos de
+              Rapa Nui y consulta las normas para recorrerlo.
+            </p>
+            <a class="explora-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Ver información oficial ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-card">
+          <img
+            src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85"
+            alt="Olas del océano, fotografía ilustrativa"
+            loading="lazy">
+          <div class="explora-card-body">
+            <span class="explora-card-number">03 / VOLCÁN</span>
+            <h3>Rano Kau y ꞌŌroŋo</h3>
+            <p>
+              Infórmate sobre el gran cráter volcánico y la aldea ceremonial
+              vinculada a la tradición del Taŋata Manu.
+            </p>
+            <a class="explora-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Ver información oficial ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-card">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85"
+            alt="Montañas, fotografía ilustrativa"
+            loading="lazy">
+          <div class="explora-card-body">
+            <span class="explora-card-number">04 / ARQUEOLOGÍA</span>
+            <h3>Rano Raraku</h3>
+            <p>
+              Conoce la cantera volcánica asociada a la elaboración de los
+              mōai y su relevancia dentro del patrimonio de la isla.
+            </p>
+            <a class="explora-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Ver información oficial ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-card">
+          <img
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85"
+            alt="Paisaje natural, fotografía ilustrativa"
+            loading="lazy">
+          <div class="explora-card-body">
+            <span class="explora-card-number">05 / PATRIMONIO</span>
+            <h3>Ahu Akivi</h3>
+            <p>
+              Consulta la información oficial de este conjunto arqueológico
+              y planifica tu visita siguiendo las indicaciones vigentes.
+            </p>
+            <a class="explora-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Ver información oficial ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-card">
+          <img
+            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85"
+            alt="Mar y costa oceánica, fotografía ilustrativa"
+            loading="lazy">
+          <div class="explora-card-body">
+            <span class="explora-card-number">06 / RECORRIDOS</span>
+            <h3>Tahai, Vinapu y Puna Pau</h3>
+            <p>
+              Descubre otros espacios patrimoniales y revisa las condiciones
+              de acceso a través de los canales oficiales.
+            </p>
+            <a class="explora-link"
+               href="https://mauhenuarapanui.com/sitios-de-visitacion-2/"
+               target="_blank" rel="noopener noreferrer">
+              Ver todos los sitios ↗
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="explora-note">
+        Algunas fotografías son ilustrativas y no representan necesariamente
+        el lugar descrito. Reemplázalas por fotografías verificadas de Rapa Nui
+        antes de publicar la versión definitiva.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. TĀPATI -->
+  <section class="explora-tapati" id="tapati">
+    <div class="explora-tapati-image"
+         role="img"
+         aria-label="Imagen de una actividad cultural de Tāpati Rapa Nui"></div>
+
+    <div class="explora-tapati-copy">
+      <span class="explora-kicker">Identidad · Tradición · Encuentro</span>
+      <h2>Tāpati Rapa Nui</h2>
+      <p>
+        Tāpati es una celebración cultural que reúne expresiones artísticas,
+        competencias tradicionales y prácticas vinculadas a la identidad
+        Rapa Nui. Es una oportunidad para reconocer la continuidad de los
+        saberes y la participación de la comunidad.
+      </p>
+      <p>
+        Las fechas, actividades y programación pueden cambiar cada año.
+        Consulta las publicaciones oficiales para conocer las novedades
+        de cada edición.
+      </p>
+      <a class="explora-link"
+         href="https://rapanui.net/secciones/tpati-8170"
+         target="_blank" rel="noopener noreferrer">
+        Página oficial de Tāpati ↗
+      </a>
+      <a class="explora-link"
+         href="https://culturarapanui.com/"
+         target="_blank" rel="noopener noreferrer">
+        Corporación de Arte y Cultura ↗
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. TURISMO RESPONSABLE -->
+  <section class="explora-section explora-responsible">
+    <div class="explora-inner">
+      <span class="explora-eyebrow">Cuidar también es conocer</span>
+      <h2 class="explora-title">Visita con respeto.</h2>
+      <p class="explora-copy">
+        El patrimonio de Rapa Nui es parte de la memoria y la vida del pueblo.
+        Una visita responsable comienza por informarse, respetar las normas
+        y seguir las indicaciones de quienes cuidan los sitios.
+      </p>
+
+      <div class="explora-rules">
+        <article class="explora-rule">
+          <span class="explora-rule-number">01</span>
+          <h3>Protege el patrimonio</h3>
+          <p>
+            No toques ni escales los mōai, ahu u otras estructuras.
+            No retires piedras ni elementos naturales o arqueológicos.
+          </p>
+        </article>
+
+        <article class="explora-rule">
+          <span class="explora-rule-number">02</span>
+          <h3>Respeta los recorridos</h3>
+          <p>
+            Permanece en los senderos habilitados, respeta los cierres y
+            sigue las indicaciones del personal del Parque Nacional.
+          </p>
+        </article>
+
+        <article class="explora-rule">
+          <span class="explora-rule-number">03</span>
+          <h3>Planifica antes de salir</h3>
+          <p>
+            Verifica el estado de los sitios, los requisitos de entrada,
+            las condiciones del tiempo y las necesidades del recorrido.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PREPARA TU VISITA -->
+  <section class="explora-section">
+    <div class="explora-inner explora-visit">
+      <div>
+        <span class="explora-eyebrow">Antes de tu recorrido</span>
+        <h2 class="explora-title">Prepara tu visita.</h2>
+        <p class="explora-copy">
+          Los requisitos y las condiciones de acceso pueden actualizarse.
+          Revisa las instrucciones vigentes en los canales oficiales antes
+          de visitar el Parque Nacional.
+        </p>
+
+        <ul class="explora-checklist">
+          <li>Consulta las condiciones de ingreso y compra del ticket.</li>
+          <li>Confirma qué sitios se encuentran habilitados.</li>
+          <li>Organiza la visita con un guía local o tour operador autorizado.</li>
+          <li>Lleva agua, protección solar y calzado apropiado.</li>
+          <li>Respeta las indicaciones del personal y las normas patrimoniales.</li>
+        </ul>
+      </div>
+
+      <aside class="explora-info">
+        <span class="explora-eyebrow">Información oficial</span>
+        <h3>Parque Nacional Rapa Nui</h3>
+        <p>
+          Ma’u Henua publica información sobre los sitios de visitación,
+          los tickets, las normas de acceso y las condiciones de los recorridos.
+        </p>
+        <a class="explora-button"
+           href="https://mauhenuarapanui.com/"
+           target="_blank" rel="noopener noreferrer">
+          Sitio oficial Ma’u Henua ↗
+        </a>
+
+        <p>
+          Para conocer antecedentes del Parque Nacional y su patrimonio,
+          consulta también la información de la Subdirección de Fomento
+          y Gestión Patrimonial.
+        </p>
+        <a class="explora-link"
+           href="https://www.sfgp.gob.cl/servicios/descubre-el-parque-nacional-rapa-nui"
+           target="_blank" rel="noopener noreferrer">
+          Información del Parque Nacional ↗
+        </a>
+
+        <p>
+          Para orientación turística, revisa la información publicada
+          por Ma’u Henua.
+        </p>
+        <a class="explora-link"
+           href="https://mauhenuarapanui.com/turismo/"
+           target="_blank" rel="noopener noreferrer">
+          Unidad de Turismo ↗
+        </a>
+
+        <p class="explora-note">
+          Comprueba los horarios y las condiciones directamente con los
+          organismos responsables. La disponibilidad puede cambiar por
+          seguridad, clima o mantención.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 7. ENLACES MUNICIPALES -->
+  <section class="explora-section" id="enlaces">
+    <div class="explora-inner">
+      <div class="explora-heading">
+        <div>
+          <span class="explora-eyebrow">Conoce más</span>
+          <h2 class="explora-title">Continúa explorando.</h2>
+        </div>
+        <p>
+          Accede a otras páginas municipales para conocer la planificación
+          turística, la cultura y los servicios relacionados con el territorio.
+        </p>
+      </div>
+
+      <div class="explora-grid">
+        <article class="explora-card">
+          <img
+            src="https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg"
+            alt="Paisaje de Anakena en Rapa Nui"
+            loading="lazy">
+          <div class="explora-card-body">
+            <span class="explora-card-number">01 / MUNICIPIO</span>
+            <h3>Dirección de Turismo</h3>
+            <p>
+              Accede a la información institucional de la unidad municipal
+              relacionada con el turismo.
+            </p>
+            <a class="explora-link"
+               href="https://rapanui.net/secciones/direccion-de-turismo-7726"
+               target="_blank" rel="noopener noreferrer">
+              Consultar dirección ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-card">
+          <img
+            src="https://www.chile.travel/wp-content/uploads/2021/07/Anakena_prin-min.jpg"
+            alt="Paisaje de Rapa Nui asociado a la planificación turística"
+            loading="lazy">
+          <div class="explora-card-body">
+            <span class="explora-card-number">02 / PLANIFICACIÓN</span>
+            <h3>Plan de Desarrollo Turístico</h3>
+            <p>
+              Conoce el PLADETUR y su relación con la planificación
+              del desarrollo turístico comunal.
+            </p>
+            <a class="explora-link"
+               href="https://rapanui.net/secciones/pladetur-8252"
+               target="_blank" rel="noopener noreferrer">
+              Consultar PLADETUR ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="explora-card">
+          <img
+            src="https://services.meteored.com/img/article/asi-ha-sido-el-inicio-de-tapati-rapa-nui-2026-el-festival-cultural-mas-potente-de-la-isla-de-pascua-1770293662094_1024.jpg"
+            alt="Actividad cultural relacionada con Tāpati Rapa Nui"
+            loading="lazy">
+          <div class="explora-card-body">
+            <span class="explora-card-number">03 / COMUNIDAD</span>
+            <h3>Arte y cultura</h3>
+            <p>
+              Revisa información cultural, festivales y actividades de la
+              Corporación Municipal de Arte y Cultura Rapa Nui.
+            </p>
+            <a class="explora-link"
+               href="https://culturarapanui.com/"
+               target="_blank" rel="noopener noreferrer">
+              Visitar corporación ↗
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CIERRE -->
+  <section class="explora-section">
+    <div class="explora-inner explora-final">
+      <div>
+        <h2>Rapa Nui se descubre con respeto.</h2>
+        <p>
+          Conoce el territorio, escucha sus historias y contribuye a proteger
+          el patrimonio natural y cultural para las próximas generaciones.
+        </p>
+      </div>
+      <a class="explora-button" href="contacto.html">
+        Contactar al municipio ↗
+      </a>
+    </div>
+  </section>
+
 </main>
+
 <footer class="site-footer">
   <div class="footer-main">
-    <div class="footer-brand"><span class="footer-kicker">Municipalidad de</span><strong>Rapa Nui</strong><p>Información y servicios para la comunidad.</p></div>
-    <div class="footer-column"><h2>Explorar</h2><a href="tramites.html">Trámites y servicios</a><a href="direcciones.html">Direcciones</a><a href="planes.html">Planes municipales</a></div>
-    <div class="footer-column"><h2>Información</h2><a href="noticias.html">Noticias</a><a href="transparencia.html">Transparencia</a><a href="contacto.html">Contacto</a></div>
-    <div class="footer-column"><h2>Comunidad</h2><a href="comunidad.html">Participación</a><a href="desarrollo.html">Desarrollo</a><a href="explora.html">Explora Rapa Nui</a></div>
+    <div class="footer-brand">
+      <span class="footer-kicker">Municipalidad de</span>
+      <strong>Rapa Nui</strong>
+      <p>Información y servicios para la comunidad.</p>
+    </div>
+
+    <div class="footer-column">
+      <h2>Explorar</h2>
+      <a href="tramites.html">Trámites y servicios</a>
+      <a href="direcciones.html">Direcciones</a>
+      <a href="planes.html">Planes municipales</a>
+    </div>
+
+    <div class="footer-column">
+      <h2>Información</h2>
+      <a href="noticias.html">Noticias</a>
+      <a href="transparencia.html">Transparencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+
+    <div class="footer-column">
+      <h2>Comunidad</h2>
+      <a href="comunidad.html">Participación</a>
+      <a href="desarrollo.html">Desarrollo</a>
+      <a href="explora.html" aria-current="page">Explora Rapa Nui</a>
+    </div>
   </div>
-  <div class="footer-bottom"><span>Municipalidad de Rapa Nui</span><a href="#top">Volver arriba ↑</a></div>
+
+  <div class="footer-bottom">
+    <span>Municipalidad de Rapa Nui</span>
+    <a href="#top">Volver al inicio ↑</a>
+  </div>
 </footer>
+
 </body>
 </html>
+```
