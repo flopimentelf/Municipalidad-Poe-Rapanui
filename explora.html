@@ -15,7 +15,6 @@
   <script src="script.js" defer></script>
 
   <style>
-    /* AJUSTES EXCLUSIVOS PARA EXPLORA */
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 90px;
@@ -576,43 +575,76 @@
 
   <div class="header-inner">
     <a class="brand" href="index.html" aria-label="Municipalidad de Rapa Nui, inicio">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48">
-          <path d="M24 4 41 14v20L24 44 7 34V14z"/>
-          <path d="M16 18h16M16 24h16M16 30h10"/>
-        </svg>
+      <img
+        class="brand-logo"
+        src="logo-municipalidad.jpeg"
+        alt="Escudo oficial de la Municipalidad de Rapa Nui, Haka Ara"
+      >
+      <span class="brand-name">
+        Municipalidad <strong>de Rapa Nui</strong>
       </span>
-      <span class="brand-name">Municipalidad <strong>de Rapa Nui</strong></span>
     </a>
 
-    <div class="header-tools" aria-label="Canales de contacto">
-      <a class="icon-link" href="https://www.facebook.com/profile.php?id=100069192400123" target="_blank" rel="noopener noreferrer" aria-label="Facebook municipal">
-        <svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1z"/></svg>
+    <div class="header-tools">
+      <a class="icon-link"
+         href="https://www.facebook.com/MuniRapaNui"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Facebook de la Municipalidad de Rapa Nui">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.5C17.3 1.3 16.3 1.2 15 1.2c-3.5 0-5.5 2.1-5.5 5.7V9H6v4h3.5v8z"/>
+        </svg>
       </a>
-      <a class="icon-link" href="https://www.instagram.com/haretavana/" target="_blank" rel="noopener noreferrer" aria-label="Instagram municipal">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+
+      <a class="icon-link"
+         href="https://www.instagram.com/haretavana/"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Instagram de la Municipalidad de Rapa Nui">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1"/>
+        </svg>
       </a>
-      <a class="icon-link" href="contacto.html" aria-label="Teléfono de contacto">
-        <svg viewBox="0 0 24 24"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/></svg>
+
+      <a class="icon-link"
+         href="tel:+56322100226"
+         aria-label="Llamar a la Municipalidad de Rapa Nui"
+         title="Teléfono: (32) 210 0226">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2z"/>
+        </svg>
       </a>
-      <a class="icon-link" href="contacto.html" aria-label="Correo municipal">
-        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m4 7 8 6 8-6"/></svg>
+
+      <a class="icon-link"
+         href="mailto:iorana@rapanui.net"
+         aria-label="Enviar correo a la Municipalidad de Rapa Nui"
+         title="Correo: iorana@rapanui.net">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="1"/>
+          <path d="m4 7 8 6 8-6"/>
+        </svg>
       </a>
     </div>
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="menu-principal"
+    >
       <span class="menu-toggle-lines" aria-hidden="true"></span>
       <span class="menu-toggle-label">Menú</span>
     </button>
 
     <nav class="main-nav" id="menu-principal" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
       <a href="tramites.html">Trámites y servicios</a>
       <a href="direcciones.html">Direcciones</a>
-      <a href="comunidad.html">Participación</a>
+      <a href="comunidad.html">Comunidad</a>
       <a href="desarrollo.html">Desarrollo</a>
-      <a href="planes.html">Planes municipales</a>
-      <a href="explora.html" aria-current="page">Explora Rapa Nui</a>
+      <a href="planes.html">Planes</a>
+      <a href="explora.html" aria-current="page">Explora</a>
     </nav>
   </div>
 </header>
